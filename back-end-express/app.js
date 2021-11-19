@@ -22,11 +22,11 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/public")));
 
-// const usersRouter = require("./routes/users");
+const usersRouter = require("./routes/users");
 // const gardensRouter = require("./routes/gardens");
 // const vegetablesrouter = require("./routes/vegetables");
 //API routes
-// app.use("/api/users", usersRouter);
+app.use("/api/users", usersRouter);
 // app.use("/api/gardens", gardensRouter);
 // app.use("/api/vegetables", vegetablesRouter);
 
