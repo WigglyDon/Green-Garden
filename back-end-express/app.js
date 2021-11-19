@@ -1,7 +1,8 @@
 // load .env data into process.env
 require("dotenv").config();
 
-// Express Server config
+// Express Server confi
+
 const PORT = process.env.PORT || 8080;
 // const ENV = process.env.ENV || "development";
 const express = require("express");
@@ -21,13 +22,13 @@ app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/public")));
 
-const usersRouter = require("./routes/users");
-const gardensRouter = require("./routes/gardens");
-const vegetablesrouter = require("./routes/vegetables");
+// const usersRouter = require("./routes/users");
+// const gardensRouter = require("./routes/gardens");
+// const vegetablesrouter = require("./routes/vegetables");
 //API routes
-app.use("/api/users", usersRouter);
-app.use("/api/gardens", gardensRouter);
-app.use("/api/vegetables", vegetablesRouter);
+// app.use("/api/users", usersRouter);
+// app.use("/api/gardens", gardensRouter);
+// app.use("/api/vegetables", vegetablesRouter);
 
 // resource routes
 app.listen(PORT, () => {
