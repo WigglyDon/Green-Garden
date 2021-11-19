@@ -1,7 +1,6 @@
 const {getAllUsers} = require('../db/helpers/user-queries');
 const express = require("express");
 const router = express.Router();
-// const test = require('../db/helpers/user-queries');
 
 router.get("/", (req, res) => {
   getAllUsers()

@@ -1,5 +1,6 @@
 // load .env data into process.env
 require("dotenv").config();
+const { sendText } = require('./twilio/send_sms');
 
 // Express Server confi
 
@@ -29,6 +30,10 @@ const usersRouter = require("./routes/users");
 app.use("/api/users", usersRouter);
 // app.use("/api/gardens", gardensRouter);
 // app.use("/api/vegetables", vegetablesRouter);
+
+// CRON JOB function 
+  sendText();
+//END CRON JOB
 
 // resource routes
 app.listen(PORT, () => {
