@@ -1,3 +1,3 @@
-INSERT INTO users (email, password)
+INSERT INTO users (email, password, phone_number)
 VALUES
-('test@test.com', 'test')
+('test@test.com', 'test','16044426950')
