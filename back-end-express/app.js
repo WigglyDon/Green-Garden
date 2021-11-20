@@ -24,23 +24,35 @@ app.use(cookieParser());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "/public")));
+const {
+  getAllNotifications,
+} = require("../back-end-express/db/helpers/notification-queries");
+const { getAllUsers } = require("../back-end-express/db/helpers/user-queries");
 
-const usersRouter = require("./routes/users");
 // const gardensRouter = require("./routes/gardens");
+const usersRouter = require("./routes/users");
 const vegetablesRouter = require("./routes/vegetables");
+const notificationsRouter = require("./routes/notifications");
+
 //API routes
 app.use("/api/users", usersRouter);
 // app.use("/api/gardens", gardensRouter);
 app.use("/api/vegetables", vegetablesRouter);
+app.use("/api/notifications", notificationsRouter);
 
 // CRON JOB function
 console.log("Before job instantiation");
 //min past, hour, Day of Month: 1-31, Months: 0-11 (Jan-Dec), Day of Week: 0-6 (Sun-Sat)
 
-const job = new CronJob("05 17 19 10 5", function () {
+// const job = new CronJob("17 20 19 10 5", function () {
+const job = new CronJob("0 */1 * * * *", function () {
   const d = new Date();
   console.log("At one Minutes:", d);
-  sendText();
+  getAllNotifications().then((notification) => {
+    getAllUsers().then((user) => {
+      sendText(user[0].phone_number, notification[0].body);
+    });
+  });
 });
 console.log("After job instantiation");
 job.start();
