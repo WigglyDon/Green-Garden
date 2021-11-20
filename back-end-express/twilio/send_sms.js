@@ -7,8 +7,7 @@ function sendText(phone_number, body) {
   console.log("token", authToken);
 
   const client = require("twilio")(accountSid, authToken);
-  console.log(typeof phone_number);
-  console.log(phone_number);
+
   client.messages
     .create({
       body: body,
