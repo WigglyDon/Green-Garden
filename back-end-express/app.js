@@ -41,22 +41,31 @@ app.use("/api/vegetables", vegetablesRouter);
 app.use("/api/notifications", notificationsRouter);
 
 // CRON JOB function
-console.log("Before job instantiation");
-//min past, hour, Day of Month: 1-31, Months: 0-11 (Jan-Dec), Day of Week: 0-6 (Sun-Sat)
-
-// const job = new CronJob("17 20 19 10 5", function () {
+// console.log("Before job instantiation");
+//seconds, min past, hour, Day of Month: 1-31, Months: 0-11 (Jan-Dec), Day of Week: 0-6 (Sun-Sat)
 const job = new CronJob("0 */1 * * * *", function () {
   const d = new Date();
-  console.log("At one Minutes:", d);
-  getAllNotifications().then((notification) => {
+  console.log("First Chron:", d);
+  getAllNotifications().then((notifications) => {
     getAllUsers().then((user) => {
-      sendText(user[0].phone_number, notification[0].body);
+      const min = notifications[0].minute;
+      const hour = notifications[0].hour;
+      const day = notifications[0].day;
+      const phone_number = user[0].phone_number;
+      const body = notifications[0].body;
+      console.log(`${min} ${hour} 20 10 ${day}`);
+      const send = new CronJob(`${min} ${hour} 20 10 ${day}`, function () {
+        const e = new Date();
+        sendText(phone_number, body);
+        console.log("Second Chron:", e);
+      });
+      send.start();
     });
   });
 });
+
 console.log("After job instantiation");
 job.start();
-
 //END CRON JOB
 
 // resource routes
