@@ -6,11 +6,15 @@ import { Button } from "@mui/material";
 import DayPicker from "./DayPicker";
 import TimePicker from "./TimePicker";
 
-export default function Scheduler() {
+export default function Scheduler(props: any) {
+  const { state, handleChange } = props
+  
   return (
     <div>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <DayPicker />
+        <DayPicker 
+        state = {state}
+        handleChange = {handleChange} />
         <TimePicker />
       </LocalizationProvider>
     </div>
