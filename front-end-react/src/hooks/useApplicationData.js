@@ -68,7 +68,7 @@ export default function useApplicationData() {
   //     [id]: appointment,
   //   };
   //   return axios
-  //     .put(`http://localhost:8001/api/notifications/${id}`, { interview })
+  //     .put(`http://localhost:8001/api/appointments/${id}`, { interview })
   //     .then(() => {
   //       const days = spotsRemaining(state, appointments);
   //       setState({

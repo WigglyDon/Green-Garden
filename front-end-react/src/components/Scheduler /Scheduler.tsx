@@ -5,6 +5,7 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { Button } from "@mui/material";
 import DayPicker from "./DayPicker";
 import TimePicker from "./TimePicker";
+import axios from "axios";
 
 export default function Scheduler(props: any) {
   const { state, handleDayChange, handleTime } = props;
@@ -17,7 +18,11 @@ export default function Scheduler(props: any) {
         <Button
           variant="contained"
           onClick={() => {
-            console.log("state", state);
+            return axios
+              .post(`http://localhost:8080/api/notifications/1`, { state })
+              .then(() => {
+                console.log("Sucessful Put!");
+              });
           }}
         >
           Save Appointment

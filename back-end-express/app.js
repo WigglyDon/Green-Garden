@@ -49,7 +49,7 @@ app.use("/api/gardens", gardensRouter);
 // CRON JOB function
 // console.log("Before job instantiation");
 //seconds, min past, hour, Day of Month: 1-31, Months: 0-11 (Jan-Dec), Day of Week: 0-6 (Sun-Sat)
-const job = new CronJob("0 1 * * * *", function () {
+const job = new CronJob("0 */1 * * * *", function () {
   const d = new Date();
   console.log("First Chron:", d);
   getAllNotifications().then((notifications) => {
