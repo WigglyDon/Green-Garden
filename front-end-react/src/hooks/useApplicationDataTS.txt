@@ -1,0 +1,97 @@
+// import { useState, useEffect } from "react";
+// import axios from "axios";
+
+// export default function useApplicationData() {
+//   interface INotifications {
+//     garden_id: number;
+//     day: number;
+//     hour: number;
+//     minute: number;
+//     body: string;
+//   }
+//   interface IGardens {
+//     garden_id: number;
+//     day: number;
+//     hour: number;
+//     minute: number;
+//     body: string;
+//   }
+
+  // interface IUsers {
+  //   garden_id: number;
+  //   day: number;
+  //   hour: number;
+  //   minute: number;
+  //   body: string;
+  // }
+
+  // const [notifications, setNotifications] = useState<INotifications[]>([]);
+  // const [users, setUsers] = useState <IUsers[]> ([])
+  // const [gardens, setGardens] = useState<IGardens[]>([]);
+
+  // useEffect(() => {
+  //   Promise.all([
+      // axios.get <IUsers[]>("http://localhost:8080/api/users"),
+      // axios.get("http://localhost:8080/api/vegetables"),
+      // axios.get<IGardens[]>("http://localhost:8080/api/gardens"),
+      // axios.get("/api/gardens_vegetables"),
+  //     axios.get<INotifications[]>("http://localhost:8080/api/notifications"),
+  //   ])
+  //     .then((all) => {
+  //       const gardensData = all[0].data;
+  //       console.log(gardensData);
+  //       const notificationsData = all[1].data;
+  //       console.log(notificationsData);
+  //       setGardens((prev) => ({
+  //         ...prev,
+  //         gardens: gardensData,
+  //       }));
+  //       setNotifications((prev) => ({
+  //         ...prev,
+  //         notifications: notificationsData,
+  //       }));
+  //     })
+  //     .catch((error) => {
+  //       console.log(error);
+  //     });
+  // }, []);
+
+  // const handleDayChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  //   setState({
+  //     ...state,
+  //     [event.target.name]: event.target.checked,
+  //   });
+  // };
+
+  // const handleTime = (newHour: any, newMin: any) => {
+  //   setState({
+  //     ...state,
+  //     state.notifications.hour: newHour,
+  //     state.notifications.minute: newMin
+  //   });
+  // };
+
+  //  function bookInterview(id, interview) {
+  //   const appointment = {
+  //     ...state.appointments[id],
+  //     interview: { ...interview },
+  //   };
+  //   const appointments = {
+  //     ...state.appointments,
+  //     [id]: appointment,
+  //   };
+  //   return axios
+  //     .put(`http://localhost:8001/api/notifications/${id}`, { interview })
+  //     .then(() => {
+  //       const days = spotsRemaining(state, appointments);
+  //       setState({
+  //         ...state,
+  //         appointments,
+  //         days,
+  //       });
+  //     });
+  //  }
+
+  // return { state, handleDayChange, handleTime };
+  // return { notifications, gardens };
+}

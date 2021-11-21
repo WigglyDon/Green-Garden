@@ -17,12 +17,11 @@ const morgan = require("morgan");
 const app = express();
 const db = require("./db");
 
-const cors = require('cors')
+const cors = require("cors");
 
 // Middleware
 
-app.use(cors())
-
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -38,17 +37,19 @@ const { getAllUsers } = require("../back-end-express/db/helpers/user-queries");
 const usersRouter = require("./routes/users");
 const vegetablesRouter = require("./routes/vegetables");
 const notificationsRouter = require("./routes/notifications");
+const gardensRouter = require("./routes/gardens");
 
 //API routes
 app.use("/api/users", usersRouter);
-// app.use("/api/gardens", gardensRouter);
+app.use("/api/gardens", gardensRouter);
 app.use("/api/vegetables", vegetablesRouter);
 app.use("/api/notifications", notificationsRouter);
+app.use("/api/gardens", gardensRouter);
 
 // CRON JOB function
 // console.log("Before job instantiation");
 //seconds, min past, hour, Day of Month: 1-31, Months: 0-11 (Jan-Dec), Day of Week: 0-6 (Sun-Sat)
-const job = new CronJob("0 */1 * * * *", function () {
+const job = new CronJob("0 1 * * * *", function () {
   const d = new Date();
   console.log("First Chron:", d);
   getAllNotifications().then((notifications) => {

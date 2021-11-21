@@ -1,11 +1,9 @@
 const express = require("express");
 const router = express.Router();
-const bcrypt = require("bcrypt");
-
-const {} = require("../db/helpers/gardens-queries");
+const { getAllGardens } = require("../db/helpers/garden-queries");
 
 router.get("/", (req, res) => {
-  getUsers()
+  getAllGardens()
     .then((data) => res.status(200).json(data))
     .catch((err) => res.status(500).json({ error: err.message }));
 });

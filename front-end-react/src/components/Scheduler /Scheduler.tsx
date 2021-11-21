@@ -7,25 +7,21 @@ import DayPicker from "./DayPicker";
 import TimePicker from "./TimePicker";
 
 export default function Scheduler(props: any) {
-  const { state, handleChange, handleTime} = props
-  
+  const { state, handleDayChange, handleTime } = props;
+
   return (
     <div>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <DayPicker 
-        state = {state}
-        handleChange = {handleChange} />
-        <TimePicker 
-          state={state}
-          handleTime = {handleTime}
-        />
+        <DayPicker state={state} handleDayChange={handleDayChange} />
+        <TimePicker state={state} handleTime={handleTime} />
         <Button
           variant="contained"
-           onClick={() => {
-             alert('clicked');
-             console.log("state:", state)
-            }}
-        > Save Appointment</Button>
+          onClick={() => {
+            console.log("state", state);
+          }}
+        >
+          Save Appointment
+        </Button>
       </LocalizationProvider>
     </div>
   );
