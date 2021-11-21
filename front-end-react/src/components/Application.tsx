@@ -8,12 +8,13 @@ import useApplicationData from "../hooks/useApplicationData";
 
 
 export default function Application() {
-  const { state, handleChange } = useApplicationData();
+  const { state, handleChange, handleTime } = useApplicationData();
   return (
     <div>
       <Scheduler 
        state ={state}
-        handleChange = {handleChange}
+        handleChange={handleChange}
+        handleTime = {handleTime}
       />
     </div>
   );

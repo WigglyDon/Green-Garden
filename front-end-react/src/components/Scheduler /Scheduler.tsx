@@ -7,7 +7,7 @@ import DayPicker from "./DayPicker";
 import TimePicker from "./TimePicker";
 
 export default function Scheduler(props: any) {
-  const { state, handleChange } = props
+  const { state, handleChange, handleTime} = props
   
   return (
     <div>
@@ -15,7 +15,17 @@ export default function Scheduler(props: any) {
         <DayPicker 
         state = {state}
         handleChange = {handleChange} />
-        <TimePicker />
+        <TimePicker 
+          state={state}
+          handleTime = {handleTime}
+        />
+        <Button
+          variant="contained"
+           onClick={() => {
+             alert('clicked');
+             console.log("state:", state)
+            }}
+        > Save Appointment</Button>
       </LocalizationProvider>
     </div>
   );

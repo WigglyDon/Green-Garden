@@ -10,6 +10,7 @@ export default function useApplicationData() {
       thursday: false,
       friday: true,
       saturday: false,
+      time: new Date(),
   });
 
   useEffect(() => {
@@ -28,6 +29,7 @@ export default function useApplicationData() {
     });
   }, []);
 
+  
  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setState({
       ...state,
@@ -35,5 +37,12 @@ export default function useApplicationData() {
     });
   };
 
-  return { state, handleChange };
-}
+  const handleTime = (newTime:any) => {
+     setState({
+      ...state,
+      ['time'] : newTime
+    });
+  }
+
+  return { state, handleChange, handleTime }
+};
