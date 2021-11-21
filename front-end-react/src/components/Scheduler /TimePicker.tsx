@@ -18,7 +18,6 @@ export default function TimePicker(props: any) {
           orientation="landscape"
           openTo="minutes"
           value={"Sun Nov 21 2021 11:56:56 GMT-0600"}
-          // value={`Sun Nov 21 2021 ${time.hour}:${time.minute}:56 GMT-0700`}
           onChange={(newTime) => {
             handleTime(newTime);
           }}

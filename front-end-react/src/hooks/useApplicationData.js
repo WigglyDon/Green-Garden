@@ -14,8 +14,7 @@ export default function useApplicationData() {
         5: false,
         6: false,
       },
-      hour: 0,
-      min: 0,
+      time: "",
     },
     gardens: {},
   });
@@ -49,11 +48,13 @@ export default function useApplicationData() {
     });
   };
 
-  const handleTime = (newHour, newMin) => {
+  const handleTime = (newTime) => {
     setState({
       ...state,
-      [state.notifications.hour]: newHour,
-      [state.notifications.minute]: newMin,
+      notificationFormData: {
+        ...state.notificationFormData,
+        ["time"]: newTime,
+      },
     });
   };
 
