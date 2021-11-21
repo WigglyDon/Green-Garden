@@ -3,7 +3,7 @@ import axios from "axios";
 
 export default function useApplicationData() {
   const [state, setState] = useState({
-      sunday: false,
+    sunday: false,
       monday: false,
       tuesday: true,
       wednesday: false,
