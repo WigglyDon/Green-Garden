@@ -3,11 +3,19 @@ import ReactDOM from "react-dom";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import Scheduler from "./Scheduler /Scheduler";
+import useApplicationData from "../hooks/useApplicationData";
+
+
 
 export default function Application() {
+  const { state, handleChange, handleTime } = useApplicationData();
   return (
     <div>
-      <Scheduler />
+      <Scheduler 
+       state ={state}
+        handleChange={handleChange}
+        handleTime = {handleTime}
+      />
     </div>
   );
 }

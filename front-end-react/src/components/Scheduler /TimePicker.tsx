@@ -5,9 +5,9 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import StaticTimePicker from "@mui/lab/StaticTimePicker";
 import { Button } from "@mui/material";
 
-export default function TimePicker() {
-  const [value, setValue] = useState<Date | null>(new Date());
-
+export default function TimePicker(props:any) {
+  // const [value, setValue] = useState<Date | null>(new Date());
+const {state, handleTime} = props
   return (
     <div>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -15,14 +15,12 @@ export default function TimePicker() {
           ampm
           orientation="landscape"
           openTo="minutes"
-          value={value}
-          onChange={(newValue) => {
-            setValue(newValue);
-          }}
+          value={state.time}
+          onChange={(newTime) => { 
+            handleTime(newTime)}}
           renderInput={(params) => <TextField {...params} />}
         />
       </LocalizationProvider>
-      <Button variant="contained"> Save Appointment</Button>
     </div>
   );
 }

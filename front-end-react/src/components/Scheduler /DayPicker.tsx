@@ -6,23 +6,8 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import Switch from "@mui/material/Switch";
 
-export default function SwitchesGroup() {
-  const [state, setState] = useState({
-    sunday: false,
-    monday: false,
-    tuesday: false,
-    wednesday: false,
-    thursday: false,
-    friday: false,
-    saturday: false,
-  });
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setState({
-      ...state,
-      [event.target.name]: event.target.checked,
-    });
-  };
+export default function DayPicker(props: any) {
+ const { state, handleChange } = props
   return (
     <FormControl component="fieldset" variant="standard">
       <FormLabel component="legend">Choose your day(s)</FormLabel>
