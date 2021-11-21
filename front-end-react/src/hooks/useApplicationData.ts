@@ -15,18 +15,21 @@ export default function useApplicationData() {
 
   useEffect(() => {
     Promise.all([
-      axios.get("http://localhost:8001/api/users"),
-      axios.get("http://localhost:8001/api/vegetables"),
-      axios.get("http://localhost:8001/api/gardens"),
-      axios.get("http://localhost:8001/api/gardens_vegetables"),
-      axios.get("http://localhost:8001/api/notifications"),
+      axios.get("/api/users"),
+      axios.get("/api/vegetables"),
+      // axios.get("/api/gardens"),
+      // axios.get("/api/gardens_vegetables"),
+      axios.get("/api/notifications"),
     ]).then((all) => {
-      const notificationsData = all[4].data;
+      const notificationsData = all[2].data;
       setState((prev) => ({
         ...prev,
         notifications: notificationsData,
       }));
-    });
+    })
+    .catch ((error) => {
+      console.log(error);
+    })
   }, []);
 
   
