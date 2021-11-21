@@ -3,13 +3,13 @@ import axios from "axios";
 
 export default function useApplicationData() {
   const [state, setState] = useState({
-    sunday: false,
-    monday: false,
-    tuesday: true,
-    wednesday: false,
-    thursday: false,
-    friday: true,
-    saturday: false,
+      sunday: false,
+      monday: false,
+      tuesday: true,
+      wednesday: false,
+      thursday: false,
+      friday: true,
+      saturday: false,
   });
 
   useEffect(() => {
