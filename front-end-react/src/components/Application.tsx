@@ -6,13 +6,15 @@ import Scheduler from "./Scheduler /Scheduler";
 import useApplicationData from "../hooks/useApplicationData";
 
 export default function Application() {
-  const { state, handleDayChange, handleTime } = useApplicationData();
+  const { state, handleDayChange, handleTime, bookNotification } =
+    useApplicationData();
   return (
     <div>
       <Scheduler
         state={state}
         handleDayChange={handleDayChange}
         handleTime={handleTime}
+        bookNotification={bookNotification}
       />
     </div>
   );

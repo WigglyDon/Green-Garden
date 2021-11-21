@@ -58,6 +58,14 @@ export default function useApplicationData() {
     });
   };
 
+  function bookNotification() {
+    return axios
+      .post(`http://localhost:8080/api/notifications/1`, { state })
+      .then(() => {
+        console.log("Sucessful Put!");
+      });
+  }
+
   //  function bookInterview(id, interview) {
   //   const appointment = {
   //     ...state.appointments[id],
@@ -79,5 +87,5 @@ export default function useApplicationData() {
   //     });
   //  }
 
-  return { state, handleDayChange, handleTime };
+  return { state, handleDayChange, handleTime, bookNotification };
 }

@@ -8,7 +8,7 @@ import TimePicker from "./TimePicker";
 import axios from "axios";
 
 export default function Scheduler(props: any) {
-  const { state, handleDayChange, handleTime } = props;
+  const { state, handleDayChange, handleTime, bookNotification } = props;
 
   return (
     <div>
@@ -18,11 +18,7 @@ export default function Scheduler(props: any) {
         <Button
           variant="contained"
           onClick={() => {
-            return axios
-              .post(`http://localhost:8080/api/notifications/1`, { state })
-              .then(() => {
-                console.log("Sucessful Put!");
-              });
+            bookNotification();
           }}
         >
           Save Appointment
