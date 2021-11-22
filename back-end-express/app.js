@@ -85,23 +85,26 @@ app.use("/api/gardens", gardensRouter);
 //     });
 //   });
 // });
-const midnightScanner = new CronJob("0 21 * * * *", function () {
+const midnightScanner = new CronJob("26 * * * *", function () {
   console.log("midnight scanner ran")
   getAllNotifications().then((notifications) => {
     getAllUsers().then((user) => {
      for (let i = 0; i < notifications.length; i++) {
         const id = notifications[i].id;
         const min = notifications[i].minute;
-        const hour = notifications[i].hour;
+        const hour = notifications[i].hour - 6;
         const day = notifications[i].day;
         const body = notifications[i].body;
         const phone_number = user[0].phone_number;
-        
-        const sendOne = new CronJob(`${min} ${hour} * * *`, function () {
+       
+        // const sendOne = new CronJob(`${min} ${hour} * * *`, function () {
+          const sendOne = new CronJob(`${min} ${hour} * * *`, function () {
           console.log("min: ",min, "hour: ", hour)
           console.log("sendOne activated")
           // sendText(phone_number, body);
         });
+        console.log("new job created");
+        console.log(sendOne.nextDate().toString())
         sendOne.start();
      }
     });

@@ -1,8 +1,8 @@
 INSERT INTO notifications (garden_id, day, hour, minute, body)
 VALUES
-(1,1,12,22,'this means monday, 12:06 pm for garden id 1'),
-(1,1,12,23,':)'),
-(1,1,12,24,'>:-(')
+(1,1,2,27,'this means monday, 12:06 pm for garden id 1'),
+(1,1,2,28,':)'),
+(1,1,2,29,'>:-(')
 -- (1,1,12,33,':)'),
 -- (1,1,12,34,':)'),
 -- (1,1,12,35,':)'),
