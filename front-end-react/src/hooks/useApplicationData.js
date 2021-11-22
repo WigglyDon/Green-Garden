@@ -62,9 +62,10 @@ export default function useApplicationData() {
   };
 
   function bookNotification(state) {
-    console.log("bookNoti state", state);
+    console.log(state);
+    const time = state.time.toString();
     return axios
-      .post(`http://localhost:8080/api/notifications/1`, { state })
+      .post(`http://localhost:8080/api/notifications/1`, { state, time })
       .then(() => {
         console.log("Sucessful Put!");
       });
