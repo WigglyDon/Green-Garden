@@ -9,7 +9,6 @@ import axios from "axios";
 
 export default function Scheduler(props: any) {
   const { state, handleDayChange, handleTime, bookNotification } = props;
-
   return (
     <div>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
@@ -18,7 +17,7 @@ export default function Scheduler(props: any) {
         <Button
           variant="contained"
           onClick={() => {
-            bookNotification();
+            bookNotification(state.notificationFormData);
           }}
         >
           Save Appointment

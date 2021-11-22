@@ -11,9 +11,22 @@ const getAllNotifications = function () {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
-const postNotification = function () {
+const postNotification = function (notificationFormData) {
   //   ? = ANY (notifications.day)
   // ? is the day int 0-6
+  // console.log("form data", notificationFormData);
+  const days = notificationFormData.days;
+  const getDayNumber = (days) => {
+    let arr = [];
+    for (const number in days) {
+      if (days[number]) {
+        arr.push(number);
+      }
+    }
+    return arr;
+  };
+  const numbersArray = getDayNumber(days);
+  console.log("numbersArray", numbersArray);
   const text = `
   INSERT INTO notifications (garden_id, day, hour, minute, body)
   VALUES

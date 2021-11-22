@@ -43,7 +43,10 @@ export default function useApplicationData() {
       ...state,
       notificationFormData: {
         ...state.notificationFormData,
-        [event.target.name]: event.target.checked,
+        days: {
+          ...state.notificationFormData.days,
+          [event.target.name]: event.target.checked,
+        },
       },
     });
   };
@@ -58,7 +61,8 @@ export default function useApplicationData() {
     });
   };
 
-  function bookNotification() {
+  function bookNotification(state) {
+    console.log("bookNoti state", state);
     return axios
       .post(`http://localhost:8080/api/notifications/1`, { state })
       .then(() => {
