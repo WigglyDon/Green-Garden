@@ -6,7 +6,6 @@ router.get("/", (req, res) => {
   getAPIVegetables()
     .then((data) => {
       res.status(200).json(data);
-      // console.log("data", data);
     })
     .catch((err) => res.status(500).json({ error: err.message }));
 });
