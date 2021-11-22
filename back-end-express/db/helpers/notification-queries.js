@@ -36,10 +36,6 @@ const postNotification = function (notificationFormData, time) {
   const days = notificationFormData.days;
   const hourAndMin = timeSplitter(time);
   const numbersArray = getDayNumber(days);
-  console.log("days", days);
-  console.log("hour", hourAndMin[0]);
-  console.log("min", hourAndMin[1]);
-  console.log("numbersArray", numbersArray);
 
   const text = `
   INSERT INTO notifications (garden_id, day, hour, minute, body)
