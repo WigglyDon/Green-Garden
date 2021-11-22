@@ -17,12 +17,11 @@ const morgan = require("morgan");
 const app = express();
 const db = require("./db");
 
-const cors = require('cors')
+const cors = require("cors");
 
 // Middleware
 
-app.use(cors())
-
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use(cookieParser());
@@ -38,21 +37,44 @@ const { getAllUsers } = require("../back-end-express/db/helpers/user-queries");
 const usersRouter = require("./routes/users");
 const vegetablesRouter = require("./routes/vegetables");
 const notificationsRouter = require("./routes/notifications");
+const gardensRouter = require("./routes/gardens");
 
 //API routes
 app.use("/api/users", usersRouter);
-// app.use("/api/gardens", gardensRouter);
+app.use("/api/gardens", gardensRouter);
 app.use("/api/vegetables", vegetablesRouter);
 app.use("/api/notifications", notificationsRouter);
+app.use("/api/gardens", gardensRouter);
 
 // CRON JOB function
 // console.log("Before job instantiation");
 //seconds, min past, hour, Day of Month: 1-31, Months: 0-11 (Jan-Dec), Day of Week: 0-6 (Sun-Sat)
-const job = new CronJob("0 */1 * * * *", function () {
-  const d = new Date();
-  console.log("First Chron:", d);
+// / looping cron job
+// const job = new CronJob("* * * * * *", function () {
+//   const activeJobs = {}
+
+//       const send = new CronJob(`* * * * *`, function () {
+//         if (!activeJobs.thisJob) {
+//            activeJobs.push(thisJob)
+//            sendText(phone_number, body);
+// }       else { do nothing }
+
+const looperJob = new CronJob("*/5 * * * * *", function () {
+  // const d = new Date();
+  // console.log("First Chron:", d);
+
   getAllNotifications().then((notifications) => {
+    const activeJobs = {};
+    const inactiveJobs = {};
+
+    console.log(notifications[0].id);
+
+    if (notifications[0].id) {
+      console.log("is there!");
+    }
+    activeJobs[notifications[0].id] = notifications[0].id;
     getAllUsers().then((user) => {
+      const id = notifications[0].id;
       const min = notifications[0].minute;
       const hour = notifications[0].hour;
       const day = notifications[0].day;
@@ -61,6 +83,9 @@ const job = new CronJob("0 */1 * * * *", function () {
       console.log(`${min} ${hour} 20 10 ${day}`);
       const send = new CronJob(`${min} ${hour} 20 10 ${day}`, function () {
         const e = new Date();
+        //push the job to active
+        //obj[key] == true
+        //activeJobs = id
         sendText(phone_number, body);
         console.log("Second Chron:", e);
       });
@@ -70,7 +95,8 @@ const job = new CronJob("0 */1 * * * *", function () {
 });
 
 console.log("After job instantiation");
-job.start();
+// console.log(looperJob);
+looperJob.start();
 //END CRON JOB
 
 // resource routes
