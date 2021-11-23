@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon app.js",
+    "start": "nodemon -L app.js",
     "db:reset": "node ./db/reset.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,6 +21,7 @@
     "morgan": "^1.10.0",
     "nodemon": "^2.0.15",
     "pg": "^8.7.1",
+    "pg-native": "^3.0.0",
     "twilio": "^3.71.2"
   }
 }
