@@ -14,7 +14,15 @@ const getAllVegetables = function () {
 
 const getAPIVegetables = function () {
   return axios
-    .get("https://www.growstuff.org/api/v1/crops/10.json")
+    .get("https://www.growstuff.org/api/v1/crops.json")
+    .then((data) => {
+      return data.data;
+    });
+};
+
+const getAPISeeds = function () {
+  return axios
+    .get("https://www.growstuff.org/api/v1/seeds.json")
     .then((data) => {
       return data.data;
     });
@@ -23,4 +31,5 @@ const getAPIVegetables = function () {
 module.exports = {
   getAllVegetables,
   getAPIVegetables,
+  getAPISeeds,
 };

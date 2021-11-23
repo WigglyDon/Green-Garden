@@ -17,20 +17,24 @@ export default function useApplicationData() {
       time: "",
     },
     gardens: {},
+    vegetables: {},
   });
 
   useEffect(() => {
     Promise.all([
       axios.get("http://localhost:8080/api/notifications"),
       axios.get("http://localhost:8080/api/gardens"),
+      axios.get("http://localhost:8080/api/vegetables"),
     ])
       .then((all) => {
         const notificationsData = all[0].data;
         const gardensData = all[1].data;
+        const vegetablesData = all[2].data.data;
         setState((prev) => ({
           ...prev,
           notifications: notificationsData,
           gardens: gardensData,
+          vegetables: vegetablesData,
         }));
       })
       .catch((error) => {
@@ -61,6 +65,16 @@ export default function useApplicationData() {
     });
   };
 
+  const handleVegetable = () => {
+    setState({
+      ...state,
+      vegetables: {
+        ...state.vegetables,
+        //new data
+      },
+    });
+  };
+
   function bookNotification(state) {
     console.log(state);
     const time = state.time.toString();
@@ -71,26 +85,11 @@ export default function useApplicationData() {
       });
   }
 
-  //  function bookInterview(id, interview) {
-  //   const appointment = {
-  //     ...state.appointments[id],
-  //     interview: { ...interview },
-  //   };
-  //   const appointments = {
-  //     ...state.appointments,
-  //     [id]: appointment,
-  //   };
-  //   return axios
-  //     .put(`http://localhost:8001/api/appointments/${id}`, { interview })
-  //     .then(() => {
-  //       const days = spotsRemaining(state, appointments);
-  //       setState({
-  //         ...state,
-  //         appointments,
-  //         days,
-  //       });
-  //     });
-  //  }
-
-  return { state, handleDayChange, handleTime, bookNotification };
+  return {
+    state,
+    handleDayChange,
+    handleTime,
+    handleVegetable,
+    bookNotification,
+  };
 }

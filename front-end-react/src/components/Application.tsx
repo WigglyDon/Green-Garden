@@ -12,21 +12,20 @@ import SideBarList from "./SideBar/SideBarList";
 import { Link } from "react-router-dom";
 
 export default function Application() {
-  const { state, handleDayChange, handleTime, bookNotification } =
-    useApplicationData();
+  const {
+    state,
+    handleDayChange,
+    handleTime,
+    bookNotification,
+    handleVegetable,
+  } = useApplicationData();
   return (
     <div>
       <Link to="/dashboard">My Garden</Link> | <Link to="/login">Login</Link>
       <Nav />
       <SearchBar />
-      <VegetableCardList />
+      <VegetableCardList state={state} />
       <GardenCardList />
-      {/* <Dashboard
-        state={state}
-        handleDayChange={handleDayChange}
-        handleTime={handleTime}
-        bookNotification={bookNotification}
-      /> */}
       <SideBarList />
     </div>
   );
