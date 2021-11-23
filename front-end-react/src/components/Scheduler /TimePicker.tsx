@@ -8,7 +8,7 @@ import { Button } from "@mui/material";
 export default function TimePicker(props: any) {
   // const [value, setValue] = useState<Date | null>(new Date());
   const { state, handleTime } = props;
-  const time = state.notifications[0];
+  // const time = state.notifications[0];
   // console.log(time);
   return (
     <div>
