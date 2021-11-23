@@ -29,7 +29,7 @@ export default function useApplicationData() {
       .then((all) => {
         const notificationsData = all[0].data;
         const gardensData = all[1].data;
-        const vegetablesData = all[2].data;
+        const vegetablesData = all[2].data.data;
         setState((prev) => ({
           ...prev,
           notifications: notificationsData,

@@ -24,7 +24,7 @@ export default function Application() {
       <Link to="/dashboard">My Garden</Link> | <Link to="/login">Login</Link>
       <Nav />
       <SearchBar />
-      <VegetableCardList />
+      <VegetableCardList state={state} />
       <GardenCardList />
       <SideBarList />
     </div>
