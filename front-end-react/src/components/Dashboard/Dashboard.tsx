@@ -4,12 +4,16 @@ import GraphOne from "./GraphOne";
 import Scheduler from "../Scheduler /Scheduler";
 import Map from "./Map";
 import { Button } from "@mui/material";
+import SideBarList from "../SideBar/GardensList";
+import GardenCardList from "./GardenCardList";
 
-export default function Dashboard(props) {
+export default function Dashboard(props: any) {
   const { state, handleDayChange, handleTime, bookNotification } = props;
 
   return (
     <div>
+      <GardenCardList />
+      <SideBarList />
       <Map />
       <GraphOne />
       <GraphTwo />
