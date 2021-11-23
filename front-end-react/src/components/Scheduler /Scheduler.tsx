@@ -18,7 +18,7 @@ export default function Scheduler(props: any) {
             bookNotification(state.notificationFormData);
           }}
         >
-          Save Appointment
+          Save Notification
         </Button>
       </LocalizationProvider>
     </div>
