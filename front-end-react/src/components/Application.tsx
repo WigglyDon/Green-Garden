@@ -2,6 +2,7 @@
 // import ReactDOM from "react-dom";
 // import AdapterDateFns from "@mui/lab/AdapterDateFns";
 // import LocalizationProvider from "@mui/lab/LocalizationProvider";
+import "./Application.scss";
 import useApplicationData from "../hooks/useApplicationData";
 import Nav from "./Nav";
 import Dashboard from "./Dashboard/Dashboard";
