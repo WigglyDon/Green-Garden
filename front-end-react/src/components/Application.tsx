@@ -4,12 +4,10 @@
 // import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import useApplicationData from "../hooks/useApplicationData";
 import Nav from "./Nav";
-import SearchBar from "./SearchBar";
-import VegetableCardList from "./VegetableCardList";
-import GardenCardList from "./GardenCardList";
 import Dashboard from "./Dashboard/Dashboard";
-import SideBarList from "./SideBar/SideBarList";
-import { Link } from "react-router-dom";
+import Login from "./Login";
+import Home from "./Home/Home";
+import { Routes, Route } from "react-router-dom";
 
 export default function Application() {
   const {
@@ -19,13 +17,26 @@ export default function Application() {
     bookNotification,
     handleVegetable,
   } = useApplicationData();
+
   return (
     <div>
       <Nav />
-      <SearchBar />
-      <VegetableCardList state={state} />
-      <GardenCardList />
-      <SideBarList />
+      <Routes>
+        <Route path="/" element={<Home state={state} />} />
+        <Route path="login" element={<Login />} />
+        <Route
+          path="dashboard"
+          element={
+            <Dashboard
+              state={state}
+              handleDayChange={handleDayChange}
+              handleTime={handleTime}
+              bookNotification={bookNotification}
+              handleVegetable={handleVegetable}
+            />
+          }
+        />
+      </Routes>
     </div>
   );
 }
