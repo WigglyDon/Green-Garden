@@ -21,7 +21,6 @@ export default function Application() {
   } = useApplicationData();
   return (
     <div>
-      <Link to="/dashboard">My Garden</Link> | <Link to="/login">Login</Link>
       <Nav />
       <SearchBar />
       <VegetableCardList state={state} />
