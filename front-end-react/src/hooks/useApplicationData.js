@@ -42,7 +42,8 @@ export default function useApplicationData() {
       });
   }, []);
 
-  const handleDayChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  
+  const handleDayChange = (event) => {
     setState({
       ...state,
       notificationFormData: {
@@ -60,7 +61,7 @@ export default function useApplicationData() {
       ...state,
       notificationFormData: {
         ...state.notificationFormData,
-        ["time"]: newTime,
+        "time": newTime,
       },
     });
   };

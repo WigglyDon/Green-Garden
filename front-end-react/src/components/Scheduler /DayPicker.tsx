@@ -7,7 +7,7 @@ import FormHelperText from "@mui/material/FormHelperText";
 import Switch from "@mui/material/Switch";
 
 export default function DayPicker(props: any) {
-  const { state, handleDayChange } = props;
+  const { handleDayChange } = props;
   return (
     <FormControl component="fieldset" variant="standard">
       <FormLabel component="legend">Choose your day(s)</FormLabel>

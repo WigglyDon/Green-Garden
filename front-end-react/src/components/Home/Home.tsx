@@ -1,4 +1,5 @@
 import React from "react";
+// eslint-disable-next-line
 import Card from "../Card";
 import SearchBar from "./SearchBar";
 import VegetableCardList from "../VegetableCardList";
