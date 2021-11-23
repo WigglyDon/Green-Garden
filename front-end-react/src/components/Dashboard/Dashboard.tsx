@@ -12,18 +12,20 @@ export default function Dashboard(props: any) {
 
   return (
     <div>
-      <GardenCardList />
-      <SideBarList />
+      <GardenCardList
+        state={state.gardens}
+      />
+      {/* <SideBarList />
       <Map />
       <GraphOne />
       <GraphTwo />
-      <Button variant="contained">Set Notifications</Button>
-      <Scheduler
+      <Button variant="contained">Set Notifications</Button> */}
+      {/* <Scheduler
         state={state}
         handleDayChange={handleDayChange}
         handleTime={handleTime}
         bookNotification={bookNotification}
-      />
+      /> */}
     </div>
   );
 }
