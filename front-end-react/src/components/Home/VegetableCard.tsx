@@ -1,16 +1,14 @@
 import React from "react";
 import './VegetableCardList.scss'
 
-import VegetableCard from './VegetableCard'
 
-
-export default function VegetableCardList(props:any) {
+export default function VegetableCard(props:any) {
   const { state } = props;
   const vegetableArray = state.vegetables;
   console.log(vegetableArray)
   return (
     <div className='searchList'>
-      <VegetableCard state={state}/>
+      BING BONG INSIDE OF ANOTHER ONE
     </div>
   );
 }
