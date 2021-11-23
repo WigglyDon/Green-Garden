@@ -1,22 +1,23 @@
 import React from "react";
 import Card from "../Card";
+import GardenCard from "../GardenCard";
 
 export default function GardenCardList(props: any) {
   const { state } = props;
 
-  console.log(state)
+  console.log('gardencardlist',state)
 
   const gardenList = state.map((garden: any) => 
-    <Card 
+    <GardenCard 
       key= {garden.id}
       id= {garden.id}
-      name= {garden.name}
+      garden_name= {garden.name}
       image= {garden.image_url}
     />
   )
 
   return (
-    <div>
+    <div className='garden-card'>
       {gardenList}
     </div>
   );

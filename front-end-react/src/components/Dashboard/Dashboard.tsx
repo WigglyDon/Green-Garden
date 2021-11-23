@@ -6,26 +6,27 @@ import Map from "./Map";
 import { Button } from "@mui/material";
 import SideBarList from "../SideBar/GardensList";
 import GardenCardList from "./GardenCardList";
+import GardenCard from "../GardenCard";
 
 export default function Dashboard(props: any) {
   const { state, handleDayChange, handleTime, bookNotification } = props;
 
   return (
     <div>
-      <GardenCardList
-        state={state.gardens}
+      <SideBarList
+        state={state}
       />
-      {/* <SideBarList />
-      <Map />
+
+      {/* <Map />
       <GraphOne />
       <GraphTwo />
-      <Button variant="contained">Set Notifications</Button> */}
-      {/* <Scheduler
+      <Button variant="contained">Set Notifications</Button>
+      <Scheduler
         state={state}
         handleDayChange={handleDayChange}
         handleTime={handleTime}
         bookNotification={bookNotification}
       /> */}
     </div>
-  );
+  )
 }
