@@ -9,7 +9,7 @@ export default function VegetableCardList(props:any) {
   const vegetableArray = state.vegetables;
   console.log(vegetableArray)
   return (
-    <div className='searchList'>
+    <div className='VegetableCardList'>
       <VegetableCard state={state}/>
     </div>
   );

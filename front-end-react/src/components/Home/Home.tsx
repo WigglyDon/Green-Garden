@@ -9,7 +9,7 @@ export default function Home(props: any) {
   const { state } = props;
   return (
     <div className='homepage'>
-      <SearchBar />
+      <SearchBar state={state} />
       <VegetableCardList state={state} />
     </div>
   );
