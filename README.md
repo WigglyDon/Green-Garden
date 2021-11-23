@@ -46,3 +46,21 @@ FIND A GRAPH API AND USE IT
 IMPLEMENT SEARCH BAR
 
 STYLING
+
+# Goals for Tonight/Tommorow
+
+### Donnie
+
+-VegetableCardList
+-SearchBar
+
+### Nikolaj
+
+--Dashboard
+--Gardens
+--Vegetables
+
+### Ed
+
+--Nav Bar
+--Scheduler
