@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import { Button } from '@mui/material';
+import './GardenCard.scss'
 
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -26,16 +27,14 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 export default function GardenCard(props: any) {
   const { garden_name, image } = props;
 
-  const [expanded, setExpanded] = React.useState(false);
-
   return (
     <Card>
-      <CardMedia
+      {/* <CardMedia
         component="img"
         image={image}
-      />
+      /> */}
 
-      <Typography variant="body2" color="text.secondary">
+      <Typography variant="body2" color="text.secondary" className="card-body">
          {garden_name}
       </Typography>
 
