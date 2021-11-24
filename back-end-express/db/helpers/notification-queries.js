@@ -26,8 +26,8 @@ const postNotification = function (notificationFormData) {
   };
   const daysObj = notificationFormData.days;
   const timeinUTC = notificationFormData.time;
-  // const timeinUTCString = JSON.stringify(timeinUTC);
-  console.log("timeinUTCString", typeof timeinUTCString);
+  const timeinUTCString = JSON.stringify(timeinUTC);
+  console.log("timeinUTC", timeinUTC);
   const numbersArray = getDayNumber(daysObj);
   const numbersArrayString = JSON.stringify(numbersArray);
   // console.log("numbersArray", numbersArray);

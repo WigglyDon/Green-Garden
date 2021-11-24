@@ -4,7 +4,7 @@ CREATE TABLE notifications (
     id SERIAL PRIMARY KEY,
     garden_id INTEGER REFERENCES gardens(id) ON DELETE CASCADE,
     day TEXT ARRAY,
-    time timestamptz,
+    time TEXT,
     body VARCHAR(255)
 );
 

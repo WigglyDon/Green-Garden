@@ -13,6 +13,7 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const notificationFormData = req.body.state;
+  // const time = req.body.time;
   // console.log(notificationFormData);
   // console.log("formdata", notificationFormData.time.toString());
   postNotification(notificationFormData)
