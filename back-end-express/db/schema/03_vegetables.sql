@@ -13,5 +13,6 @@ CREATE TABLE vegetables (
     tags VARCHAR(255), 
     water_amount INTEGER,
     sun_level VARCHAR(255),
-    season VARCHAR(255)   
+    season VARCHAR(255),
+    height INTEGER
 );
