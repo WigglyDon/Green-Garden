@@ -24,14 +24,12 @@ const postNotification = function (notificationFormData) {
     }
     return arr;
   };
-  console.log("notificationFormData", notificationFormData);
+  // console.log("notificationFormData", notificationFormData);
   const daysObj = notificationFormData.days;
   const timeinUTC = notificationFormData.time;
-  console.log("timeinUTC", timeinUTC);
-  console.log("type of timeinUTC", typeof timeinUTC);
   const numbersArray = getDayNumber(daysObj);
   const numbersArrayString = JSON.stringify(numbersArray);
-  // console.log("numbersArray", numbersArray);
+  // console.log("timeinUTC", timeinUTC);
 
   const text = `
   INSERT INTO notifications (garden_id, day, time, body)
