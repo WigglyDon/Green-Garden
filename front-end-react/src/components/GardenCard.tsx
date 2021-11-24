@@ -1,10 +1,12 @@
 import * as React from 'react';
 // import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
+// eslint-disable-next-line
 import CardMedia from '@mui/material/CardMedia';
 // import CardContent from '@mui/material/CardContent';
 // import { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
+// eslint-disable-next-line
 import { Button } from '@mui/material';
 import './GardenCard.scss'
 
@@ -26,6 +28,7 @@ import './GardenCard.scss'
 // }));
 
 export default function GardenCard(props: any) {
+  // eslint-disable-next-line
   const { garden_name, image } = props;
 
 

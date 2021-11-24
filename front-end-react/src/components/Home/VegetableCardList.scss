@@ -1,4 +1,6 @@
 .VegetableCardList {
+  display:flex;
+  flex-direction: column;
   background-color: springgreen;
 
   width: 50%;

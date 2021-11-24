@@ -7,7 +7,11 @@ const router = express.Router();
 
 
 router.get("/", (req, res) => {
-  getSearchVegetables()
+
+  if (req.query.query.length === 0) {
+    getSearchVegetables
+  }
+  getSearchVegetables(req.query.query)
     .then((data) => {
       res.status(200).json(data);
     })
