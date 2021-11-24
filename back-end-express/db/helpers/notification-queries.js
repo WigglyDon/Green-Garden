@@ -24,10 +24,11 @@ const postNotification = function (notificationFormData) {
     }
     return arr;
   };
+  console.log("notificationFormData", notificationFormData);
   const daysObj = notificationFormData.days;
   const timeinUTC = notificationFormData.time;
-  const timeinUTCString = JSON.stringify(timeinUTC);
   console.log("timeinUTC", timeinUTC);
+  console.log("type of timeinUTC", typeof timeinUTC);
   const numbersArray = getDayNumber(daysObj);
   const numbersArrayString = JSON.stringify(numbersArray);
   // console.log("numbersArray", numbersArray);
@@ -35,8 +36,9 @@ const postNotification = function (notificationFormData) {
   const text = `
   INSERT INTO notifications (garden_id, day, time, body)
   VALUES
-  (1,ARRAY ${numbersArrayString}, ${timeinUTC},'this means sunday, 3:13 pm for garden id 1')
+  (1,ARRAY ${numbersArrayString}, '${timeinUTC}','this means sunday, 3:13 pm for garden id 1')
 `;
+  console.log(text);
   return db
     .query(text)
     .then((data) => data.rows)
