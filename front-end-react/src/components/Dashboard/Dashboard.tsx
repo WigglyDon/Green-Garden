@@ -12,14 +12,16 @@ export default function Dashboard(props: any) {
   const { state, handleDayChange, handleTime, bookNotification } = props;
 
   return (
-    <div>
-      <SideBarList
-        state={state}
-      />
-      <Map />
-      <GraphOne />
-      <GraphTwo />
-      <Button variant="contained">Set Notifications</Button>
+    <div className="layout">
+      <div className="sidebard">
+        <SideBarList state={state} />
+      </div>
+      <div className="dashboard">
+        <Map />
+        <GraphOne />
+        <GraphTwo />
+        <Button variant="contained">Set Notifications</Button>
+      </div>
       <Scheduler
         state={state}
         handleDayChange={handleDayChange}
@@ -27,5 +29,5 @@ export default function Dashboard(props: any) {
         bookNotification={bookNotification}
       />
     </div>
-  )
+  );
 }
