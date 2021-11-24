@@ -1,15 +1,19 @@
 const express = require("express");
 const router = express.Router();
-const { getAllVegetables } = require("../db/helpers/gardens-vegetables-queries")
+const {
+  getAllGardenVegetables,
+  postGardensVegetable,
+} = require("../db/helpers/gardens-vegetables-queries");
 
 router.get("/", (req, res) => {
-  getAllVegetables()
+  getAllGardenVegetables()
     .then((data) => res.status(200).json(data))
     .catch((err) => res.status(500).json({ error: err.message }));
 });
 
 router.post("/", (req, res) => {
-  getAllVegetables()
+  const data = req.body.data;
+  postGardensVegetable(data)
     .then((data) => res.status(200).json(data))
     .catch((err) => res.status(500).json({ error: err.message }));
 });
