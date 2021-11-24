@@ -1,5 +1,5 @@
 const {
-  getAPIVegetables,
+  getAllVegetables,
   getAPISeeds,
 } = require("../db/helpers/vegetable-queries");
 const express = require("express");
@@ -7,7 +7,7 @@ const router = express.Router();
 
 //api/vegetables/crops
 router.get("/", (req, res) => {
-  getAPIVegetables()
+  getAllVegetables()
     .then((data) => {
       res.status(200).json(data);
     })
