@@ -1,3 +1,2 @@
-INSERT INTO vegetables (water_level, sun_level, season)
-VALUES
-('Low','Medium','Winter')
+INSERT INTO vegetables (name, image_url, description, native_region, growing_days, row_spacing, spread, sowing_method, tags, water_amount, sun_level, season, height)
+VALUES ('Tomatoes', 'img', 'description', 'native=region', 60, 45, 45, 'method', 'tags', 20, 'sun level', 'season', 45 ), ('Carrot', 'img', 'description', 'native=region', 60, 45, 45, 'method', 'tags', 20, 'sun level', 'season', 45 ),('Onion', 'img', 'description', 'native=region', 60, 45, 45, 'method', 'tags', 20, 'sun level', 'season', 45 )
