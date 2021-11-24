@@ -4,11 +4,9 @@ import './VegetableCard.scss'
 
 export default function VegetableCard(props:any) {
 
-  
-
   return (
     <div className='VegetableCard'>
-      {}oneCard
+      {props.vegetable.name}
     </div>
   );
 }

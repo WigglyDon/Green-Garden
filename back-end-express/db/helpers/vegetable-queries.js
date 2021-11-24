@@ -12,9 +12,10 @@ const getAllVegetables = function () {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
-const getSearchVegetables = function () {
+const getSearchVegetables = function (query) {
   const text = `
   SELECT * FROM vegetables
+  WHERE LOWER(name) LIKE LOWER('%${query}%')
   `;
 
   return db

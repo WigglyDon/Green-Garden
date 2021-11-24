@@ -6,12 +6,17 @@ import axios from "axios";
 
 export default function Home() {
   const [state, setState] = useState({
-    vegetables: {}
+    vegetables: [],
+    query: ''
   });
 
   useEffect(() => {
     Promise.all([
-      axios.get("http://localhost:8080/api/vegetables/search")
+      axios.get("http://localhost:8080/api/vegetables/search", {
+        params: {
+          query: state.query
+        }
+      })
     ])
       .then((all) => {
         const vegetablesData = all[0].data;
@@ -23,19 +28,24 @@ export default function Home() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [state.query]);
 
 
-  const handleChange = () => {
-    console.log(state.vegetables)
+  let vegetables = state.vegetables;
+  
+  const handleChange = (event:any) => {
+    setState((prev) => ({
+      ...prev,
+      query: event.target.value,
+    }));
  }
 
-//  const vegetables = [0];
+
 
   return (
     <div className='homepage'>
       <SearchBar handleChange={handleChange}/>
-      <VegetableCardList vegetables={[state.vegetables]}/>
+      <VegetableCardList vegetables={[vegetables]}/>
     </div>
   );
 }
