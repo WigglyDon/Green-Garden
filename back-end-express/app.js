@@ -25,6 +25,7 @@ const {
 const { getAllUsers } = require("../back-end-express/db/helpers/user-queries");
 const usersRouter = require("./routes/users");
 const vegetablesRouter = require("./routes/vegetables");
+const vegetablesSearchRouter = require("./routes/vegetablesSearch");
 const notificationsRouter = require("./routes/notifications");
 const gardensRouter = require("./routes/gardens");
 
@@ -32,6 +33,7 @@ const gardensRouter = require("./routes/gardens");
 app.use("/api/users", usersRouter);
 app.use("/api/gardens", gardensRouter);
 app.use("/api/vegetables", vegetablesRouter);
+app.use("/api/vegetables/search", vegetablesSearchRouter);
 app.use("/api/notifications", notificationsRouter);
 app.use("/api/gardens", gardensRouter);
 

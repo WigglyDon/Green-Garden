@@ -1,5 +1,5 @@
 import React from "react";
-import Garden from "../SideBar/Garden";
+// import Garden from "../SideBar/Garden";
 import GardenCardList from "../Dashboard/GardenCardList";
 import "./SideBar.scss"
 
