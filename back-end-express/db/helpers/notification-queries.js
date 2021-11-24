@@ -14,11 +14,12 @@ const getAllNotifications = function () {
 const postNotification = function (notificationFormData, time) {
   //   ? = ANY (notifications.day)
   // ? is the day int 0-6
-  const getDayNumber = (days) => {
+
+  const getDayNumber = (daysObj) => {
     let arr = [];
-    for (const number in days) {
-      if (days[number]) {
-        arr.push(number);
+    for (const number in daysObj) {
+      if (daysObj[number]) {
+        arr.push(parseInt(number));
       }
     }
     return arr;
@@ -29,19 +30,22 @@ const postNotification = function (notificationFormData, time) {
     const further = num.split(":");
     const hourString = further[0];
     const minString = further[1];
-    const array = [hourString, minString];
+    const array = [parseInt(hourString), parseInt(minString)];
     return array;
   };
 
-  const days = notificationFormData.days;
-  const hourAndMin = timeSplitter(time);
-  const numbersArray = getDayNumber(days);
+  const daysObj = notificationFormData.days;
+  console.log(daysObj);
+  const hourAndMinArray = timeSplitter(time);
+  console.log("hourAndMinArray", hourAndMinArray);
+  const numbersArray = getDayNumber(daysObj);
+  console.log("numbersArray", numbersArray);
 
   const text = `
   INSERT INTO notifications (garden_id, day, hour, minute, body)
   VALUES
-  (1,${numbersArray[0]},${hourAndMin[0]},${hourAndMin[1]},'this means sunday, 3:13 pm for garden id 1')
-  `;
+  (1,ARRAY ${numbersArray} ,${hourAndMinArray[0]},${hourAndMinArray[1]},'this means sunday, 3:13 pm for garden id 1')
+`;
   return db
     .query(text)
     .then((data) => data.rows)

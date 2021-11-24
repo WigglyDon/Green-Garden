@@ -80,7 +80,7 @@ export default function useApplicationData() {
     const time = state.time.toString();
     console.log(time);
     return axios
-      .post(`http://localhost:8080/api/notifications/1`, { state, time })
+      .post(`http://localhost:8080/api/notifications`, { state, time })
       .then(() => {
         console.log("Sucessful Put!");
       });

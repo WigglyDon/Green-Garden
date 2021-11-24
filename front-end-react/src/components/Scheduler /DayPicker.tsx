@@ -41,7 +41,6 @@ export default function DayPicker(props: any) {
           label="Saturday"
         />
       </FormGroup>
-      <FormHelperText>Be careful</FormHelperText>
     </FormControl>
   );
 }
