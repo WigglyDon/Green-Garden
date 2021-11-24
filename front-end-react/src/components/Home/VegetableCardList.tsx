@@ -1,16 +1,11 @@
 import React from "react";
-import './VegetableCardList.scss'
+import "./VegetableCardList.scss";
+import VegetableCard from "./VegetableCard";
 
-import VegetableCard from './VegetableCard'
-
-
-export default function VegetableCardList(props:any) {
-  const { state } = props;
-  const vegetableArray = state.vegetables;
-  console.log(vegetableArray)
+export default function VegetableCardList() {
   return (
-    <div className='VegetableCardList'>
-      <VegetableCard state={state}/>
+    <div className="VegetableCardList">
+      <VegetableCard />
     </div>
   );
 }

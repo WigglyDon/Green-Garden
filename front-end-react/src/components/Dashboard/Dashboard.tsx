@@ -5,27 +5,20 @@ import Scheduler from "../Scheduler /Scheduler";
 import Map from "./Map";
 import { Button } from "@mui/material";
 import SideBarList from "../SideBar/GardensList";
-import GardenCardList from "./GardenCardList";
-import GardenCard from "../GardenCard";
+import { useContext } from "react";
+import { stateContext } from "../../providers/StateProvider";
 
-export default function Dashboard(props: any) {
-  const { state, handleDayChange, handleTime, bookNotification } = props;
+export default function Dashboard() {
+  const { state } = useContext(stateContext);
 
   return (
     <div>
-      <SideBarList
-        state={state}
-      />
+      <SideBarList state={state} />
       <Map />
       <GraphOne />
       <GraphTwo />
       <Button variant="contained">Set Notifications</Button>
-      <Scheduler
-        state={state}
-        handleDayChange={handleDayChange}
-        handleTime={handleTime}
-        bookNotification={bookNotification}
-      />
+      <Scheduler />
     </div>
-  )
+  );
 }

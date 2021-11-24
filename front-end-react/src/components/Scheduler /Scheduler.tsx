@@ -4,14 +4,17 @@ import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import { Button } from "@mui/material";
 import DayPicker from "./DayPicker";
 import TimePicker from "./TimePicker";
+import { useContext } from "react";
+import { stateContext } from "../../providers/StateProvider";
 
-export default function Scheduler(props: any) {
-  const { state, handleDayChange, handleTime, bookNotification } = props;
+export default function Scheduler() {
+  const { state, bookNotification } = useContext(stateContext);
+
   return (
     <div>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <DayPicker state={state} handleDayChange={handleDayChange} />
-        <TimePicker state={state} handleTime={handleTime} />
+        <DayPicker />
+        <TimePicker />
         <Button
           variant="contained"
           onClick={() => {

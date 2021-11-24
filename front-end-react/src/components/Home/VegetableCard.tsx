@@ -1,14 +1,10 @@
 import React from "react";
-import './VegetableCard.scss'
+import { useContext } from "react";
+import { stateContext } from "../../providers/StateProvider";
+import "./VegetableCard.scss";
 
+export default function VegetableCard() {
+  const { state } = useContext(stateContext);
 
-export default function VegetableCard(props:any) {
-  const { state } = props;
-  const vegetableArray = state.vegetables;
-  console.log(vegetableArray)
-  return (
-    <div className='VegetableCard'>
-      VEG CARD
-    </div>
-  );
+  return <div className="VegetableCard">VEG CARD</div>;
 }

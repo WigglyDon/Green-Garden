@@ -1,24 +1,14 @@
 import React from "react";
-import Card from "../Card";
 import GardenCard from "../GardenCard";
+import { useContext } from "react";
+import { stateContext } from "../../providers/StateProvider";
 
-export default function GardenCardList(props: any) {
-  const { state } = props;
+export default function GardenCardList() {
+  const { state } = useContext(stateContext);
+  const gardenData = state.garden;
+  console.log("gardencardlist", gardenData);
 
-  console.log('gardencardlist',state)
+  const gardenList = gardenData.map((garden: any) => <GardenCard />);
 
-  const gardenList = state.map((garden: any) => 
-    <GardenCard 
-      key= {garden.id}
-      id= {garden.id}
-      garden_name= {garden.name}
-      image= {garden.image_url}
-    />
-  )
-
-  return (
-    <div className='garden-card'>
-      {gardenList}
-    </div>
-  );
+  return <div className="garden-card">{gardenList}</div>;
 }

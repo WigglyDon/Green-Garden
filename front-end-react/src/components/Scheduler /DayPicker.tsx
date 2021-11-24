@@ -5,9 +5,12 @@ import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import FormHelperText from "@mui/material/FormHelperText";
 import Switch from "@mui/material/Switch";
+import { useContext } from "react";
+import { stateContext } from "../../providers/StateProvider";
 
-export default function DayPicker(props: any) {
-  const { handleDayChange } = props;
+export default function DayPicker() {
+  const { handleDayChange } = useContext(stateContext);
+
   return (
     <FormControl component="fieldset" variant="standard">
       <FormLabel component="legend">Choose your day(s)</FormLabel>

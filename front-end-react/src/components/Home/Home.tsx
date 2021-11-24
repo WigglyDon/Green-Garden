@@ -3,14 +3,13 @@ import React from "react";
 import Card from "../Card";
 import SearchBar from "./SearchBar";
 import VegetableCardList from "./VegetableCardList";
-import './Home.scss'
+import "./Home.scss";
 
-export default function Home(props: any) {
-  const { state } = props;
+export default function Home() {
   return (
-    <div className='homepage'>
-      <SearchBar state={state} />
-      <VegetableCardList state={state} />
+    <div className="homepage">
+      <SearchBar />
+      <VegetableCardList />
     </div>
   );
 }

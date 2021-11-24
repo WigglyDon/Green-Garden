@@ -3,11 +3,12 @@
 // import AdapterDateFns from "@mui/lab/AdapterDateFns";
 // import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import "./Application.scss";
-import useApplicationData from "../hooks/useApplicationData";
 import Nav from "./Nav";
 import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Login";
 import Home from "./Home/Home";
+import { useContext } from "react";
+import { stateContext } from "../providers/StateProvider";
 import { Routes, Route } from "react-router-dom";
 
 export default function Application() {
@@ -15,28 +16,17 @@ export default function Application() {
     state,
     handleDayChange,
     handleTime,
-    bookNotification,
     handleVegetable,
-  } = useApplicationData();
-
+    bookNotification,
+  } = useContext(stateContext);
+  console.log(state);
   return (
     <div>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home state={state} />} />
+        <Route path="/" element={<Home />} />
         <Route path="login" element={<Login />} />
-        <Route
-          path="dashboard"
-          element={
-            <Dashboard
-              state={state}
-              handleDayChange={handleDayChange}
-              handleTime={handleTime}
-              bookNotification={bookNotification}
-              handleVegetable={handleVegetable}
-            />
-          }
-        />
+        <Route path="dashboard" element={<Dashboard />} />
       </Routes>
     </div>
   );

@@ -1,0 +1,16 @@
+--- auth=false
+  <App>
+   <Nav
+   Login link
+   />
+   <Home/>
+  </App>
+
+--- auth=true
+  <App>
+     <Nav
+    <Dashboard/>
+   />
+   <Home/>
+  </App>
+  
