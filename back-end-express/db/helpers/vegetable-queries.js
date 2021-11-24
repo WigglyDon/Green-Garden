@@ -16,6 +16,7 @@ const getSearchVegetables = function (query) {
   const text = `
   SELECT * FROM vegetables
   WHERE LOWER(name) LIKE LOWER('%${query}%')
+  LIMIT 9
   `;
 
   return db
