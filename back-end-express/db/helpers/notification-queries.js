@@ -39,12 +39,13 @@ const postNotification = function (notificationFormData, time) {
   const hourAndMinArray = timeSplitter(time);
   console.log("hourAndMinArray", hourAndMinArray);
   const numbersArray = getDayNumber(daysObj);
+  const numbersArrayString = JSON.stringify(numbersArray);
   console.log("numbersArray", numbersArray);
 
   const text = `
   INSERT INTO notifications (garden_id, day, hour, minute, body)
   VALUES
-  (1,ARRAY ${numbersArray} ,${hourAndMinArray[0]},${hourAndMinArray[1]},'this means sunday, 3:13 pm for garden id 1')
+  (1,ARRAY ${numbersArrayString},${hourAndMinArray[0]},${hourAndMinArray[1]},'this means sunday, 3:13 pm for garden id 1')
 `;
   return db
     .query(text)
