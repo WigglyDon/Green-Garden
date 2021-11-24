@@ -36,7 +36,6 @@ const postNotification = function (notificationFormData) {
   VALUES
   (1,ARRAY ${numbersArrayString}, '${timeinUTC}','this means sunday, 3:13 pm for garden id 1')
 `;
-  console.log(text);
   return db
     .query(text)
     .then((data) => data.rows)

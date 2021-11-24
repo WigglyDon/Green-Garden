@@ -10,6 +10,7 @@ const morgan = require("morgan");
 const app = express();
 const db = require("./db");
 const cors = require("cors");
+const moment = require("moment-timezone");
 
 // Middleware
 app.use(cors());
@@ -86,39 +87,52 @@ app.use("/api/gardens", gardensRouter);
 // });
 
 const timeSplitter = function (string) {
-  // console.log("timesplitter", string);
-  const date = string.split("");
-  console.log("date", date);
-  // const hour = date[11];
-  // const min = date[12];
-  // const array = [parseInt(hour), parseInt(min)];
+  const date = moment.tz(string, "America/Edmonton"); //converts utc(GMT) object into mountain time utc object
+  const dateString = date.format(); //convert to string for parseing
+  const dateStringSplitT = dateString.split("T");
+  const hourAndMin = dateStringSplitT[1];
+  const hourAndMinSplit = hourAndMin.split(":");
+  const hour = hourAndMinSplit[0];
+  const min = hourAndMinSplit[1];
+  const array = [parseInt(hour), parseInt(min)];
+  console.log("hourMinArray", array);
   return array;
 };
 
-const midnightScanner = new CronJob(" */10 * * * * * ", function () {
+const midnightScanner = new CronJob("40 13 * * * ", function () {
   console.log("midnight scanner ran");
   getAllNotifications().then((notifications) => {
     getAllUsers()
       .then((user) => {
-        // console.log("notifications time", notifications[0].time);
-        const time = notifications[0].time;
-        const hourAndMinArray = timeSplitter(time);
-        console.log("hourAndMinArray", hourAndMinArray);
-        // for (let i = 0; i < notifications.length; i++) {
-        //   const min = notifications[i].minute;
-        //   const hour = notifications[i].hour - 7; //subtract seven to get mountain standard time
-        //   const day = notifications[i].day;
-        //   const body = notifications[i].body;
-        //   const phone_number = user[0].phone_number;
-        //   const sendOne = new CronJob(`* * * * *`, function () {
-        //     console.log("min: ", min, "hour: ", hour);
-        //     console.log("sendOne activated");
-        //     // sendText(phone_number, body);
-        //   });
-        //   console.log("new job created");
-        //   console.log(sendOne.nextDate().toString());
-        //   sendOne.start();
-        // }
+        let cronJobsArray = [];
+        for (let i = 0; i < notifications.length; i++) {
+          const time = notifications[0].time;
+          const hourAndMinArray = timeSplitter(time);
+          const hour = hourAndMinArray[0];
+          const min = hourAndMinArray[1];
+          const body = notifications[i].body;
+          const phone_number = user[0].phone_number;
+          const daysArray = notifications[i].day;
+          for (let j = 0; j < daysArray.length; j++) {
+            // * Seconds: 0-59
+            // * Minutes: 0-59
+            // * Hours: 0-23
+            // * Day of Month: 1-31
+            // * Months: 0-11 (Jan-Dec)
+            // * Day of Week: 0-6 (Sun-Sat)
+            const send = new CronJob(`${min} ${hour} * * *`, function () {
+              console.log("send job created hour", hour);
+              console.log("send job created min", min);
+              // sendText(phone_number, body);
+            });
+            cronJobsArray.push(send);
+          }
+          for (let job of cronJobsArray) {
+            // console.log("job started", job);
+            console.log("job started");
+            job.start();
+          }
+        }
       })
       .catch((error) => {
         console.log(error);
