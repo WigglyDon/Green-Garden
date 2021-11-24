@@ -16,7 +16,7 @@ export default function useApplicationData() {
       },
       time: "",
     },
-    gardens: {},
+    gardens: [],
     vegetables: {},
   });
 
@@ -42,7 +42,6 @@ export default function useApplicationData() {
       });
   }, []);
 
-  
   const handleDayChange = (event) => {
     setState({
       ...state,
@@ -61,7 +60,7 @@ export default function useApplicationData() {
       ...state,
       notificationFormData: {
         ...state.notificationFormData,
-        "time": newTime,
+        time: newTime,
       },
     });
   };

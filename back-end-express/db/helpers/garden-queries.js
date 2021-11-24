@@ -34,6 +34,19 @@ const postNotification = function () {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
+const postNewGarden = function (data) {
+  const text = `
+  INSERT INTO gardens (user_id,name,image_url,region)
+  VALUES
+  (1,[6],12,55,'this means saturday, 4:25 pm for garden id 1')
+  `;
+  return db
+    .query(text)
+    .then((data) => data.rows)
+    .catch((err) => console.error(this, "query failed", err.stack));
+};
+
 module.exports = {
   getAllGardens,
+  postNewGarden,
 };
