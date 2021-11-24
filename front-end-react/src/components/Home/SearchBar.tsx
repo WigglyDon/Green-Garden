@@ -1,5 +1,9 @@
 import React from "react";
 
-export default function SearchBar() {
-  return <div>I'm a search bar.</div>;
+export default function SearchBar(props:any) {
+  return (
+
+    <input type="text" placeholder="enter search here!"></input>
+
+    )
 }
