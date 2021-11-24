@@ -1,5 +1,5 @@
 import React from "react";
-import Card from "../Card";
+// import Card from "../Card";
 import GardenCard from "../GardenCard";
 
 export default function GardenCardList(props: any) {

@@ -1,5 +1,4 @@
 DROP TABLE IF EXISTS vegetables CASCADE;
-
 CREATE TABLE vegetables (
     id SERIAL PRIMARY KEY,
     name VARCHAR(255),

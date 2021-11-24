@@ -5,8 +5,8 @@ import Scheduler from "../Scheduler /Scheduler";
 import Map from "./Map";
 import { Button } from "@mui/material";
 import SideBarList from "../SideBar/GardensList";
-import GardenCardList from "./GardenCardList";
-import GardenCard from "../GardenCard";
+// import GardenCardList from "./GardenCardList";
+// import GardenCard from "../GardenCard";
 
 export default function Dashboard(props: any) {
   const { state, handleDayChange, handleTime, bookNotification } = props;

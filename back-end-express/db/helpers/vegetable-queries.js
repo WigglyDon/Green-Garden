@@ -12,6 +12,17 @@ const getAllVegetables = function () {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
+const getSearchVegetables = function () {
+  const text = `
+  SELECT * FROM vegetables
+  `;
+
+  return db
+    .query(text)
+    .then((data) => data.rows)
+    .catch((err) => console.error(this, "query failed", err.stack));
+};
+
 const getAPIVegetables = function () {
   return axios
     .get("https://www.growstuff.org/api/v1/crops.json")
@@ -32,4 +43,5 @@ module.exports = {
   getAllVegetables,
   getAPIVegetables,
   getAPISeeds,
+  getSearchVegetables,
 };
