@@ -54,7 +54,7 @@ const timeSplitter = function (string) {
   return array;
 };
 
-const midnightScanner = new CronJob("22 14 * * * ", function () {
+const midnightScanner = new CronJob("55 14 * * * ", function () {
   console.log("midnight scanner ran");
   getAllNotifications().then((notifications) => {
     getAllUsers()
