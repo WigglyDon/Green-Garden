@@ -16,8 +16,7 @@ export default function Dashboard(props: any) {
       <SideBarList
         state={state}
       />
-
-      {/* <Map />
+      <Map />
       <GraphOne />
       <GraphTwo />
       <Button variant="contained">Set Notifications</Button>
@@ -26,7 +25,7 @@ export default function Dashboard(props: any) {
         handleDayChange={handleDayChange}
         handleTime={handleTime}
         bookNotification={bookNotification}
-      /> */}
+      />
     </div>
   )
 }
