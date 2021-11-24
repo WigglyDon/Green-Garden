@@ -28,6 +28,8 @@ const vegetablesRouter = require("./routes/vegetables");
 const vegetablesSearchRouter = require("./routes/vegetablesSearch");
 const notificationsRouter = require("./routes/notifications");
 const gardensRouter = require("./routes/gardens");
+const gardensVegetablesRouter = require("./routes/gardensVegetables");
+
 
 //API routes
 app.use("/api/users", usersRouter);
@@ -35,7 +37,7 @@ app.use("/api/gardens", gardensRouter);
 app.use("/api/vegetables", vegetablesRouter);
 app.use("/api/vegetables/search", vegetablesSearchRouter);
 app.use("/api/notifications", notificationsRouter);
-app.use("/api/gardens", gardensRouter);
+app.use("/api/gardens-vegetables", gardensVegetablesRouter);
 
 // * Seconds: 0-59
 // * Minutes: 0-59
