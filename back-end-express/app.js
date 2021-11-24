@@ -45,7 +45,7 @@ app.use("/api/gardens", gardensRouter);
 // (CUSTOM TIMES)
 // '00 00 00 * * *' -> Midnight for Demo
 // '0 */10 * * * *' -> Every 10 minutes
- // const send = new CronJob(`${min} ${hour} 20 10 ${day}`, function () {});
+// const send = new CronJob(`${min} ${hour} 20 10 ${day}`, function () {});
 
 // const createCronJob = (time, body,phone_number) => {
 //   console.log("creation of cronjob")
@@ -56,8 +56,6 @@ app.use("/api/gardens", gardensRouter);
 //   return job;
 // }
 
-
- 
 // const midnightScanner = new CronJob("0 * * * * *", function () {
 //   console.log("midnightScanner ran")
 //   getAllNotifications().then((notifications) => {
@@ -85,34 +83,40 @@ app.use("/api/gardens", gardensRouter);
 //     });
 //   });
 // });
-const midnightScanner = new CronJob("26 * * * *", function () {
-  console.log("midnight scanner ran")
+const timeSplitter = function (string) {
+  const date = string.split("");
+  const hour = date[11];
+  const min = date[12];
+  const array = [parseInt(hour), parseInt(min)];
+  return array;
+};
+
+const midnightScanner = new CronJob(" */20 * * * * * ", function () {
+  console.log("midnight scanner ran");
   getAllNotifications().then((notifications) => {
     getAllUsers().then((user) => {
-     for (let i = 0; i < notifications.length; i++) {
-        const id = notifications[i].id;
+      // console.log("notifications", notifications);
+      // const hourAndMinArray = timeSplitter();
+      for (let i = 0; i < notifications.length; i++) {
         const min = notifications[i].minute;
-        const hour = notifications[i].hour - 6;
+        const hour = notifications[i].hour - 7; //subtract seven to get mountain standard time
         const day = notifications[i].day;
         const body = notifications[i].body;
         const phone_number = user[0].phone_number;
-       
-        // const sendOne = new CronJob(`${min} ${hour} * * *`, function () {
-          const sendOne = new CronJob(`${min} ${hour} * * *`, function () {
-          console.log("min: ",min, "hour: ", hour)
-          console.log("sendOne activated")
+        const sendOne = new CronJob(`* * * * *`, function () {
+          console.log("min: ", min, "hour: ", hour);
+          console.log("sendOne activated");
           // sendText(phone_number, body);
         });
         console.log("new job created");
-        console.log(sendOne.nextDate().toString())
+        console.log(sendOne.nextDate().toString());
         sendOne.start();
-     }
+      }
     });
   });
 });
 
 midnightScanner.start();
-
 
 app.listen(PORT, () => {
   console.log(

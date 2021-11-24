@@ -13,11 +13,9 @@ router.get("/", (req, res) => {
 
 router.post("/", (req, res) => {
   const notificationFormData = req.body.state;
-  const time = req.body.time;
-  console.log(notificationFormData);
-  console.log("time in notifications.js", time);
+  // console.log(notificationFormData);
   // console.log("formdata", notificationFormData.time.toString());
-  postNotification(notificationFormData, time)
+  postNotification(notificationFormData)
     .then((data) => res.status(200).json(data))
     .catch((err) => res.status(500).json({ error: err.message }));
 });
