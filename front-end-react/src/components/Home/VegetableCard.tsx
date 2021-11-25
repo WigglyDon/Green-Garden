@@ -7,12 +7,12 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import { styled } from '@mui/material/styles';
-import IconButton, { IconButtonProps } from '@mui/material/IconButton';
-import Collapse from '@mui/material/Collapse';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import { styled } from "@mui/material/styles";
+import IconButton, { IconButtonProps } from "@mui/material/IconButton";
+import Collapse from "@mui/material/Collapse";
 import axios from "axios";
-import GardenSelector from './GardenSelector';
+import GardenSelector from "./GardenSelector";
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
@@ -21,30 +21,27 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
   const { expand, ...other } = props;
   return <IconButton {...other} />;
 })(({ theme, expand }) => ({
-  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
-  marginLeft: 'auto',
-  transition: theme.transitions.create('transform', {
+  transform: !expand ? "rotate(0deg)" : "rotate(180deg)",
+  marginLeft: "auto",
+  transition: theme.transitions.create("transform", {
     duration: theme.transitions.duration.shortest,
   }),
 }));
 
-
 export default function VegetableCard(props: any) {
   const [expanded, setExpanded] = React.useState(false);
-  const {state} = props;
+  const { state, setState } = props;
 
-  console.log("VEGETABLE CARD STATE", state)
+  console.log("VEGETABLE CARD STATE", state);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
 
   return (
-    
-    <Card className={'VegetableCard'}>
-      
+    <Card className={"VegetableCard"}>
       <CardMedia
-        className={'VegetableCardImage'}
+        className={"VegetableCardImage"}
         component="img"
         image={props.vegetable.image_url}
         alt="veggie pic"
@@ -53,12 +50,17 @@ export default function VegetableCard(props: any) {
         <Typography gutterBottom variant="h5" component="div">
           {props.vegetable.name}
         </Typography>
-        <Typography className={'VegetableCardDescription'} variant="body2" color="text.secondary">
+        <Typography
+          className={"VegetableCardDescription"}
+          variant="body2"
+          color="text.secondary"
+        >
           {props.vegetable.description}
         </Typography>
       </CardContent>
+
       <CardActions>
-      <ExpandMore
+        <ExpandMore
           expand={expanded}
           onClick={handleExpandClick}
           aria-expanded={expanded}
@@ -68,26 +70,43 @@ export default function VegetableCard(props: any) {
         </ExpandMore>
       </CardActions>
 
-      <Collapse className='VegetableCardDropdown'in={expanded} timeout="auto" unmountOnExit>
+      <Collapse
+        className="VegetableCardDropdown"
+        in={expanded}
+        timeout="auto"
+        unmountOnExit
+      >
         <CardContent>
-          <Button onClick={() => {
-            axios.post('http://localhost:8080/api/gardensvegetables', {
-              gardenId: 1,
-              vegetableId: 1
-            })
-            .then(function (response) {
-              console.log(response);
-            })
-            .catch(function (error) {
-              console.log(error);
-            });
-          }}>Add to Garden</Button>
-         <GardenSelector state={state}/>
+          <div> Native Region: {props.vegetable.native_region}</div>
+          <div> Row Spacing: {props.vegetable.row_spacing}</div>
+         <div>Spread: {props.vegetable.spread}</div>
+          <div> Sowing Method: {props.vegetable.sowing_method}</div>
+          <div> Tags: {props.vegetable.tags}</div>
+          {/* <div> Sun Level: {props.vegetable.sun_level}</div> */}
+          {/* <div> Height: {props.vegetable.height}</div> */}
+          {/* <div>Growing Days: {props.vegetable.growing_days}</div> */}
+          {/* <div> Water Amount: {props.vegetable.water_amount}</div> */}
+
+          <GardenSelector state={state} />
+          <Button
+            onClick={() => {
+              axios
+                .post("http://localhost:8080/api/gardensvegetables", {
+                  gardenId: 1,
+                  vegetableId: 1,
+                })
+                .then(function (response) {
+                  console.log(response);
+                })
+                .catch(function (error) {
+                  console.log(error);
+                });
+            }}
+          >
+            Add to Garden
+          </Button>
         </CardContent>
-        this is also where the description of my vegetable will go
       </Collapse>
-
-
     </Card>
   );
 }
