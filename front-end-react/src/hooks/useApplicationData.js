@@ -18,6 +18,7 @@ export default function useApplicationData() {
     },
     gardens: [],
     vegetables: {},
+    gardensVegetables: {}
   });
 
   useEffect(() => {
@@ -25,16 +26,19 @@ export default function useApplicationData() {
       axios.get("http://localhost:8080/api/notifications"),
       axios.get("http://localhost:8080/api/gardens"),
       axios.get("http://localhost:8080/api/vegetables"),
+      axios.get("http://localhost:8080/api/gardensvegetables"),
     ])
       .then((all) => {
         const notificationsData = all[0].data;
         const gardensData = all[1].data;
         const vegetablesData = all[2].data.data;
+        const gardensVegetablesData = all[3].data;
         setState((prev) => ({
           ...prev,
           notifications: notificationsData,
           gardens: gardensData,
           vegetables: vegetablesData,
+          gardensVegetables: gardensVegetablesData,
         }));
       })
       .catch((error) => {

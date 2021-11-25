@@ -20,6 +20,16 @@ const getAllGardens = function () {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
+const getAllGardenNames = function () {
+  const text = `
+  SELECT name FROM gardens;
+  `;
+  return db
+    .query(text)
+    .then((data) => data.rows)
+    .catch((err) => console.error(this, "query failed", err.stack));
+};
+
 // const postNotification = function () {
 //   //   ? = ANY (notifications.day)
 //   // ? is the day int 0-6
@@ -49,4 +59,5 @@ const postNewGarden = function (data) {
 module.exports = {
   getAllGardens,
   postNewGarden,
+  getAllGardenNames,
 };
