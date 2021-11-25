@@ -1,6 +1,8 @@
 import React from "react";
 // import Garden from "../SideBar/Garden";
 import GardenCardList from "../Dashboard/GardenCardList";
+import VegetableCardList from "../Home/VegetableCardList";
+import Empty from "./Empty";
 import "./SideBar.scss"
 
 
@@ -17,6 +19,8 @@ export default function SideBarList(props: any) {
         <GardenCardList
           state={state.gardens}
         />
+
+        <Empty/>
       </div>
     </div>
   );
