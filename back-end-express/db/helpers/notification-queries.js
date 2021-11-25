@@ -24,17 +24,15 @@ const postNotification = function (notificationFormData) {
     }
     return arr;
   };
-  // console.log("notificationFormData", notificationFormData);
   const daysObj = notificationFormData.days;
   const timeinUTC = notificationFormData.time;
   const numbersArray = getDayNumber(daysObj);
   const numbersArrayString = JSON.stringify(numbersArray);
-  // console.log("timeinUTC", timeinUTC);
 
   const text = `
   INSERT INTO notifications (garden_id, day, time, body)
   VALUES
-  (1,ARRAY ${numbersArrayString}, '${timeinUTC}','this means sunday, 3:13 pm for garden id 1')
+  (1,ARRAY ${numbersArrayString}, '${timeinUTC}','Please water your garden now!')
 `;
   return db
     .query(text)

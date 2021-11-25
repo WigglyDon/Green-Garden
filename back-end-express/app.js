@@ -39,7 +39,6 @@ app.use("/api/gardens", gardensRouter);
 // (CUSTOM TIMES)
 // '00 00 00 * * *' -> Midnight for Demo
 // '0 */10 * * * *' -> Every 10 minutes
-// const send = new CronJob(`${min} ${hour} 20 10 ${day}`, function () {});
 
 const timeSplitter = function (string) {
   const date = moment.tz(string, "America/Edmonton"); //converts utc(GMT) object into mountain time utc object
@@ -54,7 +53,7 @@ const timeSplitter = function (string) {
   return array;
 };
 
-const midnightScanner = new CronJob("56 16 * * * ", function () {
+const midnightScanner = new CronJob("08 17 * * * ", function () {
   console.log("midnight scanner ran");
   getAllNotifications().then((notifications) => {
     getAllUsers()
@@ -80,7 +79,7 @@ const midnightScanner = new CronJob("56 16 * * * ", function () {
               console.log("send job created day", day);
               console.log("send job created hour", hour);
               console.log("send job created min", min);
-              sendText(phone_number, body);
+              // sendText(phone_number, body);
             });
             cronJobsArray.push(send);
           }
