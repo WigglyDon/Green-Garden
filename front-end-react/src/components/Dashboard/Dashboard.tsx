@@ -6,6 +6,8 @@ import Map from "./Map";
 import { Button } from "@mui/material";
 import Sidebar from "../SideBar";
 import { Link } from "react-router-dom";
+import '../SideBar/index.scss'
+
 
 // import GardenCardList from "./GardenCardList";
 // import GardenCard from "../GardenCard";

@@ -1,16 +1,16 @@
 .MuiTypography-root{
-    
       color: #8395a7;
       height: 5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      align-items: center;
       margin-top: 15px;
   
       &:hover {
-        background-color: #ee5253;
         cursor: pointer;
-        color: blue;
+        background-color: #328674;
+        color: white;
       }
   
       &--selected {

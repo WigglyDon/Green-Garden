@@ -79,8 +79,8 @@ const Form = function (props: any) {
             </section>
             <section className="appointment__card-right">
                 <section className="appointment__actions">
-                    <Button onClick={reset}>Cancel</Button>
-                    <Button onClick={validate}>Save</Button>
+                    <Button className='save-button' onClick={validate}>Save</Button>
+                    <Button className='cancel-button' onClick={reset}>Cancel</Button>
                 </section>
             </section>
         </main>
