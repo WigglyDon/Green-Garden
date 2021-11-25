@@ -7,13 +7,7 @@ import { useState } from "react";
 
 const Sidebar = function (props: any) {
   const { state, createGarden } = props;
-
   const [addButton, setAddButton] = useState(true);
-
-  console.log(addButton);
-
-
-
   // const deleteInterview = () => {
   //     transition(DELETING);
   //     cancelInterview(id)
@@ -48,7 +42,7 @@ const Sidebar = function (props: any) {
       <div className='add' onClick={() => { setAddButton(false) }}>
         {addButton ? <Empty /> : null}
       </div>
-      {!addButton ? <Form state={state} createGarden={createGarden}/> : null}
+      {!addButton ? <Form state={state} createGarden={createGarden} /> : null}
 
 
     </article>
