@@ -28,10 +28,10 @@ import Typography from "@mui/material/Typography";
 
 export default function VegetableCard(props: any) {
   return (
-    <Card sx={{ maxWidth: 345 }}>
+    <Card className={'VegetableCard'}>
       <CardMedia
+        className={'VegetableCardImage'}
         component="img"
-        height="140"
         image={props.vegetable.image_url}
         alt="veggie pic"
       />
@@ -39,12 +39,11 @@ export default function VegetableCard(props: any) {
         <Typography gutterBottom variant="h5" component="div">
           {props.vegetable.name}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography className={'VegetableCardDescription'} variant="body2" color="text.secondary">
           {props.vegetable.description}
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Share</Button>
         <Button size="small">Learn More</Button>
       </CardActions>
     </Card>
