@@ -1,8 +1,13 @@
 .VegetableCardList {
-  display:flex;
-  flex-direction: column;
-  background-color: springgreen;
 
-  width: 50%;
-  height: 50%;
+  // background-color: springgreen;
+
+  display:flex;
+
+  flex-wrap: wrap;
+
+
+
+  width: 90%;
+  height: 90%;
 }
