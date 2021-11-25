@@ -8,14 +8,14 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 
 // garden find = select all gardens where userid = 1
 export default function GardenSelector(props:any) {
-  const [age, setAge] = React.useState('');
+  const [selectedGarden, setSelectedGarden] = React.useState('');
   const {state} = props.state;
 
   const gardens = state.gardens;
 
 
   const handleChange = (event: SelectChangeEvent) => {
-    setAge(event.target.value as string);
+    setSelectedGarden(event.target.value as string);
   };
 
   const mapList = (listGardens:any) => {
@@ -33,12 +33,12 @@ export default function GardenSelector(props:any) {
   return (
     <Box sx={{ minWidth: 120 }}>
       <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <InputLabel id="demo-simple-select-label">Selected Garden</InputLabel>
         <Select
           labelId="demo-simple-select-label"
           id="demo-simple-select"
-          value={age}
-          label="Age"
+          value={selectedGarden}
+          label="selectedGarden"
           onChange={handleChange}
         >
         {mapList(gardens)}
