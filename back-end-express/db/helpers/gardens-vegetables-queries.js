@@ -14,11 +14,12 @@ const getAllGardenVegetables = function () {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
-const postGardensVegetable = function () {
+
+const postGardensVegetables = function () {
   const text = `
-  INSERT INTO gardens (user_id,name,image_url,region)
+  INSERT INTO gardens_vegetables (garden_id,vegetable_id)
   VALUES
-  (1,[6],12,55,'this means saturday, 4:25 pm for garden id 1')
+  (1,1)
   `;
 
   return db
@@ -26,4 +27,4 @@ const postGardensVegetable = function () {
     .then((data) => data.rows)
     .catch((err) => console.error(this, "query failed", err.stack));
 };
-module.exports = { getAllGardenVegetables, postGardensVegetable };
+module.exports = { getAllGardenVegetables, postGardensVegetables };

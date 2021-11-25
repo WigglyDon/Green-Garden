@@ -25,7 +25,7 @@ export default function Application() {
     <div>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Home state={state}/>} />
         <Route path="login" element={<Login />} />
         <Route
           path="dashboard"
