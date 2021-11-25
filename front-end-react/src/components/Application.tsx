@@ -8,6 +8,7 @@ import Nav from "./Nav";
 import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Login";
 import Home from "./Home/Home";
+import Scheduler from "./Scheduler/Scheduler";
 import { Routes, Route } from "react-router-dom";
 
 export default function Application() {
@@ -36,6 +37,18 @@ export default function Application() {
               bookNotification={bookNotification}
               handleVegetable={handleVegetable}
               createGarden={createGarden}
+            />
+          }
+        />
+        <Route
+          path="scheduler"
+          element={
+            <Scheduler
+              state={state}
+              handleDayChange={handleDayChange}
+              handleTime={handleTime}
+              bookNotification={bookNotification}
+              handleVegetable={handleVegetable}
             />
           }
         />

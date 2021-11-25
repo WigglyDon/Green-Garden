@@ -11,37 +11,29 @@ const getAllNotifications = function () {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
-const postNotification = function (notificationFormData, time) {
+const postNotification = function (notificationFormData) {
   //   ? = ANY (notifications.day)
   // ? is the day int 0-6
-  const getDayNumber = (days) => {
+
+  const getDayNumber = (daysObj) => {
     let arr = [];
-    for (const number in days) {
-      if (days[number]) {
-        arr.push(number);
+    for (const number in daysObj) {
+      if (daysObj[number]) {
+        arr.push(parseInt(number));
       }
     }
     return arr;
   };
-  const timeSplitter = function (string) {
-    const date = string.split(" ");
-    const num = date[4];
-    const further = num.split(":");
-    const hourString = further[0];
-    const minString = further[1];
-    const array = [hourString, minString];
-    return array;
-  };
-
-  const days = notificationFormData.days;
-  const hourAndMin = timeSplitter(time);
-  const numbersArray = getDayNumber(days);
+  const daysObj = notificationFormData.days;
+  const timeinUTC = notificationFormData.time;
+  const numbersArray = getDayNumber(daysObj);
+  const numbersArrayString = JSON.stringify(numbersArray);
 
   const text = `
-  INSERT INTO notifications (garden_id, day, hour, minute, body)
+  INSERT INTO notifications (garden_id, day, time, body)
   VALUES
-  (1,${numbersArray[0]},${hourAndMin[0]},${hourAndMin[1]},'this means sunday, 3:13 pm for garden id 1')
-  `;
+  (1,ARRAY ${numbersArrayString}, '${timeinUTC}','Please water your garden now!')
+`;
   return db
     .query(text)
     .then((data) => data.rows)

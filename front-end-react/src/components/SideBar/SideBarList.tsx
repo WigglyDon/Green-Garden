@@ -1,6 +1,5 @@
 import React from "react";
 import GardensList from "../SideBar/GardensList";
-
 export default function SideBarList() {
   return (
     <div>

@@ -1,0 +1,18 @@
+.nav-layout {
+  display: flex;
+  height: 60px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2bb449;
+  // background-image: url("../images/foggy-birds.png");
+  // padding: 3.5em;
+}
+
+.nav-logo {
+  padding-left: 1em;
+}
+
+.nav-links {
+  padding-right: 1em;
+}
