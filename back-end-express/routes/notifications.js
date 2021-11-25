@@ -12,6 +12,7 @@ router.get("/", (req, res) => {
 });
 
 router.post("/", (req, res) => {
+  console.log("State", req.body.state);
   const notificationFormData = req.body.state;
   // const time = req.body.time;
   // console.log(notificationFormData);

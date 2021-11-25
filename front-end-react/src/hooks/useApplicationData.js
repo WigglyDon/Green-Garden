@@ -77,8 +77,6 @@ export default function useApplicationData() {
 
   function bookNotification(state) {
     console.log(state);
-    // const time = state.time.toString();  only use to save time as mountain in database
-    // console.log(time);
     return axios
       .post(`http://localhost:8080/api/notifications`, { state })
       .then(() => {

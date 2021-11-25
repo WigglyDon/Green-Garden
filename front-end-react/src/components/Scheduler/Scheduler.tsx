@@ -8,6 +8,7 @@ import "./Scheduler.scss";
 
 export default function Scheduler(props: any) {
   const { state, handleDayChange, handleTime, bookNotification } = props;
+  console.log(state)
   return (
     <div className="scheduler-layout">
       <div className="picker-layout">

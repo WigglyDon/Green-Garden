@@ -5,7 +5,7 @@ import GardenCard from "../GardenCard";
 export default function GardenCardList(props: any) {
   const { state } = props;
 
-  console.log("gardencardlist", state);
+  // console.log("gardencardlist", state);
 
   const gardenList = state.map((garden: any) => (
     <GardenCard
