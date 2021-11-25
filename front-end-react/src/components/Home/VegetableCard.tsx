@@ -1,23 +1,5 @@
 import "./VegetableCard.scss";
 
-// export default function VegetableCard(props: any) {
-//   // console.log(props.vegetable)
-//   return (
-//     <div className="VegetableCard">
-//       {props.vegetable.name}
-//       <img
-//         className="VegetableCardImage"
-//         alt="veggie pic"
-//         src={props.vegetable.image_url}
-//       />
-//       <div>description: {props.vegetable.description}</div>
-//       <div>growing_days: {props.vegetable.growing_days}</div>
-//       <div>height: {props.vegetable.height}</div>
-//       <div>native_region: {props.vegetable.native_region}</div>
-//     </div>
-//   );
-// }
-//--------------------------------
 import * as React from "react";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -25,10 +7,36 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import { styled } from '@mui/material/styles';
+import IconButton, { IconButtonProps } from '@mui/material/IconButton';
+
+
+interface ExpandMoreProps extends IconButtonProps {
+  expand: boolean;
+}
+const ExpandMore = styled((props: ExpandMoreProps) => {
+  const { expand, ...other } = props;
+  return <IconButton {...other} />;
+})(({ theme, expand }) => ({
+  transform: !expand ? 'rotate(0deg)' : 'rotate(180deg)',
+  marginLeft: 'auto',
+  transition: theme.transitions.create('transform', {
+    duration: theme.transitions.duration.shortest,
+  }),
+}));
 
 export default function VegetableCard(props: any) {
+  const [expanded, setExpanded] = React.useState(false);
+
+  const handleExpandClick = () => {
+    setExpanded(!expanded);
+  };
+
   return (
+    
     <Card className={'VegetableCard'}>
+      
       <CardMedia
         className={'VegetableCardImage'}
         component="img"
@@ -44,7 +52,14 @@ export default function VegetableCard(props: any) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Learn More</Button>
+      <ExpandMore
+          expand={expanded}
+          onClick={handleExpandClick}
+          aria-expanded={expanded}
+          aria-label="show more"
+        >
+          <ExpandMoreIcon />
+        </ExpandMore>
       </CardActions>
     </Card>
   );
