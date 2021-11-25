@@ -1,5 +1,6 @@
 import React from "react";
 
-export default function Card() {
-  return <div>I'm a card.</div>;
+export default function Card(props: any) {
+
+  return <div> I'm a card  </div>
 }

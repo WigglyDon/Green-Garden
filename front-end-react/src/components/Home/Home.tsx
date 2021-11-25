@@ -1,14 +1,51 @@
-import React from "react";
-import Card from "../Card";
+import React, { useState, useEffect } from 'react';
 import SearchBar from "./SearchBar";
-import VegetableCardList from "../VegetableCardList";
+import VegetableCardList from "./VegetableCardList";
+import './Home.scss'
+import axios from "axios";
 
-export default function Home(props: any) {
-  const { state } = props;
+export default function Home() {
+  const [state, setState] = useState({
+    vegetables: [],
+    query: ''
+  });
+
+  useEffect(() => {
+    Promise.all([
+      axios.get("http://localhost:8080/api/vegetables/search", {
+        params: {
+          query: state.query
+        }
+      })
+    ])
+      .then((all) => {
+        const vegetablesData = all[0].data;
+        setState((prev) => ({
+          ...prev,
+          vegetables: vegetablesData,
+        }));
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [state.query]);
+
+
+  let vegetables = state.vegetables;
+  
+  const handleChange = (event:any) => {
+    setState((prev) => ({
+      ...prev,
+      query: event.target.value,
+    }));
+ }
+
+
+
   return (
-    <div>
-      <SearchBar />
-      <VegetableCardList state={state} />
+    <div className='homepage'>
+      <SearchBar handleChange={handleChange}/>
+      <VegetableCardList vegetables={[vegetables]}/>
     </div>
   );
 }

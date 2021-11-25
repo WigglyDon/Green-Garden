@@ -1,20 +1,24 @@
 const {
-  getAllVegetables,
+  getSearchVegetables,
   getAPISeeds,
 } = require("../db/helpers/vegetable-queries");
 const express = require("express");
 const router = express.Router();
 
-//api/vegetables/crops
+
 router.get("/", (req, res) => {
-  getAllVegetables()
+
+  if (req.query.query.length === 0) {
+    getSearchVegetables
+  }
+  getSearchVegetables(req.query.query)
     .then((data) => {
       res.status(200).json(data);
     })
     .catch((err) => res.status(500).json({ error: err.message }));
 });
 
-//api/vegetables/photos
+
 router.get("/seeds", (req, res) => {
   getAPISeeds()
     .then((data) => {
