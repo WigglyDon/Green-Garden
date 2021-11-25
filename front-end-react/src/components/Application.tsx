@@ -4,7 +4,7 @@
 // import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import "./Application.scss";
 import useApplicationData from "../hooks/useApplicationData";
-import Nav from "./Nav";
+import Nav from "./Nav.jsx";
 import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Login";
 import Home from "./Home/Home";
@@ -18,15 +18,17 @@ export default function Application() {
     handleTime,
     bookNotification,
     handleVegetable,
-    createGarden
+    createGarden,
+    login,
+    logout,
   } = useApplicationData();
-
+  console.log(state);
   return (
     <div>
-      <Nav />
+      <Nav state={state} logout={logout} />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="login" element={<Login />} />
+        <Route path="login" element={<Login state={state} login={login} />} />
         <Route
           path="dashboard"
           element={

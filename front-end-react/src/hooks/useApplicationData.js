@@ -18,6 +18,12 @@ export default function useApplicationData() {
     },
     gardens: [],
     vegetables: {},
+    auth: false,
+    users: {
+      email: null,
+      password: null,
+      phone_number: null,
+    },
   });
 
   useEffect(() => {
@@ -25,16 +31,19 @@ export default function useApplicationData() {
       axios.get("http://localhost:8080/api/notifications"),
       axios.get("http://localhost:8080/api/gardens"),
       axios.get("http://localhost:8080/api/vegetables"),
+      axios.get("http://localhost:8080/api/users"),
     ])
       .then((all) => {
         const notificationsData = all[0].data;
         const gardensData = all[1].data;
         const vegetablesData = all[2].data.data;
+        const usersData = all[3].data;
         setState((prev) => ({
           ...prev,
           notifications: notificationsData,
           gardens: gardensData,
           vegetables: vegetablesData,
+          users: usersData,
         }));
       })
       .catch((error) => {
@@ -85,8 +94,8 @@ export default function useApplicationData() {
   }
 
   function createGarden(state) {
-    console.log('GARDEN',state);
- 
+    // console.log("GARDEN", state);
+
     return axios
       .post(`http://localhost:8080/api/gardens/`, { state })
       .then(() => {
@@ -94,7 +103,20 @@ export default function useApplicationData() {
       });
   }
 
-  
+  const login = function () {
+    setState({
+      ...state.auth,
+      auth: true,
+    });
+  };
+
+  const logout = function () {
+    setState({
+      ...state.auth,
+      auth: false,
+    });
+  };
+
   return {
     state,
     handleDayChange,
@@ -102,5 +124,7 @@ export default function useApplicationData() {
     handleVegetable,
     bookNotification,
     createGarden,
+    login,
+    logout,
   };
 }
