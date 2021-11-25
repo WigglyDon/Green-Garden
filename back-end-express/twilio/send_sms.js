@@ -11,7 +11,7 @@ function sendText(phone_number, body) {
   client.messages
     .create({
       body: body,
-      from: "+18507508266",
+      from: "+17633108615",
       to: phone_number,
     })
     .then((message) => console.log(message.sid));

@@ -11,17 +11,17 @@ export default function TimePicker(props: any) {
   const { handleTime } = props;
   return (
     <div>
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <StaticTimePicker
-          orientation="landscape"
-          openTo="minutes"
-          value={""}
-          onChange={(newTime) => {
-            handleTime(newTime);
-          }}
-          renderInput={(params) => <TextField {...params} />}
-        />
-      </LocalizationProvider>
+      {/* <LocalizationProvider dateAdapter={AdapterDateFns}> */}
+      <StaticTimePicker
+        orientation="landscape"
+        openTo="minutes"
+        value={Number}
+        onChange={(newTime) => {
+          handleTime(newTime);
+        }}
+        renderInput={(params) => <TextField {...params} />}
+      />
+      {/* </LocalizationProvider> */}
     </div>
   );
 }
