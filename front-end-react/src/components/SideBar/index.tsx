@@ -1,36 +1,35 @@
 import React from "react";
 import GardenCardList from "../Dashboard/GardenCardList";
-import Show from "./Show";
 import Empty from "./Empty";
 import Form from "./Form";
 import { useState } from "react";
+import GardenVegetableList from "./GardenVegetablesList";
+
 
 const Sidebar = function (props: any) {
-  const { state, createGarden } = props;
-
+  const { state, createGarden, changeGarden } = props;
+  console.log('STATE',state);
   const [addButton, setAddButton] = useState(true);
-
-  console.log(addButton);
-
+  const [gardenID, setGardenID] = useState(null);
 
 
-  // const deleteInterview = () => {
-  //     transition(DELETING);
-  //     cancelInterview(id)
-  //         .then(() => {
-  //             transition(EMPTY);
-  //         })
-  //         .catch(() => {
-  //             transition(ERROR_DELETE, true)
-  //         })
-  // }
+
+  //set state which id gets displayed
 
   return (
     <article className="sidebarItems">
       <img className='logo' src="https://raw.githubusercontent.com/nikolajjuuel/scheduler/master/public/images/lhl.png" alt="" />
       <h2>My Gardens</h2>
       <hr />
-      <GardenCardList state={state.gardens} />
+      <GardenCardList state={state} changeGarden={changeGarden}/>
+
+
+      {/* <GardenVegetableList 
+        state={state}
+        vegetables={state.gardenVegetables}
+        /> */}
+
+
 
       {/* setting state and passing props to components */}
       {/* {mode === SHOW && <Show student={interview.student} interviewer={interview.interviewer.name}
@@ -48,7 +47,7 @@ const Sidebar = function (props: any) {
       <div className='add' onClick={() => { setAddButton(false) }}>
         {addButton ? <Empty /> : null}
       </div>
-      {!addButton ? <Form state={state} createGarden={createGarden}/> : null}
+      {!addButton ? <Form state={state} createGarden={createGarden} /> : null}
 
 
     </article>
