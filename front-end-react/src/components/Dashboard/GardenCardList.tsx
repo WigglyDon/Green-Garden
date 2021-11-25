@@ -16,5 +16,10 @@ export default function GardenCardList(props: any) {
     />
   ));
 
-  return <div className="garden-card">{gardenList}</div>;
+  return (
+    <div className='garden-card'>
+      {gardenList}
+      <div className='new-garden'></div>
+    </div>
+  )
 }

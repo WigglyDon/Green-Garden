@@ -84,11 +84,23 @@ export default function useApplicationData() {
       });
   }
 
+  function createGarden(state) {
+    console.log('GARDEN',state);
+ 
+    return axios
+      .post(`http://localhost:8080/api/gardens/`, { state })
+      .then(() => {
+        console.log("Sucessful Put!");
+      });
+  }
+
+  
   return {
     state,
     handleDayChange,
     handleTime,
     handleVegetable,
     bookNotification,
+    createGarden,
   };
 }

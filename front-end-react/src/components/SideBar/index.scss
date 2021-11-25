@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+$base-color: #c6538c;
+$font-family: "Lato", sans-serif;
+
+h2 {
+    font-family: $font-family;
+    color: white;
+}
+
+.sidebarItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sidebard {
+    background-color: #57c1aa;
+    width: 25%;
+}
+
+.garden-card {
+    width: 80%;
+}
+
+.logo {
+    margin-top: 10px;
+}
+
+.garden_add-button {
+    margin-top: 10px;
+}
+
+hr {
+    width: 80%;
+}
+
+.appointment__actions {
+    display: flex;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.appointment__card-left{
+    width: 80%;
+}
