@@ -16,8 +16,10 @@ export default function useApplicationData() {
       },
       time: "",
     },
+    garden: null,
     gardens: [],
     vegetables: {},
+    gardenVegetables: {}
   });
 
   useEffect(() => {
@@ -31,20 +33,20 @@ export default function useApplicationData() {
         const notificationsData = all[0].data;
         const gardensData = all[1].data;
         const vegetablesData = all[2].data.data;
-        const gardenVegetables = all[3].data.data;
+        const gardenVegetablesData = all[3].data;
 
         setState((prev) => ({
           ...prev,
           notifications: notificationsData,
           gardens: gardensData,
           vegetables: vegetablesData,
-          gardenVegetables: gardenVegetables
+          gardenVegetables: gardenVegetablesData
         }));
       })
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [state.gardens]);
 
   const handleDayChange = (event) => {
     setState({
@@ -91,8 +93,6 @@ export default function useApplicationData() {
   }
 
   function createGarden(state) {
-    console.log('GARDEN',state);
- 
     return axios
       .post(`http://localhost:8080/api/gardens/`, { state })
       .then(() => {
@@ -100,6 +100,20 @@ export default function useApplicationData() {
       });
   }
 
+  function changeGarden(id) {
+    setState(prevState => ({
+      ...prevState,
+      garden: id
+    }))
+  }
+
+
+  //setState(prevState => ({   ...prevState,   metawords: evt.target.value, }))
+  // ...state,
+  // notificationFormData: {
+  //   ...state.notificationFormData,
+  //   time: newTime,
+  // },
   
   return {
     state,
@@ -108,5 +122,6 @@ export default function useApplicationData() {
     handleVegetable,
     bookNotification,
     createGarden,
+    changeGarden
   };
 }

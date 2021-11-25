@@ -13,6 +13,8 @@ const Form = function (props: any) {
 
 
   const [selectedFile, setSelectedFile] = useState(null)
+
+
   const newGarden = {
     name: { garden },
     region: { region },
@@ -26,7 +28,7 @@ const Form = function (props: any) {
 
   function validate() {
     if (garden === "") {
-      setError("Student name cannot be blank");
+      setError("Garden name cannot be black");
       return;
     }
     setError("");
