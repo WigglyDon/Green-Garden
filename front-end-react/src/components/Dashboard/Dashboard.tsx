@@ -11,7 +11,6 @@ import SideBarList from "../SideBar/GardensList";
 // import GardenCard from "../GardenCard";
 
 export default function Dashboard(props: any) {
-  // eslint-disable-next-line
   const { state, handleDayChange, handleTime, bookNotification } = props;
 
   return (
