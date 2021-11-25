@@ -38,7 +38,18 @@ export default function Application() {
             />
           }
         />
-        <Route path="scheduler" element={<Scheduler />} />
+        <Route
+          path="scheduler"
+          element={
+            <Scheduler
+              state={state}
+              handleDayChange={handleDayChange}
+              handleTime={handleTime}
+              bookNotification={bookNotification}
+              handleVegetable={handleVegetable}
+            />
+          }
+        />
       </Routes>
     </div>
   );

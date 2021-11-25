@@ -3,8 +3,7 @@ import TextField from "@mui/material/TextField";
 import AdapterDateFns from "@mui/lab/AdapterDateFns";
 import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import StaticTimePicker from "@mui/lab/StaticTimePicker";
-// eslint-disable-next-line
-import { fr } from "date-fns/locale";
+// import { fr } from "date-fns/locale";
 
 export default function TimePicker(props: any) {
   // const [value, setValue] = useState<Date | null>(new Date());

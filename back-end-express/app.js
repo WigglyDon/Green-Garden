@@ -56,7 +56,7 @@ const timeSplitter = function (string) {
   return array;
 };
 
-const midnightScanner = new CronJob("08 17 * * * ", function () {
+const midnightScanner = new CronJob("06 19 * * * ", function () {
   console.log("midnight scanner ran");
   getAllNotifications().then((notifications) => {
     getAllUsers()
@@ -70,6 +70,7 @@ const midnightScanner = new CronJob("08 17 * * * ", function () {
           const body = notifications[i].body;
           const phone_number = user[0].phone_number;
           const daysArray = notifications[i].day;
+          console.log("daysArray", daysArray);
           for (let j = 0; j < daysArray.length; j++) {
             // * Seconds: 0-59
             // * Minutes: 0-59
