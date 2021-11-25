@@ -19,6 +19,7 @@ export default function GardenCardList(props: any) {
   return (
     <div className='garden-card'>
       {gardenList}
+      <div className='new-garden'>ADD A NEW GARDEN</div>
     </div>
   );
 }

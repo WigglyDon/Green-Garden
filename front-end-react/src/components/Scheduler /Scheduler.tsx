@@ -15,6 +15,8 @@ export default function Scheduler(props: any) {
         <Button
           variant="contained"
           onClick={() => {
+            console.log('S',state)
+            console.log('SN',state.notificationFormData)
             bookNotification(state.notificationFormData);
           }}
         >
