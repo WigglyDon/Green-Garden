@@ -16,6 +16,7 @@ export default function useApplicationData() {
       },
       time: "",
     },
+    garden: null,
     gardens: [],
     vegetables: {},
     gardensVegetables: {}
@@ -44,7 +45,7 @@ export default function useApplicationData() {
       .catch((error) => {
         console.log(error);
       });
-  }, []);
+  }, [state.gardens]);
 
   const handleDayChange = (event) => {
     setState({
@@ -91,8 +92,6 @@ export default function useApplicationData() {
   }
 
   function createGarden(state) {
-    console.log('GARDEN',state);
- 
     return axios
       .post(`http://localhost:8080/api/gardens/`, { state })
       .then(() => {
@@ -100,6 +99,20 @@ export default function useApplicationData() {
       });
   }
 
+  function changeGarden(id) {
+    setState(prevState => ({
+      ...prevState,
+      garden: id
+    }))
+  }
+
+
+  //setState(prevState => ({   ...prevState,   metawords: evt.target.value, }))
+  // ...state,
+  // notificationFormData: {
+  //   ...state.notificationFormData,
+  //   time: newTime,
+  // },
   
   return {
     state,
@@ -108,5 +121,6 @@ export default function useApplicationData() {
     handleVegetable,
     bookNotification,
     createGarden,
+    changeGarden
   };
 }
