@@ -108,6 +108,7 @@ export default function useApplicationData() {
       console.log("Sucessful Put!");
     });
   };
+
   const updateAuthState = function () {
     return axios
       .get("http://localhost:8080/api/users")
