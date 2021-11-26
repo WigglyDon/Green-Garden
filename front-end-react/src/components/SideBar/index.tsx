@@ -7,7 +7,7 @@ import GardenVegetableList from "./GardenVegetablesList";
 
 
 const Sidebar = function (props: any) {
-  const { state, createGarden, changeGarden } = props;
+  const { state, createGarden, changeGarden, updateGardenState } = props;
   console.log('STATE',state);
   const [addButton, setAddButton] = useState(true);
   const [gardenID, setGardenID] = useState(null);
@@ -47,7 +47,7 @@ const Sidebar = function (props: any) {
       <div className='add' onClick={() => { setAddButton(false) }}>
         {addButton ? <Empty /> : null}
       </div>
-      {!addButton ? <Form state={state} createGarden={createGarden} /> : null}
+      {!addButton ? <Form state={state} createGarden={createGarden} setAddButton={setAddButton} /> : null}
 
 
     </article>

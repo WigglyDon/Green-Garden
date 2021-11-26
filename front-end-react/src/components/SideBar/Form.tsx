@@ -3,7 +3,7 @@ import { Button } from '@mui/material';
 import { render } from '@testing-library/react';
 
 const Form = function (props: any) {
-  const { createGarden, state } = props;
+  const { createGarden, state, setAddButton } = props;
   const [error, setError] = useState("");
 
 
@@ -33,6 +33,9 @@ const Form = function (props: any) {
     }
     setError("");
     createGarden(newGarden);
+    setAddButton(true);
+  //  updateGardenState();
+
     setGarden('')
   }
 
