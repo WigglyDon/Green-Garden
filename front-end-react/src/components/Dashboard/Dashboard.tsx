@@ -40,7 +40,7 @@ export default function Dashboard(props: any) {
 
       <div className="dashboard">
         <div className="graphContainer full">
-          <GraphTwo />
+          <GraphTwo state={state.gardensVegetables} />
         </div>
         <div className="graphContainer full">
           <GraphFour />

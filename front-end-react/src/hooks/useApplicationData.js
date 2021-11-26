@@ -19,7 +19,7 @@ export default function useApplicationData() {
     garden: null,
     gardens: [],
     vegetables: {},
-    gardensVegetables: {},
+    gardensVegetables: [],
     test: 0
   });
 

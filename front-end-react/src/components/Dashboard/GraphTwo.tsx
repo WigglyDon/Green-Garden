@@ -10,6 +10,7 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { AnyRecord } from 'dns';
 
 
 ChartJS.register(
@@ -34,24 +35,32 @@ export const options = {
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => Math.floor(Math.random() * 100000)),
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-    {
-      label: 'Dataset 2',
-      data: labels.map(() => Math.floor(Math.random() * 100000)),
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-  ],
-};
 
-export default function GraphTwo() {
+const dataParser = (state: any, target:any) => {
+  return state.map((name: any) => name[target]);
+}
+
+
+
+export default function GraphTwo(props: any) {
+  const { state } = props;
+  console.log("GRAPH STATE", state);
+  //console.log("PARSER", dataParser(state));
+
+  const labels = dataParser(state, 'name')
+
+
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: 'Dataset',
+        data: dataParser(state, 'height'),
+        backgroundColor: 'orange',
+      }
+    ],
+  };
+
   return <Bar className="GraphTwo" options={options} data={data} />;
 }
