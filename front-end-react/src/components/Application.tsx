@@ -27,7 +27,7 @@ export default function Application() {
   console.log({ state });
   return (
     <div>
-      <Nav state={state} logout={logout} />
+      <Nav state={state} />
       <Routes>
         <Route path="/" element={<Home state={state} />} />
         <Route path="login" element={<Login state={state} login={login} />} />

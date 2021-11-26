@@ -81,16 +81,11 @@ export default function useApplicationData() {
       ...state,
       vegetables: {
         ...state.vegetables,
-        //new data
       },
     });
   };
 
   function bookNotification(state) {
-    // console.log(state);
-    // console.log(state);
-    // const time = state.time.toString();  only use to save time as mountain in database
-    // console.log(time);
     return axios
       .post(`http://localhost:8080/api/notifications`, { state })
       .then(() => {
@@ -100,10 +95,6 @@ export default function useApplicationData() {
 
   function createGarden(state) {
     // console.log("GARDEN", state);
-    // console.log('createGarden', state)
-    //const newGarden ;
-    //const newGardenId ;
-
     return axios
       .post(`http://localhost:8080/api/gardens/`, { state })
       .then((res) => {
@@ -113,10 +104,20 @@ export default function useApplicationData() {
       });
   }
   const login = function () {
-    setState({
-      ...state,
-      auth: true,
+    return axios.put(`http://localhost:8080/api/users`).then(() => {
+      console.log("Sucessful Put!");
     });
+  };
+  const updateAuthState = function () {
+    return axios
+      .get("http://localhost:8080/api/users")
+      .then(({ data }) => {
+        setState((prevState) => ({
+          ...prevState,
+          auth: data,
+        }));
+      })
+      .catch((err) => console.error(err));
   };
 
   const logout = function () {
@@ -125,26 +126,17 @@ export default function useApplicationData() {
       auth: false,
     });
   };
+
   function updateGardenState() {
     return axios
       .get("http://localhost:8080/api/gardens")
       .then(({ data }) => {
-        //        console.log("GARDEN DATA", { gardenData })
-        // const {data} = gardenData;
         setState((prevState) => ({
           ...prevState,
           gardens: data,
         }));
       })
       .catch((err) => console.error(err));
-
-    // return axios.get("http://localhost:8080/api/gardens")
-    // .then((gardenData) => {
-    //   setState(prevState => ({
-    //     ...prevState,
-    //       gardens: gardenData
-    //   }))
-    // })
   }
 
   function changeGarden(id) {
@@ -153,13 +145,6 @@ export default function useApplicationData() {
       garden: id,
     }));
   }
-
-  //setState(prevState => ({   ...prevState,   metawords: evt.target.value, }))
-  // ...state,
-  // notificationFormData: {
-  //   ...state.notificationFormData,
-  //   time: newTime,
-  // },
 
   return {
     state,
@@ -171,5 +156,6 @@ export default function useApplicationData() {
     login,
     logout,
     changeGarden,
+    updateAuthState,
   };
 }

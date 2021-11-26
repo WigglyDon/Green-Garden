@@ -4,6 +4,7 @@ import "./Nav.scss";
 
 export default function Nav(props: any) {
   const { state } = props;
+
   return (
     <div className="nav-layout">
       <div className="nav-logo">
