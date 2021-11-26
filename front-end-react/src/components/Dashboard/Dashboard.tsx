@@ -38,9 +38,9 @@ export default function Dashboard(props: any) {
       <div className="dashboard">
         <Map />
         <div className="graphContainer">
-        <GraphThree />
-        <GraphTwo />
         <GraphOne />
+        <GraphTwo />
+        <GraphThree />
         </div>
       </div>
       <Link to="/scheduler">

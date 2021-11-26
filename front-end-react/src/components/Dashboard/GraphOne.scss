@@ -1,25 +1,14 @@
-// #GraphOne{
 
-// // width: 20%!important;
-// // height: 20%!important;
+.graphContainer{
+  display:flex;
+  width: 50%;
 
-// }
+}
 
-// .GraphTwo{
+.layout{
+  display:flex;
+}
 
-//   width: 20%;
-//   height: 20%;
-  
-//   }
-
-//   .GraphThree{
-
-//     width: 20%;
-//     height: 20%;
-    
-//     }
-
-// .graphContainer{
-//   display:flex;
-
-// }
+.dashboard{
+  width: 80%;
+}
