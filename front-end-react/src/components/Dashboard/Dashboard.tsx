@@ -13,7 +13,7 @@ import '../SideBar/index.scss'
 // import GardenCard from "../GardenCard";
 
 export default function Dashboard(props: any) {
-  const { state, handleDayChange, handleTime, bookNotification, createGarden, changeGarden } = props;
+  const { state, handleDayChange, handleTime, bookNotification, createGarden, changeGarden, updateState } = props;
 
 
 
@@ -27,6 +27,7 @@ export default function Dashboard(props: any) {
         <Sidebar 
           state={state} 
           createGarden={createGarden}
+         // updateGardenState={updateGardenState}
           changeGarden={changeGarden}
           />
       </div>
