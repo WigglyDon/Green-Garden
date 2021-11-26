@@ -1,4 +1,5 @@
 const db = require("../");
+
 const getAllUsers = function () {
   const text = `
   SELECT * FROM users
@@ -22,4 +23,16 @@ const putLogin = function () {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
-module.exports = { getAllUsers, putLogin };
+const putLogout = function () {
+  const text = `
+  UPDATE users
+  SET auth = false
+  WHERE id = 1;
+  `;
+  return db
+    .query(text)
+    .then((data) => data.rows)
+    .catch((err) => console.error(this, "query failed", err.stack));
+};
+
+module.exports = { getAllUsers, putLogin, putLogout };

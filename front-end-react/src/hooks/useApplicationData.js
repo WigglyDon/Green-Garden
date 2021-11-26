@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export default function useApplicationData() {
   const [state, setState] = useState({
@@ -19,12 +20,11 @@ export default function useApplicationData() {
     garden: null,
     gardens: [],
     vegetables: {},
-    auth: false,
-    users: {},
+    users: [],
     gardensVegetables: {},
     test: 0,
   });
-
+  const navigate = useNavigate();
   useEffect(() => {
     Promise.all([
       axios.get("http://localhost:8080/api/notifications"),
@@ -103,28 +103,31 @@ export default function useApplicationData() {
         updateGardenState();
       });
   }
-  const login = function () {
-    return axios.put(`http://localhost:8080/api/users`).then(() => {
-      console.log("Sucessful Put!");
-    });
-  };
 
-  const updateAuthState = function () {
+  const updateUserState = function () {
     return axios
       .get("http://localhost:8080/api/users")
-      .then(({ data }) => {
+      .then((data) => {
+        const updatedUser = data.data[0];
         setState((prevState) => ({
           ...prevState,
-          auth: data,
+          users: updatedUser,
         }));
       })
       .catch((err) => console.error(err));
   };
 
+  const login = function () {
+    return axios.put(`http://localhost:8080/api/users/login`).then(() => {
+      console.log("Sucessful Put!");
+      updateUserState();
+    });
+  };
+
   const logout = function () {
-    setState({
-      ...state,
-      auth: false,
+    return axios.put(`http://localhost:8080/api/users/logout`).then(() => {
+      console.log("Sucessful Put!");
+      updateUserState();
     });
   };
 
@@ -157,6 +160,5 @@ export default function useApplicationData() {
     login,
     logout,
     changeGarden,
-    updateAuthState,
   };
 }

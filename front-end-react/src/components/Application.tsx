@@ -19,15 +19,15 @@ export default function Application() {
     bookNotification,
     handleVegetable,
     createGarden,
+    changeGarden,
     login,
     logout,
-    changeGarden,
     //  updateGardenState
   } = useApplicationData();
-  console.log({ state });
+  console.log("state in app", state);
   return (
     <div>
-      <Nav state={state} />
+      <Nav state={state} logout={logout} />
       <Routes>
         <Route path="/" element={<Home state={state} />} />
         <Route path="login" element={<Login state={state} login={login} />} />

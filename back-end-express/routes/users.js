@@ -1,4 +1,8 @@
-const { getAllUsers, putLogin } = require("../db/helpers/user-queries");
+const {
+  getAllUsers,
+  putLogin,
+  putLogout,
+} = require("../db/helpers/user-queries");
 const express = require("express");
 const router = express.Router();
 
@@ -8,8 +12,14 @@ router.get("/", (req, res) => {
     .catch((err) => res.status(500).json({ error: err.message }));
 });
 
-router.put("/", (req, res) => {
+router.put("/login", (req, res) => {
   putLogin()
+    .then((data) => res.status(200).json(data))
+    .catch((err) => res.status(500).json({ error: err.message }));
+});
+
+router.put("/logout", (req, res) => {
+  putLogout()
     .then((data) => res.status(200).json(data))
     .catch((err) => res.status(500).json({ error: err.message }));
 });
