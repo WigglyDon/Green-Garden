@@ -7,7 +7,7 @@ import "./SideBar.scss"
 
 export default function GardenVegetableList(props: any) {
 
-    console.log("VP",props)
+    // console.log("VP",props)
 
   return (
     <div>

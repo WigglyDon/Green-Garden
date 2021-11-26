@@ -82,7 +82,7 @@ export default function useApplicationData() {
   };
 
   function bookNotification(state) {
-    console.log(state);
+    // console.log(state);
     // const time = state.time.toString();  only use to save time as mountain in database
     // console.log(time);
     return axios
@@ -93,14 +93,14 @@ export default function useApplicationData() {
   }
 
   function createGarden(state) {
-    console.log('createGarden', state)
+    // console.log('createGarden', state)
     //const newGarden ;
     //const newGardenId ; 
 
     return axios
       .post(`http://localhost:8080/api/gardens/`, { state })
       .then((res) => {
-        console.log({ res });
+        // console.log({ res });
         console.log("Sucessful Put!");
         updateGardenState()
       });

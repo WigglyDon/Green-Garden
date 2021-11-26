@@ -6,10 +6,15 @@ import axios from "axios";
 
 export default function Home(props:any) {
   const parentState = props;
+
   const [state, setState] = useState({
     vegetables: [],
     query: ''
   });
+
+  // console.log("BIG LAD", state)
+
+
 
   useEffect(() => {
     Promise.all([

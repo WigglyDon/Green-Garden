@@ -8,7 +8,7 @@ import { useState } from 'react';
 export default function GardenCard(props: any) {
   const { garden_name, image, garden, changeGarden } = props;
 
-  console.log('GARDEN CARD PROPS',props.id)
+  // console.log('GARDEN CARD PROPS',props.id)
 
 
 

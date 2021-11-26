@@ -17,7 +17,7 @@ export default function Dashboard(props: any) {
 
 
 
-  console.log("S",state);
+  // console.log("S",state);
 
   //{state.garden === 1 ? <Map /> : state.garden === 2 ? <Graph /> : state.garden === 3 ? <Graph /> : null}
 
