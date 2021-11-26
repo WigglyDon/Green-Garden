@@ -19,7 +19,8 @@ export default function Application() {
     bookNotification,
     handleVegetable,
     createGarden,
-    changeGarden
+    changeGarden,
+  //  updateGardenState
   } = useApplicationData();
 
   return (
@@ -38,6 +39,7 @@ export default function Application() {
               bookNotification={bookNotification}
               handleVegetable={handleVegetable}
               createGarden={createGarden}
+              //updateState= {updateGardenState}
               changeGarden={changeGarden}
             />
           }
