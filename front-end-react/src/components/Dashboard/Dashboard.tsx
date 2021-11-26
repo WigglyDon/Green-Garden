@@ -1,3 +1,4 @@
+// eslint-disable-next-line
 import React from "react";
 import GraphTwo from "./GraphTwo";
 import GraphOne from "./GraphOne";
@@ -13,6 +14,7 @@ import '../SideBar/index.scss'
 // import GardenCard from "../GardenCard";
 
 export default function Dashboard(props: any) {
+  // eslint-disable-next-line
   const { state, handleDayChange, handleTime, bookNotification, createGarden, changeGarden, updateState } = props;
 
 
@@ -33,8 +35,8 @@ export default function Dashboard(props: any) {
       </div>
       <div className="dashboard">
         <Map />
-        <GraphOne />
         <GraphTwo />
+        <GraphOne />
       </div>
       <Link to="/scheduler">
         <Button variant="contained">Set Notifications</Button>

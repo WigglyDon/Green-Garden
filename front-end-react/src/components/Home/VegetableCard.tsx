@@ -11,7 +11,6 @@ import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
 import IconButton, { IconButtonProps } from "@mui/material/IconButton";
 import Collapse from "@mui/material/Collapse";
-import axios from "axios";
 import GardenSelector from "./GardenSelector";
 
 interface ExpandMoreProps extends IconButtonProps {
@@ -29,8 +28,11 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function VegetableCard(props: any) {
+  
   const [expanded, setExpanded] = React.useState(false);
+  // eslint-disable-next-line
   const { state, setState } = props;
+  // eslint-disable-next-line
   const [selectedGarden, setSelectedGarden] = React.useState('');
 
   console.log("VEGETABLE CARD STATE", state);

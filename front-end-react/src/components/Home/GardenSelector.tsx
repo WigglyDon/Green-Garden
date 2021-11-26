@@ -11,6 +11,7 @@ import axios from 'axios'
 export default function GardenSelector(props:any) {
 
   const {state} = props.state;
+  // eslint-disable-next-line
   const {selectedGarden, setSelectedGarden} = props.selectedGarden
   // console.log("selected garden", props.selectedGarden)
 
