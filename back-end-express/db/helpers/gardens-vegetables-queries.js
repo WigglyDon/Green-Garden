@@ -20,7 +20,7 @@ const postGardensVegetables = function (data) {
   const gardenId = data.gardenId;
   const vegetableId = data.vegetableId;
   
-  console.log("IDPAIRS", gardenId, vegetableId)
+  // console.log("IDPAIRS", gardenId, vegetableId)
 
   const text = `
   INSERT INTO gardens_vegetables (garden_id,vegetable_id)

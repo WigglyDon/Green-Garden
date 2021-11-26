@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import GardenCard from "../GardenCard";
 
 export default function GardenCardList(props: any) {
-  console.log("GDL",props)
+  // console.log("GDL",props)
   const { state, changeGarden } = props;
   //gardens array [] to individual garden cards
   const gardenList = state?.gardens?.map((garden: any) => (

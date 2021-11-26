@@ -8,7 +8,7 @@ import GardenVegetableList from "./GardenVegetablesList";
 
 const Sidebar = function (props: any) {
   const { state, createGarden, changeGarden, updateGardenState } = props;
-  console.log('STATE',state);
+  // console.log('STATE',state);
   const [addButton, setAddButton] = useState(true);
   const [gardenID, setGardenID] = useState(null);
 

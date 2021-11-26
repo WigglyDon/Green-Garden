@@ -12,7 +12,7 @@ export default function Home(props:any) {
     query: ''
   });
 
-  console.log("BIG LAD", state)
+  // console.log("BIG LAD", state)
 
 
 

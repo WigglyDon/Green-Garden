@@ -12,20 +12,20 @@ export default function GardenSelector(props:any) {
 
   const {state} = props.state;
   const {selectedGarden, setSelectedGarden} = props.selectedGarden
-  console.log("selected garden", props.selectedGarden)
+  // console.log("selected garden", props.selectedGarden)
 
   const gardens = state.gardens;
 
 
   const handleChange = (event: SelectChangeEvent) => {
     // setSelectedGarden(event.target.value as string);
-    console.log("CLICK ACTION", state)
+    // console.log("CLICK ACTION", state)
 
    
       const gardenId = event.target.value
       const vegetableId = props.currentVegetableId
 
-      console.log({vegetableId})
+      // console.log({vegetableId})
 
       axios
         .post("http://localhost:8080/api/gardensvegetables", {
@@ -38,6 +38,7 @@ export default function GardenSelector(props:any) {
         .catch(function (error) {
           console.log(error);
         });
+        alert("posted to database")
   
   };
 

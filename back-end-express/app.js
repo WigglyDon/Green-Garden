@@ -53,7 +53,7 @@ const timeSplitter = function (string) {
   const hour = hourAndMinSplit[0];
   const min = hourAndMinSplit[1];
   const array = [parseInt(hour), parseInt(min)];
-  console.log("hourMinArray", array);
+  // console.log("hourMinArray", array);
   return array;
 };
 
@@ -71,7 +71,7 @@ const midnightScanner = new CronJob("06 19 * * * ", function () {
           const body = notifications[i].body;
           const phone_number = user[0].phone_number;
           const daysArray = notifications[i].day;
-          console.log("daysArray", daysArray);
+          // console.log("daysArray", daysArray);
           for (let j = 0; j < daysArray.length; j++) {
             // * Seconds: 0-59
             // * Minutes: 0-59
