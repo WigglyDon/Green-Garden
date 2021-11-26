@@ -1,29 +1,16 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import '../Dashboard/GraphOne.scss'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top' as const,
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Bar Chart',
-    },
-  },
-};
-
 export const data = {
-  labels: ['FIRST', 'SECOND', 'THIRD', 'Green', 'Purple', 'Orange'],
+  labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
   datasets: [
     {
       label: '# of Votes',
-      data: [1, 19, 3, 5, 2, 3],
+      data: [19, 12, 3, 5, 2, 3],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -45,6 +32,9 @@ export const data = {
   ],
 };
 
-export default function GraphOne() {
-  return <Pie id="GraphOne" data={data} options={options} />;
+export default function GraphThree() {
+  return <Doughnut 
+  data={data}
+  className="GraphThree"
+   />;
 }

@@ -1,15 +1,19 @@
+// eslint-disable-next-line
 import React from "react";
 import GardenCardList from "../Dashboard/GardenCardList";
 import Empty from "./Empty";
 import Form from "./Form";
 import { useState } from "react";
+// eslint-disable-next-line
 import GardenVegetableList from "./GardenVegetablesList";
 
 
 const Sidebar = function (props: any) {
+  // eslint-disable-next-line
   const { state, createGarden, changeGarden, updateGardenState } = props;
   // console.log('STATE',state);
   const [addButton, setAddButton] = useState(true);
+  // eslint-disable-next-line
   const [gardenID, setGardenID] = useState(null);
 
 
