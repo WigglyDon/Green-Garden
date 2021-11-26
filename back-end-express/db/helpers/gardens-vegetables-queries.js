@@ -15,12 +15,20 @@ const getAllGardenVegetables = function () {
 };
 
 
-const postGardensVegetables = function () {
+const postGardensVegetables = function (data) {
+
+  const gardenId = data.gardenId;
+  const vegetableId = data.vegetableId;
+  
+  console.log("IDPAIRS", gardenId, vegetableId)
+
   const text = `
   INSERT INTO gardens_vegetables (garden_id,vegetable_id)
   VALUES
-  (1,1)
+  (${gardenId}, ${vegetableId})
   `;
+  // ${vegetableid}
+  // ${gardenid}
 
   return db
     .query(text)

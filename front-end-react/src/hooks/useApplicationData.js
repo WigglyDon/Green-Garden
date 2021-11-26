@@ -45,7 +45,7 @@ export default function useApplicationData() {
       .catch((error) => {
         console.log(error);
       });
-  }, [state.gardens]);
+  }, []);
 
   const handleDayChange = (event) => {
     setState({
