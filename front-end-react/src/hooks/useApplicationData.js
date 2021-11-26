@@ -16,6 +16,7 @@ export default function useApplicationData() {
       },
       time: "",
     },
+    garden: null,
     gardens: [],
     vegetables: {},
     auth: false,
@@ -25,6 +26,7 @@ export default function useApplicationData() {
       phone_number: null,
     },
     gardensVegetables: {},
+    test: 0,
   });
 
   useEffect(() => {
@@ -89,7 +91,10 @@ export default function useApplicationData() {
   };
 
   function bookNotification(state) {
-    console.log(state);
+    // console.log(state);
+    // console.log(state);
+    // const time = state.time.toString();  only use to save time as mountain in database
+    // console.log(time);
     return axios
       .post(`http://localhost:8080/api/notifications`, { state })
       .then(() => {
@@ -99,11 +104,16 @@ export default function useApplicationData() {
 
   function createGarden(state) {
     // console.log("GARDEN", state);
+    // console.log('createGarden', state)
+    //const newGarden ;
+    //const newGardenId ;
 
     return axios
       .post(`http://localhost:8080/api/gardens/`, { state })
-      .then(() => {
+      .then((res) => {
+        // console.log({ res });
         console.log("Sucessful Put!");
+        updateGardenState();
       });
   }
 
@@ -120,6 +130,41 @@ export default function useApplicationData() {
       auth: false,
     });
   };
+  function updateGardenState() {
+    return axios
+      .get("http://localhost:8080/api/gardens")
+      .then(({ data }) => {
+        //        console.log("GARDEN DATA", { gardenData })
+        // const {data} = gardenData;
+        setState((prevState) => ({
+          ...prevState,
+          gardens: data,
+        }));
+      })
+      .catch((err) => console.error(err));
+
+    // return axios.get("http://localhost:8080/api/gardens")
+    // .then((gardenData) => {
+    //   setState(prevState => ({
+    //     ...prevState,
+    //       gardens: gardenData
+    //   }))
+    // })
+  }
+
+  function changeGarden(id) {
+    setState((prevState) => ({
+      ...prevState,
+      garden: id,
+    }));
+  }
+
+  //setState(prevState => ({   ...prevState,   metawords: evt.target.value, }))
+  // ...state,
+  // notificationFormData: {
+  //   ...state.notificationFormData,
+  //   time: newTime,
+  // },
 
   return {
     state,
@@ -130,5 +175,6 @@ export default function useApplicationData() {
     createGarden,
     login,
     logout,
+    changeGarden,
   };
 }

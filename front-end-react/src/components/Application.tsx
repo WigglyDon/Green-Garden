@@ -21,6 +21,8 @@ export default function Application() {
     createGarden,
     login,
     logout,
+    changeGarden,
+    //  updateGardenState
   } = useApplicationData();
   console.log(state);
   return (
@@ -39,6 +41,8 @@ export default function Application() {
               bookNotification={bookNotification}
               handleVegetable={handleVegetable}
               createGarden={createGarden}
+              //updateState= {updateGardenState}
+              changeGarden={changeGarden}
             />
           }
         />
