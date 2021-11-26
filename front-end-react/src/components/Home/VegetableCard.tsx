@@ -31,9 +31,9 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 export default function VegetableCard(props: any) {
   const [expanded, setExpanded] = React.useState(false);
   const { state, setState } = props;
-  const [selectedGarden, setSelectedGarden] = React.useState('');
+  const [selectedGarden, setSelectedGarden] = React.useState("");
 
-  console.log("VEGETABLE CARD STATE", state);
+  // console.log("VEGETABLE CARD STATE", state);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -78,10 +78,10 @@ export default function VegetableCard(props: any) {
         unmountOnExit
       >
         <CardContent>
-        {/* <div> THIS CARD ID IS: {props.vegetable.id}</div> */}
+          {/* <div> THIS CARD ID IS: {props.vegetable.id}</div> */}
           <div> Native Region: {props.vegetable.native_region}</div>
           <div> Row Spacing: {props.vegetable.row_spacing}</div>
-         <div>Spread: {props.vegetable.spread}</div>
+          <div>Spread: {props.vegetable.spread}</div>
           <div> Sowing Method: {props.vegetable.sowing_method}</div>
           <div> Tags: {props.vegetable.tags}</div>
           {/* <div> Sun Level: {props.vegetable.sun_level}</div> */}
@@ -89,8 +89,12 @@ export default function VegetableCard(props: any) {
           {/* <div>Growing Days: {props.vegetable.growing_days}</div> */}
           {/* <div> Water Amount: {props.vegetable.water_amount}</div> */}
 
-          <GardenSelector currentVegetableId={props.vegetable.id} state={state} selectedGarden={selectedGarden} />
-          <Button >  Add to Garden </Button>
+          <GardenSelector
+            currentVegetableId={props.vegetable.id}
+            state={state}
+            selectedGarden={selectedGarden}
+          />
+          <Button> Add to Garden </Button>
         </CardContent>
       </Collapse>
     </Card>

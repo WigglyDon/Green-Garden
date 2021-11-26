@@ -20,11 +20,7 @@ export default function useApplicationData() {
     gardens: [],
     vegetables: {},
     auth: false,
-    users: {
-      email: null,
-      password: null,
-      phone_number: null,
-    },
+    users: {},
     gardensVegetables: {},
     test: 0,
   });
@@ -41,8 +37,8 @@ export default function useApplicationData() {
         const notificationsData = all[0].data;
         const gardensData = all[1].data;
         const vegetablesData = all[2].data.data;
-        const gardensVegetablesData = all[3].data;
-        const usersData = all[4].data;
+        const usersData = all[3].data;
+        const gardensVegetablesData = all[4].data;
         setState((prev) => ({
           ...prev,
           notifications: notificationsData,
@@ -116,17 +112,16 @@ export default function useApplicationData() {
         updateGardenState();
       });
   }
-
   const login = function () {
     setState({
-      ...state.auth,
+      ...state,
       auth: true,
     });
   };
 
   const logout = function () {
     setState({
-      ...state.auth,
+      ...state,
       auth: false,
     });
   };

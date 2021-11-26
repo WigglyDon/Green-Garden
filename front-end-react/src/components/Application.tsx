@@ -4,7 +4,7 @@
 // import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import "./Application.scss";
 import useApplicationData from "../hooks/useApplicationData";
-import Nav from "./Nav.jsx";
+import Nav from "./Nav";
 import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Login";
 import Home from "./Home/Home";
@@ -24,7 +24,7 @@ export default function Application() {
     changeGarden,
     //  updateGardenState
   } = useApplicationData();
-  console.log(state);
+  console.log({ state });
   return (
     <div>
       <Nav state={state} logout={logout} />

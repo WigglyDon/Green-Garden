@@ -13,19 +13,17 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { Link } from "react-router-dom";
 
 const theme = createTheme();
 
 export default function Login(props: any) {
-  const { state, login } = props;
+  const { login } = props;
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     //Add email/password validation as stretch
     const data = new FormData(event.currentTarget);
     login();
-    console.log(state.auth);
     console.log({
       email: data.get("email"),
       password: data.get("password"),
@@ -76,16 +74,14 @@ export default function Login(props: any) {
               id="password"
               autoComplete="current-password"
             />
-            <Link to="/">
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                sx={{ mt: 3, mb: 2 }}
-              >
-                Sign In
-              </Button>
-            </Link>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              sx={{ mt: 3, mb: 2 }}
+            >
+              Sign In
+            </Button>
           </Box>
         </Box>
       </Container>
