@@ -90,29 +90,7 @@ export default function VegetableCard(props: any) {
           {/* <div> Water Amount: {props.vegetable.water_amount}</div> */}
 
           <GardenSelector currentVegetableId={props.vegetable.id} state={state} selectedGarden={selectedGarden} />
-          <Button
-            // onClick={() => {
-            //   console.log("ONCLICK ", props.state.state.gardens)
-
-            //   console.log("SELECTED GARDEN", selectedGarden)
-            //   // const selectedGardenId = selectedGarden;
-            //   const tempId = props.state.state.gardens[0].id
-
-            //   axios
-            //     .post("http://localhost:8080/api/gardensvegetables", {
-            //       gardenId: 2,
-            //       vegetableId: 2,
-            //     })
-            //     .then(function (response) {
-            //       console.log(response);
-            //     })
-            //     .catch(function (error) {
-            //       console.log(error);
-            //     });
-            // }}
-          >
-            Add to Garden
-          </Button>
+          <Button >  Add to Garden </Button>
         </CardContent>
       </Collapse>
     </Card>
