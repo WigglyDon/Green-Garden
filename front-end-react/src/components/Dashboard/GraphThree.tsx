@@ -1,6 +1,6 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
-import { Pie } from 'react-chartjs-2';
+import { Doughnut } from 'react-chartjs-2';
 import '../Dashboard/GraphOne.scss'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
@@ -10,7 +10,7 @@ export const data = {
   datasets: [
     {
       label: '# of Votes',
-      data: [12, 19, 3, 5, 2, 3],
+      data: [19, 12, 3, 5, 2, 3],
       backgroundColor: [
         'rgba(255, 99, 132, 0.2)',
         'rgba(54, 162, 235, 0.2)',
@@ -32,6 +32,9 @@ export const data = {
   ],
 };
 
-export default function GraphOne() {
-  return <Pie id="GraphOne" data={data} width={50} height={50} options={{ maintainAspectRatio: false }} />;
+export default function GraphThree() {
+  return <Doughnut 
+  data={data}
+  className="GraphThree"
+   />;
 }

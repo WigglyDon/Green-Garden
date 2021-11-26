@@ -1,4 +1,5 @@
 import React from 'react';
+import '../Dashboard/GraphOne.scss'
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -52,5 +53,5 @@ export const data = {
 };
 
 export default function GraphTwo() {
-  return <Bar options={options} data={data} />;
+  return <Bar className="GraphTwo" options={options} data={data} />;
 }
