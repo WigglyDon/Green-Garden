@@ -47,7 +47,7 @@ export default function Dashboard(props: any) {
         </div>
         <div className="graphContainer half">
           <GraphThree />
-          <GraphOne />
+          <GraphOne state={state.gardensVegetables} />
         </div>
       </div>
       {/* <Link to="/scheduler">
