@@ -3,6 +3,7 @@ import React from "react";
 import GraphTwo from "./GraphTwo";
 import GraphOne from "./GraphOne";
 import GraphThree from "./GraphThree";
+import GraphFour from "./GraphFour";
 // import Scheduler from "../Scheduler/Scheduler";
 import Map from "./Map";
 import { Button } from "@mui/material";
@@ -28,24 +29,30 @@ export default function Dashboard(props: any) {
   return (
     <div className="layout">
       <div className="sidebard">
-        <Sidebar 
-          state={state} 
+        <Sidebar
+          state={state}
           createGarden={createGarden}
-         // updateGardenState={updateGardenState}
+          // updateGardenState={updateGardenState}
           changeGarden={changeGarden}
-          />
+        />
       </div>
+      {/* <Map /> */}
+
       <div className="dashboard">
-        <Map />
-        <div className="graphContainer">
-        <GraphOne />
-        <GraphTwo />
-        <GraphThree />
+        <div className="graphContainer full">
+          <GraphTwo />
+        </div>
+        <div className="graphContainer full">
+          <GraphFour />
+        </div>
+        <div className="graphContainer half">
+          <GraphThree />
+          <GraphOne />
         </div>
       </div>
-      <Link to="/scheduler">
+      {/* <Link to="/scheduler">
         <Button variant="contained">Set Notifications</Button>
-      </Link>
+      </Link> */}
     </div>
   );
 }

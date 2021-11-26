@@ -1,14 +1,39 @@
-
-.graphContainer{
-  display:flex;
-  width: 50%;
-
-}
-
 .layout{
-  display:flex;
+  display: flex;
 }
 
-.dashboard{
-  width: 80%;
+.graphContainer {
+  display: flex;
+  width: 100%;
 }
+
+.full {
+  canvas{
+    max-height: 300px;
+  }
+}
+
+.half {
+  canvas{
+    max-width: 50%;
+    max-height: 300px;
+  }
+}
+
+
+
+
+.ha
+
+.layout {
+  display: flex;
+}
+
+.dashboard {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
