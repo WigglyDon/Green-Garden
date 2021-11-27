@@ -31,7 +31,7 @@ export default function Login(props: any) {
 
     //update db user table auth column to true
     login().then(() => {
-      updateUserState();
+      // updateUserState();
       navigate("/");
     });
   };
