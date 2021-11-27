@@ -4,6 +4,7 @@ import GraphTwo from "./GraphTwo";
 import GraphOne from "./GraphOne";
 import GraphThree from "./SeasonsPieChart";
 import GraphFour from "./GraphFour";
+import { TagsBarGraph } from "./TagsBarGraph";
 // import Scheduler from "../Scheduler/Scheduler";
 import Map from "./Map";
 import { Button } from "@mui/material";
@@ -41,11 +42,17 @@ export default function Dashboard(props: any) {
 
       <div className="dashboard">
         <div className="graphContainer full">
+          {/* vegetable care */}
           <GraphTwo state={state.gardensVegetables} />
         </div>
         <div className="graphContainer half">
-          <SeasonsPieChart state={state.gardensVegetables}/>
+          <SeasonsPieChart state={state.gardensVegetables} />
+
+          {/* garden diversity */}
           <GraphOne state={state.gardensVegetables} />
+        </div>
+        <div className="graphContainer half">
+          <TagsBarGraph state={state.gardensVegetables} />
         </div>
         <div className="graphContainer full">
           <GraphFour />

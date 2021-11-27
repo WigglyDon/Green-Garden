@@ -4,16 +4,16 @@ VALUES
 ('Tomato','https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/5dc3618ef2c1020004f936e4.jpg?1573085580',
 'The tomato is the fruit of the tomato plant, a member of the Nightshade family (Solanaceae). The fruit grows on a small compact bush.',
 'Canada', 60, 45, 45, 'Direct seed indoors and transplant seedlings outside after hardening off',
-'fruit', 20, 'Full Sun','Summer',30),
+'Fruits', 20, 'Full Sun','Summer',30),
 
 -- name, image_url, description, native_region, growing_days, row_spacing, spread, sowing_method, tags, water_amount, sun_level, season, height
-('Carrot', 'https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/58c312395865650004000000.jpg?1489179191', 'The carrot is a root vegetable. It is usually orange in color, but some cultivars are purple, black, red, white, and yellow.' , 'USA', 60, 45, 45, 'direct SEED', 'nothing', 10, 'Full Sun', 'Summer', 5),
+('Carrot', 'https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/58c312395865650004000000.jpg?1489179191', 'The carrot is a root vegetable. It is usually orange in color, but some cultivars are purple, black, red, white, and yellow.' , 'USA', 60, 45, 45, 'direct SEED', 'Roots', 10, 'Full Sun', 'Summer', 5),
 
-('Lettuce', 'https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/576b87bafe8d750003000424.jpg?1466664889', 'Lettuce is a cool weather crop and high temperatures will impede germination and/or cause the plant to bolt (go to seed quickly). Some hybrid cultivars have been bred to be more heat-resistant.', 'CHANGE ME', 60, 45, 45, 'direct SEED', 'nothing', 25, 'Full Sun', 'Winter', 5),
+('Lettuce', 'https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/576b87bafe8d750003000424.jpg?1466664889', 'Lettuce is a cool weather crop and high temperatures will impede germination and/or cause the plant to bolt (go to seed quickly). Some hybrid cultivars have been bred to be more heat-resistant.', 'CHANGE ME', 60, 45, 45, 'direct SEED', 'Nuts', 25, 'Full Sun', 'Winter', 5),
 
-('Strawberry', 'https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/551dc6103732390003730100.jpg?1428014606', 'Strawberries are a hybrid species of the genus Fragaria that produce sweet, bright red fruits. There are three main types of strawberries: 1) summer-fruiting: produce a single, large crop of fruit the year after planting.', 'CHANGE ME', 60, 45, 45, 'direct SEED', 'nothing', 5, 'Full Sun', 'Fall', 5),
+('Strawberry', 'https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/551dc6103732390003730100.jpg?1428014606', 'Strawberries are a hybrid species of the genus Fragaria that produce sweet, bright red fruits. There are three main types of strawberries: 1) summer-fruiting: produce a single, large crop of fruit the year after planting.', 'CHANGE ME', 60, 45, 45, 'direct SEED', 'Grains', 5, 'Full Sun', 'Fall', 5),
 
-('Chili Pepper', 'https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/54ffd15f31343500038b0200.jpg?1426051420', 'The chilli pepper (from Nahuatl chīlli) is the fruit of plants from the genus Capsicum which are members of the nightshade family, Solanaceae. Chilli peppers are widely used in many cuisines as a spice to add heat to dishes.', 'CHANGE ME', 60, 45, 45, 'direct SEED', 'nothing', 28, 'Full Sun', 'Summer', 5),
+('Chili Pepper', 'https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/54ffd15f31343500038b0200.jpg?1426051420', 'The chilli pepper (from Nahuatl chīlli) is the fruit of plants from the genus Capsicum which are members of the nightshade family, Solanaceae. Chilli peppers are widely used in many cuisines as a spice to add heat to dishes.', 'CHANGE ME', 60, 45, 45, 'direct SEED', 'Foilage', 28, 'Full Sun', 'Summer', 5),
 
 ('Mushroom', 'https://s3.amazonaws.com/openfarm-project/production/media/pictures/attachments/576b88b7fe8d75000300042c.jpg?1466665142', 'Mushrooms are the fleshy, spore-bearing, fruiting body of a fungus. Mushrooms often have a stem, a cap, and gills on the underside of the cap - but not always.', 'FRANCE', 60, 45, 45, 'direct SEED', 'nothing', 15, 'Full Sun', 'Summer', 5),
 
