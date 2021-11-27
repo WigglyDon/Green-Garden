@@ -20,6 +20,7 @@ export default function Application() {
     handleVegetable,
     createGarden,
     changeGarden,
+    handleAddVegetable,
     //  updateGardenState
   } = useApplicationData();
 
@@ -30,7 +31,7 @@ export default function Application() {
         <Route 
         path="/" 
         element=
-        {<Home state={state} />} />
+        {<Home parentState={state} handleAddVegetable={handleAddVegetable} />} />
         <Route path="login" element={<Login />} />
         <Route
           path="dashboard"
