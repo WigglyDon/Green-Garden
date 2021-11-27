@@ -4,7 +4,7 @@ import VegetableCardList from "./VegetableCardList";
 import './Home.scss'
 import axios from "axios";
 
-export default function Home(props:any) {
+export default function Home(props: any) {
   const parentState = props;
 
   const [state, setState] = useState({
@@ -38,20 +38,22 @@ export default function Home(props:any) {
 
 
   let vegetables = state.vegetables;
-  
-  const handleChange = (event:any) => {
+
+  const handleChange = (event: any) => {
     setState((prev) => ({
       ...prev,
       query: event.target.value,
     }));
- }
+  }
 
 
 
   return (
     <div className='homepage'>
-      <SearchBar handleChange={handleChange}/>
-      <VegetableCardList state={parentState} vegetables={[vegetables]}/>
+      <SearchBar handleChange={handleChange} />
+      <div className='all-vegetables'>
+        <VegetableCardList state={parentState} vegetables={[vegetables]} />
+      </div>
     </div>
   );
 }

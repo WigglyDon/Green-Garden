@@ -43,12 +43,14 @@ export default function VegetableCard(props: any) {
 
   return (
     <Card className={"VegetableCard"}>
+      <div className='image-container'> 
       <CardMedia
         className={"VegetableCardImage"}
         component="img"
         image={props.vegetable.image_url}
         alt="veggie pic"
       />
+      </div>
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
           {props.vegetable.name}
