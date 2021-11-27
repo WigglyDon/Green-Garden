@@ -57,7 +57,7 @@ export default function VegetableCard(props: any) {
       </CardContent>
       <CardActions>
         <div className="drop-down" onClick={handleExpandClick}>
-          <div className="learn-more"> Learn More </div>
+          <div className="learn-more"> Add to Garden </div>
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
