@@ -163,5 +163,6 @@ export default function useApplicationData() {
     login,
     logout,
     changeGarden,
+    updateUserState,
   };
 }

@@ -17,7 +17,7 @@ import { useNavigate } from "react-router-dom";
 const theme = createTheme();
 
 export default function Login(props: any) {
-  const { login } = props;
+  const { state, login, updateUserState } = props;
   const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
@@ -31,6 +31,7 @@ export default function Login(props: any) {
 
     //update db user table auth column to true
     login().then(() => {
+      updateUserState();
       navigate("/");
     });
   };

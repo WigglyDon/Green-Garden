@@ -22,15 +22,25 @@ export default function Application() {
     changeGarden,
     login,
     logout,
+    updateUserState,
     //  updateGardenState
   } = useApplicationData();
-  console.log("state in app", state);
+  // console.log("state in app", state);
   return (
     <div>
-      <Nav state={state} logout={logout} />
+      <Nav state={state} logout={logout} updateUserState={updateUserState} />
       <Routes>
         <Route path="/" element={<Home state={state} />} />
-        <Route path="login" element={<Login state={state} login={login} />} />
+        <Route
+          path="login"
+          element={
+            <Login
+              updateUserState={updateUserState}
+              state={state}
+              login={login}
+            />
+          }
+        />
         <Route
           path="dashboard"
           element={
