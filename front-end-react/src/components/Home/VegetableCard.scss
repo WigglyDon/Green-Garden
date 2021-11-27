@@ -1,6 +1,6 @@
 .not-logged-in-msg {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
-  // padding-right: 1em;
+  align-items: center;
 }
