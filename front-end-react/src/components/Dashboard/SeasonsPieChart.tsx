@@ -1,15 +1,15 @@
 import React from 'react';
 import { Chart as ChartJS, ArcElement, Tooltip, Legend } from 'chart.js';
 import { Pie } from 'react-chartjs-2';
-import '../Dashboard/GraphOne.scss';
 import { graphDataParser } from '../helpers/graphParser';
 import { graphaDataSculptor } from '../helpers/graphDataSculptor'
 
 ChartJS.register(ArcElement, Tooltip, Legend);
 
-export default function GraphOne(props: any) {
+export default function SeasonsPieChart(props: any) {
   const { state } = props;
-  //console.log("G1 STATE", state)
+
+  console.log("SEA STATE", state)
   const obj = {
     canada: 1,
     changeMe: 2,
@@ -22,18 +22,18 @@ export default function GraphOne(props: any) {
       },
           title: {
             display: true,
-           text: 'Garden Diversity',
+           text: 'Growing Seasons',
           },
     },
   };
 
   const data = {
-    labels: Object.keys(graphaDataSculptor(graphDataParser(state, "native_region"))),
+    labels: Object.keys(graphaDataSculptor(graphDataParser(state, "season"))),
     //graphDataParser(state, "native_region"),
     datasets: [
       {
         label: '# of Votes',
-        data:  Object.values(graphaDataSculptor(graphDataParser(state, "native_region"))),
+        data:  Object.values(graphaDataSculptor(graphDataParser(state, "season"))),
         backgroundColor: [
           'rgba(255, 99, 132, 0.2)',
           'rgba(54, 162, 235, 0.2)',
@@ -55,5 +55,5 @@ export default function GraphOne(props: any) {
     ],
   };
 
-  return <Pie id="GraphOne" data={data} options={options} />;
+  return <Pie id="SeasonsPieChart" data={data} options={options} />;
 }

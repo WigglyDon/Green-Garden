@@ -30,23 +30,43 @@ export default function GraphTwo(props: any) {
   const data = {
     labels,
     datasets: [
+     
+     //orangy color   // backgroundColor: 'rgba(224, 141, 121, 0.2)',
+        // borderColor: 'rgba(224, 141, 121, 1)',
       {
-        label: 'Height',
+        label: 'Seed Spacing',
+        data: graphDataParser(state, 'spread'),
+        backgroundColor: 'rgba(99, 43, 48, 0.2)',
+        borderColor: 'rgba(99, 43, 48, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Water amount',
+        data: graphDataParser(state, 'water_amount'),
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Average Vegetable Height',
         data: graphDataParser(state, 'height'),
-        backgroundColor: 'orange',
+        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+        borderColor: 'rgba(255, 159, 64, 1)',
+        borderWidth: 1
       }
+      
     ],
   };
 
   const options = {
     responsive: true,
     plugins: {
-      // legend: {
-      //   position: 'top' as const,
-      // },
+      legend: {
+        position: 'top' as const,
+      },
       title: {
-        display: false,
-        text: 'Vegetables Height',
+        display: true,
+        text: 'Vegetable Care',
       },
     },
   };

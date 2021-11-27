@@ -2,7 +2,7 @@
 import React from "react";
 import GraphTwo from "./GraphTwo";
 import GraphOne from "./GraphOne";
-import GraphThree from "./GraphThree";
+import GraphThree from "./SeasonsPieChart";
 import GraphFour from "./GraphFour";
 // import Scheduler from "../Scheduler/Scheduler";
 import Map from "./Map";
@@ -11,6 +11,7 @@ import Sidebar from "../SideBar";
 import { Link } from "react-router-dom";
 import '../SideBar/index.scss'
 import '../Dashboard/GraphOne.scss'
+import SeasonsPieChart from "./SeasonsPieChart";
 
 
 // import GardenCardList from "./GardenCardList";
@@ -42,12 +43,12 @@ export default function Dashboard(props: any) {
         <div className="graphContainer full">
           <GraphTwo state={state.gardensVegetables} />
         </div>
+        <div className="graphContainer half">
+          <SeasonsPieChart state={state.gardensVegetables}/>
+          <GraphOne state={state.gardensVegetables} />
+        </div>
         <div className="graphContainer full">
           <GraphFour />
-        </div>
-        <div className="graphContainer half">
-          <GraphThree />
-          <GraphOne state={state.gardensVegetables} />
         </div>
       </div>
       {/* <Link to="/scheduler">

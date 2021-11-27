@@ -118,6 +118,8 @@ export default function useApplicationData() {
 
       }).catch((err) => console.error(err));
 
+      
+
 
 
     // return axios.get("http://localhost:8080/api/gardens")
@@ -130,6 +132,18 @@ export default function useApplicationData() {
 
   }
 
+
+  // function updateGardenVegetableState() {
+  //   return axios.get("http://localhost:8080/api/gardensvegetables")
+  //     .then(({data}) =>  {
+  //       setState(prevState => ({
+  //         ...prevState,
+  //         gardens: data
+  //       }))
+
+  //     }).catch((err) => console.error(err));
+  // }
+
   function changeGarden(id) {
     setState(prevState => ({
       ...prevState,
@@ -138,12 +152,6 @@ export default function useApplicationData() {
   }
 
 
-  //setState(prevState => ({   ...prevState,   metawords: evt.target.value, }))
-  // ...state,
-  // notificationFormData: {
-  //   ...state.notificationFormData,
-  //   time: newTime,
-  // },
 
   return {
     state,
@@ -153,6 +161,5 @@ export default function useApplicationData() {
     bookNotification,
     createGarden,
     changeGarden,
-    //  updateGardenState
   };
 }
