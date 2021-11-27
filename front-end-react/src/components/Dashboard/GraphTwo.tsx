@@ -10,6 +10,8 @@ import {
   Legend,
 } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { AnyRecord } from 'dns';
+import { graphDataParser } from '../helpers/graphParser'
 
 
 ChartJS.register(
@@ -21,37 +23,53 @@ ChartJS.register(
   Legend
 );
 
-export const options = {
-  responsive: true,
-  plugins: {
-    legend: {
-      position: 'top' as const,
-    },
-    title: {
-      display: true,
-      text: 'Chart.js Bar Chart',
-    },
-  },
-};
+export default function GraphTwo(props: any) {
+  const { state } = props;
+  const labels = graphDataParser(state, 'name')
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+  const data = {
+    labels,
+    datasets: [
+     
+     //orangy color   // backgroundColor: 'rgba(224, 141, 121, 0.2)',
+        // borderColor: 'rgba(224, 141, 121, 1)',
+      {
+        label: 'Seed Spacing',
+        data: graphDataParser(state, 'spread'),
+        backgroundColor: 'rgba(153, 102, 255, 0.2)',
+        borderColor: 'rgba(153, 102, 255, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Water amount',
+        data: graphDataParser(state, 'water_amount'),
+        backgroundColor: 'rgba(54, 162, 235, 0.2)',
+        borderColor: 'rgba(54, 162, 235, 1)',
+        borderWidth: 1
+      },
+      {
+        label: 'Average Vegetable Height',
+        data: graphDataParser(state, 'height'),
+        backgroundColor: 'rgba(255, 159, 64, 0.2)',
+        borderColor: 'rgba(255, 159, 64, 1)',
+        borderWidth: 1
+      }
+      
+    ],
+  };
 
-export const data = {
-  labels,
-  datasets: [
-    {
-      label: 'Dataset 1',
-      data: labels.map(() => Math.floor(Math.random() * 100000)),
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
+  const options = {
+    responsive: true,
+    plugins: {
+      legend: {
+        position: 'bottom' as const,
+      },
+      title: {
+        display: true,
+        text: 'Vegetable Care',
+      },
     },
-    {
-      label: 'Dataset 2',
-      data: labels.map(() => Math.floor(Math.random() * 100000)),
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-  ],
-};
+  };
 
-export default function GraphTwo() {
   return <Bar className="GraphTwo" options={options} data={data} />;
 }
