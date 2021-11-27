@@ -39,7 +39,7 @@ export default function VegetableCard(props: any) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
-
+  const email = localStorage?.getItem("email");
   return (
     <Card className={"vegetable-card"}>
       <div className="image-container">
@@ -56,10 +56,9 @@ export default function VegetableCard(props: any) {
           {props.vegetable.description}
         </div>
       </CardContent>
-
       <CardActions>
         <div className="drop-down" onClick={handleExpandClick}>
-          <div className="learn-more"> Add to Garden</div>
+          <div className="learn-more"> Learn More </div>
           <ExpandMore
             expand={expanded}
             onClick={handleExpandClick}
@@ -108,13 +107,20 @@ export default function VegetableCard(props: any) {
           {/* <div> THIS CARD ID IS: {props.vegetable.id}</div> */}
           {/* <div>Spread: {props.vegetable.spread}</div> */}
           {/* <div>Growing Days: {props.vegetable.growing_days}</div> */}
-
-          <GardenSelector
-            currentVegetableId={props.vegetable.id}
-            state={state}
-            selectedGarden={selectedGarden}
-          />
-          <Button> Submit </Button>
+          {email ? (
+            <>
+              <GardenSelector
+                currentVegetableId={props.vegetable.id}
+                state={state}
+                selectedGarden={selectedGarden}
+              />
+              <Button> Submit </Button>
+            </>
+          ) : (
+            <div className="not-logged-in-msg">
+              Please log in first to access add to garden.
+            </div>
+          )}
         </CardContent>
       </Collapse>
     </Card>
