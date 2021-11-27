@@ -13,7 +13,7 @@ router.get("/", (req, res) => {
 });
 
 router.get("/:id", (req, res) => {
-  console.log("req bodyyyyyyyy", req.params)
+  // console.log("req bodyyyyyyyy", req.params)
   //req.params has the id to pass to this function
   getSpecificGardenVegetables(req.params.id)
     .then((data) => res.status(200).json(data))

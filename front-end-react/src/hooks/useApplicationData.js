@@ -147,6 +147,17 @@ export default function useApplicationData() {
   }
 
   function changeGarden(id) {
+
+    return axios
+      .get(`http://localhost:8080/api/gardensvegetables/${id}`)
+      .then(({ data }) => {
+        setState((prevState) => ({
+          ...prevState,
+          gardensVegetables: data,
+        }));
+      })
+      .catch((err) => console.error(err));
+
     setState((prevState) => ({
       ...prevState,
       garden: id,
