@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from "react";
 import SearchBar from "./SearchBar";
 import VegetableCardList from "./VegetableCardList";
-import './Home.scss'
+import Nav from "../Nav";
+import "./Home.scss";
 import axios from "axios";
 
 export default function Home(props: any) {
@@ -9,20 +10,18 @@ export default function Home(props: any) {
 
   const [state, setState] = useState({
     vegetables: [],
-    query: ''
+    query: "",
   });
 
   // console.log("BIG LAD", state)
-
-
 
   useEffect(() => {
     Promise.all([
       axios.get("http://localhost:8080/api/vegetables/search", {
         params: {
-          query: state.query
-        }
-      })
+          query: state.query,
+        },
+      }),
     ])
       .then((all) => {
         const vegetablesData = all[0].data;
@@ -36,7 +35,6 @@ export default function Home(props: any) {
       });
   }, [state.query]);
 
-
   let vegetables = state.vegetables;
 
   const handleChange = (event: any) => {
@@ -44,14 +42,13 @@ export default function Home(props: any) {
       ...prev,
       query: event.target.value,
     }));
-  }
-
-
+  };
 
   return (
-    <div className='homepage'>
+    <div className="homepage">
+      <Nav />
       <SearchBar handleChange={handleChange} />
-      <div className='all-vegetables'>
+      <div className="all-vegetables">
         <VegetableCardList state={parentState} vegetables={[vegetables]} />
       </div>
     </div>
