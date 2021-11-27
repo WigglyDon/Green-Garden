@@ -12,9 +12,6 @@ export default function Home(props: any) {
     query: ''
   });
 
-  // console.log("BIG LAD", state)
-
-
 
   useEffect(() => {
     Promise.all([

@@ -5,7 +5,7 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
+
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
@@ -34,8 +34,6 @@ export default function VegetableCard(props: any) {
   const { state, setState } = props;
   // eslint-disable-next-line
   const [selectedGarden, setSelectedGarden] = React.useState('');
-
-  console.log("VEGETABLE CARD STATE", state);
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -115,7 +113,7 @@ export default function VegetableCard(props: any) {
           {/* <div>Growing Days: {props.vegetable.growing_days}</div> */}
 
           <GardenSelector currentVegetableId={props.vegetable.id} state={state} selectedGarden={selectedGarden} />
-          <Button >  Submit </Button>
+          
         </CardContent>
       </Collapse>
     </Card>
