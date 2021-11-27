@@ -4,9 +4,9 @@
 // import LocalizationProvider from "@mui/lab/LocalizationProvider";
 import "./Application.scss";
 import useApplicationData from "../hooks/useApplicationData";
-import Nav from "./Nav";
 import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Login";
+import Logout from "./Logout";
 import Home from "./Home/Home";
 import Scheduler from "./Scheduler/Scheduler";
 import { Routes, Route } from "react-router-dom";
@@ -26,13 +26,15 @@ export default function Application() {
 
   return (
     <div className="backdrop">
-      <Nav />
       <Routes>
-        <Route 
-        path="/" 
-        element=
-        {<Home parentState={state} handleAddVegetable={handleAddVegetable} />} />
+        <Route
+          path="/"
+          element={
+            <Home parentState={state} handleAddVegetable={handleAddVegetable} />
+          }
+        />
         <Route path="login" element={<Login />} />
+        <Route path="logout" element={<Logout />} />
         <Route
           path="dashboard"
           element={
