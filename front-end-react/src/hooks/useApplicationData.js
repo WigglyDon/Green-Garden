@@ -20,7 +20,7 @@ export default function useApplicationData() {
     gardens: [],
     vegetables: {},
     gardensVegetables: [],
-    test: 0,
+    selected: false,
   });
 
   useEffect(() => {
@@ -147,6 +147,7 @@ export default function useApplicationData() {
   }
 
   function changeGarden(id) {
+    
 
     return axios
       .get(`http://localhost:8080/api/gardensvegetables/${id}`)
@@ -154,14 +155,11 @@ export default function useApplicationData() {
         setState((prevState) => ({
           ...prevState,
           gardensVegetables: data,
+          garden: id,
+          selected:true,
         }));
       })
       .catch((err) => console.error(err));
-
-    setState((prevState) => ({
-      ...prevState,
-      garden: id,
-    }));
   }
 
   return {

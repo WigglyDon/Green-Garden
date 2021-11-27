@@ -4,12 +4,17 @@ import React, { useState } from "react";
 import GardenCard from "../GardenCard";
 
 export default function GardenCardList(props: any) {
-  // console.log("GDL",props)
+
   const { state, changeGarden } = props;
+
+
+  
+  console.log("STATE DOT GARDEN", state);
   //gardens array [] to individual garden cards
   const gardenList = state?.gardens?.map((garden: any) => (
 
     <GardenCard
+      selected={state.selected}
       key={garden.id}
       id={garden.id}
       garden_name={garden.name}
