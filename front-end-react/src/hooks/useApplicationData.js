@@ -122,7 +122,7 @@ export default function useApplicationData() {
   const login = function () {
     return axios.put(`http://localhost:8080/api/users/login`).then(() => {
       console.log("Sucessful Put!");
-      updateUserState();
+      // updateUserState();
     });
   };
 
