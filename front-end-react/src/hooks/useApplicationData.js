@@ -24,7 +24,9 @@ export default function useApplicationData() {
     gardensVegetables: {},
     test: 0,
   });
+
   const navigate = useNavigate();
+
   useEffect(() => {
     Promise.all([
       axios.get("http://localhost:8080/api/notifications"),
@@ -128,6 +130,7 @@ export default function useApplicationData() {
     return axios.put(`http://localhost:8080/api/users/logout`).then(() => {
       console.log("Sucessful Put!");
       updateUserState();
+      navigate("/");
     });
   };
 

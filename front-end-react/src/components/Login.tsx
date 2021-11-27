@@ -13,12 +13,12 @@ import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
-
+import { useNavigate } from "react-router-dom";
 const theme = createTheme();
 
 export default function Login(props: any) {
   const { login } = props;
-
+  const navigate = useNavigate();
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     //Add email/password validation as stretch
@@ -29,7 +29,9 @@ export default function Login(props: any) {
     // });
 
     //update db user table auth column to true
-    login();
+    login().then(() => {
+      navigate("/");
+    });
   };
 
   return (
