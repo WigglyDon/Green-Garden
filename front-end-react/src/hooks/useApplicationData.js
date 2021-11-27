@@ -20,7 +20,7 @@ export default function useApplicationData() {
     gardens: [],
     vegetables: {},
     gardensVegetables: [],
-    test: 0
+    selected: false,
   });
 
   useEffect(() => {
@@ -48,23 +48,21 @@ export default function useApplicationData() {
       });
   }, []);
 
-
   const handleAddVegetable = (gardenId, vegetableId) => {
-    console.log("HANDLE ADD VEGETABLE CALLED", gardenId, vegetableId)
+    console.log("HANDLE ADD VEGETABLE CALLED", gardenId, vegetableId);
     axios
-        .post("http://localhost:8080/api/gardensvegetables", {
-          gardenId,
-          vegetableId,
-        })
-        .then(function (response) {
-          console.log(response)
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-        alert("posted to database")
-    
-  }
+      .post("http://localhost:8080/api/gardensvegetables", {
+        gardenId,
+        vegetableId,
+      })
+      .then(function (response) {
+        updateGardenVegetableState();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+    alert("posted to database");
+  };
 
   const handleDayChange = (event) => {
     setState({
@@ -113,63 +111,56 @@ export default function useApplicationData() {
   function createGarden(state) {
     // console.log('createGarden', state)
     //const newGarden ;
-    //const newGardenId ; 
+    //const newGardenId ;
 
     return axios
       .post(`http://localhost:8080/api/gardens/`, { state })
       .then((res) => {
         // console.log({ res });
         console.log("Sucessful Put!");
-        updateGardenState()
+        updateGardenState();
       });
   }
 
-  function updateGardenState() {
-    return axios.get("http://localhost:8080/api/gardens")
-      .then(({data}) =>  {
-//        console.log("GARDEN DATA", { gardenData })
-      // const {data} = gardenData;
-        setState(prevState => ({
+  function updateGardenVegetableState() {
+    return axios
+      .get("http://localhost:8080/api/gardensvegetables")
+      .then(({ data }) => {
+        setState((prevState) => ({
           ...prevState,
-          gardens: data
-        }))
-
-      }).catch((err) => console.error(err));
-
-      
-
-
-
-    // return axios.get("http://localhost:8080/api/gardens")
-    // .then((gardenData) => {
-    //   setState(prevState => ({
-    //     ...prevState,
-    //       gardens: gardenData
-    //   }))
-    // })
-
+          gardensVegetables: data,
+        }));
+      })
+      .catch((err) => console.error(err));
   }
 
-
-  // function updateGardenVegetableState() {
-  //   return axios.get("http://localhost:8080/api/gardensvegetables")
-  //     .then(({data}) =>  {
-  //       setState(prevState => ({
-  //         ...prevState,
-  //         gardens: data
-  //       }))
-
-  //     }).catch((err) => console.error(err));
-  // }
+  function updateGardenState() {
+    return axios
+      .get("http://localhost:8080/api/gardens")
+      .then(({ data }) => {
+        setState((prevState) => ({
+          ...prevState,
+          gardens: data,
+        }));
+      })
+      .catch((err) => console.error(err));
+  }
 
   function changeGarden(id) {
-    setState(prevState => ({
-      ...prevState,
-      garden: id
-    }))
+    
+
+    return axios
+      .get(`http://localhost:8080/api/gardensvegetables/${id}`)
+      .then(({ data }) => {
+        setState((prevState) => ({
+          ...prevState,
+          gardensVegetables: data,
+          garden: id,
+          selected:true,
+        }));
+      })
+      .catch((err) => console.error(err));
   }
-
-
 
   return {
     state,

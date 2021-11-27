@@ -10,7 +10,7 @@ export default function VegetableCardList(props: any) {
   const mapVegetables = (vegetableList:any) => {
     let vegCards = [];
 
-   console.log("State in VegetableCardList", state)
+  //  console.log("State in VegetableCardList", state)
 
     for (let i = 0; i < vegetableList.length; i++) {
       const vegetable = props.vegetables[0][i];

@@ -15,6 +15,21 @@ const getAllGardenVegetables = function () {
 };
 
 
+const getSpecificGardenVegetables = function (id) {
+  const text = `
+  SELECT *
+  FROM gardens_vegetables
+  INNER JOIN vegetables
+  ON vegetables.id = vegetable_id
+  WHERE garden_id = ${id}
+  `;
+
+  return db
+    .query(text)
+    .then((data) => data.rows)
+    .catch((err) => console.error(this, "query failed", err.stack));
+};
+
 const postGardensVegetables = function (data) {
 
   const gardenId = data.gardenId;
@@ -35,4 +50,4 @@ const postGardensVegetables = function (data) {
     .then((data) => data.rows)
     .catch((err) => console.error(this, "query failed", err.stack));
 };
-module.exports = { getAllGardenVegetables, postGardensVegetables };
+module.exports = { getAllGardenVegetables, postGardensVegetables, getSpecificGardenVegetables };

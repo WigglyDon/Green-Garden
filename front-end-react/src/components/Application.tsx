@@ -25,7 +25,7 @@ export default function Application() {
   } = useApplicationData();
 
   return (
-    <div>
+    <div className="backdrop">
       <Nav />
       <Routes>
         <Route 
