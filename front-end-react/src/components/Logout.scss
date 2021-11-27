@@ -1,3 +1,8 @@
-.logout-button {
-  height: 20px;
+.page {
+  display: flex;
+  // height: 60px;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  // background-color: #2bb449;
 }

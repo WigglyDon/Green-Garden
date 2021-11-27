@@ -6,6 +6,7 @@ import "./Application.scss";
 import useApplicationData from "../hooks/useApplicationData";
 import Dashboard from "./Dashboard/Dashboard";
 import Login from "./Login";
+import Logout from "./Logout";
 import Home from "./Home/Home";
 import Scheduler from "./Scheduler/Scheduler";
 import { Routes, Route } from "react-router-dom";
@@ -27,6 +28,7 @@ export default function Application() {
       <Routes>
         <Route path="/" element={<Home state={state} />} />
         <Route path="login" element={<Login />} />
+        <Route path="logout" element={<Logout />} />
         <Route
           path="dashboard"
           element={

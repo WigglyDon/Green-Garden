@@ -1,16 +1,22 @@
 import React from "react";
 import Logout from "./Logout";
 import { NavLink } from "react-router-dom";
+// import { useNavigate } from "react-router";
 import "./Nav.scss";
 import { useState, useEffect } from "react";
 import { Button } from "@mui/material";
 
 export default function Nav() {
   const [email, setEmail] = useState(localStorage?.getItem("email"));
-
+  // const navigate = useNavigate();
   useEffect(() => {
     setEmail(email);
   }, [email]);
+
+  // const handleClick = () => {
+  //   localStorage.removeItem("email");
+  //   navigate("/");
+  // };
 
   return (
     <div className="nav-layout">
@@ -27,8 +33,8 @@ export default function Nav() {
                 My Gardens
               </NavLink>
             </Button>
-            <NavLink to="/" style={{ textDecoration: "none" }}>
-              <Logout />
+            <NavLink to="/logout" style={{ textDecoration: "none" }}>
+              Logout
             </NavLink>
           </>
         ) : (
