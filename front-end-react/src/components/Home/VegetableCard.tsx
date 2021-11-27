@@ -28,7 +28,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 }));
 
 export default function VegetableCard(props: any) {
-  
+
   const [expanded, setExpanded] = React.useState(false);
   // eslint-disable-next-line
   const { state, setState } = props;
@@ -42,35 +42,38 @@ export default function VegetableCard(props: any) {
   };
 
   return (
-    <Card className={"VegetableCard"}>
-      <CardMedia
-        className={"VegetableCardImage"}
-        component="img"
-        image={props.vegetable.image_url}
-        alt="veggie pic"
-      />
-      <CardContent>
-        <Typography gutterBottom variant="h5" component="div">
+    <Card className={"vegetable-card"}>
+      <div className='image-container'>
+        <CardMedia
+          className={"VegetableCardImage"}
+          component="img"
+          image={props.vegetable.image_url}
+          alt="veggie pic"
+        />
+      </div>
+      <CardContent className='vegetable-textbox'>
+        <div className="vegetable-title">
           {props.vegetable.name}
-        </Typography>
-        <Typography
-          className={"VegetableCardDescription"}
-          variant="body2"
-          color="text.secondary"
-        >
+        </div>
+        <div className="vegetable-description">
           {props.vegetable.description}
-        </Typography>
+        </div>
       </CardContent>
 
       <CardActions>
-        <ExpandMore
-          expand={expanded}
-          onClick={handleExpandClick}
-          aria-expanded={expanded}
-          aria-label="show more"
-        >
-          <ExpandMoreIcon />
-        </ExpandMore>
+
+        <div className='drop-down' onClick={handleExpandClick}>
+          <div className='learn-more'> Add to Garden</div>
+          <ExpandMore
+            expand={expanded}
+            onClick={handleExpandClick}
+            aria-expanded={expanded}
+            aria-label="show more"
+          >
+            <ExpandMoreIcon className='chevron' />
+          </ExpandMore>
+        </div>
+
       </CardActions>
 
       <Collapse
@@ -80,19 +83,39 @@ export default function VegetableCard(props: any) {
         unmountOnExit
       >
         <CardContent>
-        {/* <div> THIS CARD ID IS: {props.vegetable.id}</div> */}
-          <div> Native Region: {props.vegetable.native_region}</div>
-          <div> Row Spacing: {props.vegetable.row_spacing}</div>
-         <div>Spread: {props.vegetable.spread}</div>
-          <div> Sowing Method: {props.vegetable.sowing_method}</div>
-          <div> Tags: {props.vegetable.tags}</div>
-          {/* <div> Sun Level: {props.vegetable.sun_level}</div> */}
-          {/* <div> Height: {props.vegetable.height}</div> */}
+          <div className='vegetable-info'>
+            <div className='info'>
+              <p className='key'>Native Region: </p>
+              <p className='value'> {props.vegetable.native_region}</p>
+            </div>
+            <div className='info'>
+              <p className='key'> Tags: </p>
+              <p className='value'> {props.vegetable.tags}</p>
+            </div>
+            <div className='info'>
+              <p className='key'>Sun Level: </p>
+              <p className='value'> {props.vegetable.sun_level}</p>
+            </div>
+            <div className='info'>
+              <p className='key'> Water Amount: </p>
+              <p className='value'> {props.vegetable.water_amount}</p>
+            </div>
+            <div className='info'>
+              <p className='key'> Height: </p>
+              <p className='value'> {props.vegetable.height}</p>
+            </div>
+            <div className='info'>
+              {/* <p className='key'>Sowing Method: </p> */}
+              <p className='key'> {props.vegetable.sowing_method}</p>
+            </div>
+          </div>
+          {/* <div> Row Spacing: {props.vegetable.row_spacing}</div> */}
+          {/* <div> THIS CARD ID IS: {props.vegetable.id}</div> */}
+          {/* <div>Spread: {props.vegetable.spread}</div> */}
           {/* <div>Growing Days: {props.vegetable.growing_days}</div> */}
-          {/* <div> Water Amount: {props.vegetable.water_amount}</div> */}
 
           <GardenSelector currentVegetableId={props.vegetable.id} state={state} selectedGarden={selectedGarden} />
-          <Button >  Add to Garden </Button>
+          <Button >  Submit </Button>
         </CardContent>
       </Collapse>
     </Card>

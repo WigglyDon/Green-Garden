@@ -1,11 +1,94 @@
-.homepage {
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-  // background-color: slategray;
+$primary-font: "Lato", sans-serif;
+$secondary-font: 'Montserrat', sans-serif;
 
+.homepage{
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.all-vegetables{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vegetable-card-list{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.vegetable-card{
+  width: 25%;
+  margin-right: 4%;
+  margin-left: 4%;
+  margin-top: 5%;
+}
+
+.image-container{
+  img{
+    width: 100%;
+    height: 200px;
+  }
+}
+
+.vegetable-title{
+  font-family: $primary-font;
+  font-size: 30px;
+  border-bottom: solid 1px;
+}
+
+.vegetable-description{
+  font-family: $secondary-font;
+  margin-top: 10px;
+}
+.vegetable-textbox{
+  height: 180px;
+}
+
+.drop-down{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.learn-more{
+  font-family: $secondary-font;
+//  margin-left: 5px;
+}
+
+.vegetable-info{
+  border-bottom: 1px solid grey;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  .info{
+    border-bottom: solid 1px grey;
+    justify-content: space-between;
+  }
+  .key{
+    font-weight: 200;
+  }
+  .value{
+    font-weight: 600;
+  }
+}
 
-  width: 100vw;
-  height: 100vh;
+.css-3ogxn6-MuiButtonBase-root-MuiIconButton-root{
+  width: 10px;
+  height: 10px;
+}
+
+
+.css-1eomvmf-MuiButtonBase-root-MuiIconButton-root{
+  width: 10px;
+  height: 10px;
 }

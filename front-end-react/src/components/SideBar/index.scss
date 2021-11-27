@@ -52,3 +52,14 @@ hr {
 .appointment__card-left{
     width: 80%;
 }
+
+.vegetable-info{
+    display: flex;
+    flex-direction: row;
+
+}
+
+.info{
+    display:flex;
+    justify-content: space-around;
+}

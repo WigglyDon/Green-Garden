@@ -24,6 +24,6 @@ export default function VegetableCardList(props: any) {
 
 
 
-  return <ul className="VegetableCardList">{listVegetables}</ul>;
+  return <div className='vegetable-card-list'>{listVegetables}</div>;
 
 }
