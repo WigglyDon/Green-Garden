@@ -7,22 +7,28 @@ import GraphFour from "./GraphFour";
 import { TagsBarGraph } from "./TagsBarGraph";
 // import Scheduler from "../Scheduler/Scheduler";
 import Map from "./Map";
+import Nav from "../Nav";
 import { Button } from "@mui/material";
 import Sidebar from "../SideBar";
 import { Link } from "react-router-dom";
-import '../SideBar/index.scss'
-import '../Dashboard/GraphOne.scss'
+import "../SideBar/index.scss";
+import "../Dashboard/GraphOne.scss";
 import SeasonsPieChart from "./SeasonsPieChart";
-
 
 // import GardenCardList from "./GardenCardList";
 // import GardenCard from "../GardenCard";
 
 export default function Dashboard(props: any) {
   // eslint-disable-next-line
-  const { state, handleDayChange, handleTime, bookNotification, createGarden, changeGarden, updateState } = props;
-
-
+  const {
+    state,
+    handleDayChange,
+    handleTime,
+    bookNotification,
+    createGarden,
+    changeGarden,
+    updateState,
+  } = props;
 
   // console.log("S",state);
 
@@ -30,6 +36,7 @@ export default function Dashboard(props: any) {
 
   return (
     <div className="layout">
+      <Nav />
       <div className="sidebard">
         <Sidebar
           state={state}
@@ -58,7 +65,7 @@ export default function Dashboard(props: any) {
           <GraphFour />
         </div>
       </div>
-      {/* <Link to="/scheduler">
+      {/* <Link to="/scheduler" style={{ textDecoration: "none" }>
         <Button variant="contained">Set Notifications</Button>
       </Link> */}
     </div>

@@ -1,10 +1,11 @@
 import React from "react";
+import Logout from "./Logout";
 import { NavLink } from "react-router-dom";
 import "./Nav.scss";
 import { useState, useEffect } from "react";
+import { Button } from "@mui/material";
 
 export default function Nav() {
-  // const userEmail = localStorage?.getItem("email");
   const [email, setEmail] = useState(localStorage?.getItem("email"));
 
   useEffect(() => {
@@ -14,16 +15,28 @@ export default function Nav() {
   return (
     <div className="nav-layout">
       <div className="nav-logo">
-        <NavLink to="/">What to grow?</NavLink>
+        <NavLink to="/" style={{ textDecoration: "none" }}>
+          What to Grow?
+        </NavLink>
       </div>
       <div className="nav-links">
-        {console.log({ email })}
         {email ? (
           <>
-            <NavLink to="/dashboard">My Gardens</NavLink> <a href="/">Logout</a>
+            <Button variant="text">
+              <NavLink to="/dashboard" style={{ textDecoration: "none" }}>
+                My Gardens
+              </NavLink>
+            </Button>
+            <NavLink to="/" style={{ textDecoration: "none" }}>
+              <Logout />
+            </NavLink>
           </>
         ) : (
-          <NavLink to="/login">Login</NavLink>
+          <Button variant="text">
+            <NavLink to="/login" style={{ textDecoration: "none" }}>
+              Login
+            </NavLink>
+          </Button>
         )}
       </div>
     </div>
