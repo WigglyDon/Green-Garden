@@ -5,7 +5,7 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-import Button from "@mui/material/Button";
+
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
@@ -31,11 +31,11 @@ export default function VegetableCard(props: any) {
 
   const [expanded, setExpanded] = React.useState(false);
   // eslint-disable-next-line
-  const { state, setState } = props;
+  const { state, handleAddVegetable, vegetable } = props;
   // eslint-disable-next-line
   const [selectedGarden, setSelectedGarden] = React.useState('');
 
-  console.log("VEGETABLE CARD STATE", state);
+  console.log("State in VegetableCard", state)
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
@@ -47,16 +47,16 @@ export default function VegetableCard(props: any) {
         <CardMedia
           className={"VegetableCardImage"}
           component="img"
-          image={props.vegetable.image_url}
+          image={vegetable.image_url}
           alt="veggie pic"
         />
       </div>
       <CardContent className='vegetable-textbox'>
         <div className="vegetable-title">
-          {props.vegetable.name}
+          {vegetable.name}
         </div>
         <div className="vegetable-description">
-          {props.vegetable.description}
+          {vegetable.description}
         </div>
       </CardContent>
 
@@ -86,36 +86,36 @@ export default function VegetableCard(props: any) {
           <div className='vegetable-info'>
             <div className='info'>
               <p className='key'>Native Region: </p>
-              <p className='value'> {props.vegetable.native_region}</p>
+              <p className='value'> {vegetable.native_region}</p>
             </div>
             <div className='info'>
               <p className='key'> Tags: </p>
-              <p className='value'> {props.vegetable.tags}</p>
+              <p className='value'> {vegetable.tags}</p>
             </div>
             <div className='info'>
               <p className='key'>Sun Level: </p>
-              <p className='value'> {props.vegetable.sun_level}</p>
+              <p className='value'> {vegetable.sun_level}</p>
             </div>
             <div className='info'>
               <p className='key'> Water Amount: </p>
-              <p className='value'> {props.vegetable.water_amount}</p>
+              <p className='value'> {vegetable.water_amount}</p>
             </div>
             <div className='info'>
               <p className='key'> Height: </p>
-              <p className='value'> {props.vegetable.height}</p>
+              <p className='value'> {vegetable.height}</p>
             </div>
             <div className='info'>
               {/* <p className='key'>Sowing Method: </p> */}
-              <p className='key'> {props.vegetable.sowing_method}</p>
+              <p className='key'> {vegetable.sowing_method}</p>
             </div>
           </div>
-          {/* <div> Row Spacing: {props.vegetable.row_spacing}</div> */}
-          {/* <div> THIS CARD ID IS: {props.vegetable.id}</div> */}
-          {/* <div>Spread: {props.vegetable.spread}</div> */}
-          {/* <div>Growing Days: {props.vegetable.growing_days}</div> */}
+          {/* <div> Row Spacing: {vegetable.row_spacing}</div> */}
+          {/* <div> THIS CARD ID IS: {vegetable.id}</div> */}
+          {/* <div>Spread: {vegetable.spread}</div> */}
+          {/* <div>Growing Days: {vegetable.growing_days}</div> */}
 
-          <GardenSelector currentVegetableId={props.vegetable.id} state={state} selectedGarden={selectedGarden} />
-          <Button >  Submit </Button>
+          <GardenSelector handleAddVegetable={handleAddVegetable} currentVegetableId={vegetable.id} state={state} selectedGarden={selectedGarden} />
+          
         </CardContent>
       </Collapse>
     </Card>

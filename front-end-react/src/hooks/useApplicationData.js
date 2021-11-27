@@ -48,6 +48,24 @@ export default function useApplicationData() {
       });
   }, []);
 
+
+  const handleAddVegetable = (gardenId, vegetableId) => {
+    console.log("HANDLE ADD VEGETABLE CALLED", gardenId, vegetableId)
+    axios
+        .post("http://localhost:8080/api/gardensvegetables", {
+          gardenId,
+          vegetableId,
+        })
+        .then(function (response) {
+          console.log(response)
+        })
+        .catch(function (error) {
+          console.log(error);
+        });
+        alert("posted to database")
+    
+  }
+
   const handleDayChange = (event) => {
     setState({
       ...state,
@@ -161,5 +179,6 @@ export default function useApplicationData() {
     bookNotification,
     createGarden,
     changeGarden,
+    handleAddVegetable,
   };
 }
