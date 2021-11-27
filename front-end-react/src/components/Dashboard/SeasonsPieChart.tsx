@@ -9,7 +9,7 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 export default function SeasonsPieChart(props: any) {
   const { state } = props;
 
-  console.log("SEA STATE", state)
+  // console.log("SEA STATE", state)
   const obj = {
     canada: 1,
     changeMe: 2,
