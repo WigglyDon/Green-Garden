@@ -40,6 +40,7 @@ app.use("/api/vegetables/search", vegetablesSearchRouter);
 app.use("/api/notifications", notificationsRouter);
 app.use("/api/gardens", gardensRouter);
 app.use("/api/gardensvegetables", gardensVegetablesRouter);
+app.use("/api/gardensvegetables/:id", gardensVegetablesRouter);
 // (CUSTOM TIMES)
 // '00 00 00 * * *' -> Midnight for Demo
 // '0 */10 * * * *' -> Every 10 minutes

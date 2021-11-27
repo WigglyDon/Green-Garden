@@ -20,13 +20,19 @@ export default function Application() {
     handleVegetable,
     createGarden,
     changeGarden,
+    handleAddVegetable,
     //  updateGardenState
   } = useApplicationData();
 
   return (
-    <div>
+    <div className="backdrop">
       <Routes>
-        <Route path="/" element={<Home state={state} />} />
+        <Route
+          path="/"
+          element={
+            <Home parentState={state} handleAddVegetable={handleAddVegetable} />
+          }
+        />
         <Route path="login" element={<Login />} />
         <Route path="logout" element={<Logout />} />
         <Route

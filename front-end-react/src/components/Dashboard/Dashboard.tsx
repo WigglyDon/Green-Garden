@@ -30,7 +30,7 @@ export default function Dashboard(props: any) {
     updateState,
   } = props;
 
-  // console.log("S",state);
+  console.log("State", state);
 
   //{state.garden === 1 ? <Map /> : state.garden === 2 ? <Graph /> : state.garden === 3 ? <Graph /> : null}
 

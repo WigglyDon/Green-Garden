@@ -1,22 +1,28 @@
-// eslint-disable-next-line
 import * as React from 'react';
 import Card from '@mui/material/Card';
 import Typography from '@mui/material/Typography';
 import './GardenCard.scss'
-// eslint-disable-next-line
 import { useState } from 'react';
-
+import classNames from 'classnames';
 
 export default function GardenCard(props: any) {
-  // eslint-disable-next-line
-  const { garden_name, image, garden, changeGarden } = props;
+  const { garden_name, image, garden, changeGarden, id, selected} = props;
+  // const [selected, setSelected] = useState(false);
+  console.log(selected)
 
-  // console.log('GARDEN CARD PROPS',props.id)
+  let gardenClass = classNames("", {
+    "selected": selected
+});
+
+const funktown = function() {
+  changeGarden(id)
+}
 
 
+  console.log("GARDEN", garden)
 
   return (
-    <Card  onClick = {() => changeGarden(props.id)}>
+    <Card  className={gardenClass} onClick = {funktown}>
       <Typography variant="body2" color="text.secondary" className="card-body">
          {garden_name}
       </Typography>

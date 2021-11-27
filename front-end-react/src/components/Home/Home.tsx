@@ -6,14 +6,15 @@ import "./Home.scss";
 import axios from "axios";
 
 export default function Home(props: any) {
-  const parentState = props;
+  const { handleAddVegetable, parentState } = props;
 
   const [state, setState] = useState({
     vegetables: [],
     query: "",
   });
 
-  // console.log("BIG LAD", state)
+  console.log("State in Home", state);
+  console.log("PARENT STATE", parentState);
 
   useEffect(() => {
     Promise.all([
@@ -49,7 +50,11 @@ export default function Home(props: any) {
       <Nav />
       <SearchBar handleChange={handleChange} />
       <div className="all-vegetables">
-        <VegetableCardList state={parentState} vegetables={[vegetables]} />
+        <VegetableCardList
+          handleAddVegetable={handleAddVegetable}
+          state={parentState}
+          vegetables={[vegetables]}
+        />
       </div>
     </div>
   );
