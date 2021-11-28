@@ -36,6 +36,14 @@ export default function Scheduler(props: any) {
         >
           Save Notification
         </Button>
+        <Button
+          className="cancel-button"
+          onClick={() => {
+            setShowNotifications(false);
+          }}
+        >
+          Cancel
+        </Button>
       </div>
     </div>
   );
