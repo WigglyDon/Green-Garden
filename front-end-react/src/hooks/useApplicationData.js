@@ -161,8 +161,19 @@ export default function useApplicationData() {
       .catch((err) => console.error(err));
   }
 
-  const deleteGarden = () => {
-    console.log("hello");
+  const deleteGarden = (id) => {
+    return axios
+      .delete(`http://localhost:8080/api/gardens/${id}`)
+      .then(({ data }) => {
+        setState((prevState) => ({
+          ...prevState,
+          gardensVegetables: data,
+          garden: id,
+          selected: false,
+        }));
+        updateGardenState();
+      })
+      .catch((err) => console.error(err));
   };
   return {
     state,

@@ -36,9 +36,9 @@ export default function Dashboard(props: any) {
     updateState,
     deleteGarden,
   } = props;
-  console.log("state in dashboard", state.garden);
+  // console.log("state in dashboard", state.garden);
   const gardenId = state.garden;
-  console.log("gardenId in dashboard", state);
+  // console.log("gardenId in dashboard", state);
 
   // const notificationsHandler = () => {
   //   setShowNotifications(!showNotifications);

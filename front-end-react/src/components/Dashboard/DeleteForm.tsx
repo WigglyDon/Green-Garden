@@ -5,6 +5,7 @@ import { render } from "@testing-library/react";
 const DeleteForm = function (props: any) {
   const { state, deleteGarden } = props;
   console.log("state in deleteform", state.garden);
+  const gardenID = state.garden;
 
   return (
     <main className="form">
@@ -15,7 +16,7 @@ const DeleteForm = function (props: any) {
         <Button
           className="save-button"
           onClick={() => {
-            deleteGarden();
+            deleteGarden(gardenID);
           }}
         >
           Yes
