@@ -49,7 +49,7 @@ export default function useApplicationData() {
   }, []);
 
   const handleAddVegetable = (gardenId, vegetableId) => {
-    console.log("HANDLE ADD VEGETABLE CALLED", gardenId, vegetableId);
+    // console.log("HANDLE ADD VEGETABLE CALLED", gardenId, vegetableId);
     axios
       .post("http://localhost:8080/api/gardensvegetables", {
         gardenId,
@@ -147,8 +147,6 @@ export default function useApplicationData() {
   }
 
   function changeGarden(id) {
-    
-
     return axios
       .get(`http://localhost:8080/api/gardensvegetables/${id}`)
       .then(({ data }) => {
@@ -171,5 +169,6 @@ export default function useApplicationData() {
     createGarden,
     changeGarden,
     handleAddVegetable,
+    updateGardenVegetableState,
   };
 }

@@ -10,7 +10,7 @@ import GardenVegetableList from "./GardenVegetablesList";
 
 const Sidebar = function (props: any) {
   // eslint-disable-next-line
-  const { state, createGarden, changeGarden, updateGardenState } = props;
+  const { state, createGarden, changeGarden, updateGardenState, updateGardenVegetableState } = props;
   // console.log('STATE',state);
   const [addButton, setAddButton] = useState(true);
   // eslint-disable-next-line
@@ -25,7 +25,7 @@ const Sidebar = function (props: any) {
       <img className='logo' src="https://raw.githubusercontent.com/nikolajjuuel/scheduler/master/public/images/lhl.png" alt="" />
       <h2>My Gardens</h2>
       <hr />
-      <GardenCardList state={state} changeGarden={changeGarden}/>
+      <GardenCardList updateGardenVegetableState={updateGardenVegetableState} state={state} changeGarden={changeGarden}/>
 
 
       {/* <GardenVegetableList 

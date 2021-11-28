@@ -1,30 +1,39 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import Typography from '@mui/material/Typography';
-import './GardenCard.scss'
-import { useState } from 'react';
-import classNames from 'classnames';
+import * as React from "react";
+import Card from "@mui/material/Card";
+import Typography from "@mui/material/Typography";
+import "./GardenCard.scss";
+import { useState } from "react";
+import classNames from "classnames";
 
 export default function GardenCard(props: any) {
-  const { garden_name, image, garden, changeGarden, id, selected} = props;
-  // const [selected, setSelected] = useState(false);
-  console.log(selected)
+  // const [selected, setSelected] = useState(false)
 
-  let gardenClass = classNames("", {
-    "selected": selected
-});
+  const { garden_name, garden, changeGarden, id, selected, setSelected, updateGardenVegetableState } =
+    props;
 
-const funktown = function() {
-  changeGarden(id)
-}
+  let gardenClass = classNames(
+    "", 
+    {selected : selected === id ? true : false,},
+    );
 
 
-  console.log("GARDEN", garden)
+
+  const funktown = function () {
+    changeGarden(id);
+
+    if (selected !== id) {
+      setSelected(id);
+    } else {
+      setSelected(null);
+      updateGardenVegetableState()
+    }
+
+  };
 
   return (
-    <Card  className={gardenClass} onClick = {funktown}>
+    <Card className={gardenClass} onClick={funktown}>
       <Typography variant="body2" color="text.secondary" className="card-body">
-         {garden_name}
+        {garden_name}
       </Typography>
     </Card>
   );

@@ -13,9 +13,6 @@ export default function Home(props: any) {
   });
 
 
-  console.log("State in Home", state)
-  console.log("PARENT STATE", parentState)
-
   useEffect(() => {
     Promise.all([
       axios.get("http://localhost:8080/api/vegetables/search", {

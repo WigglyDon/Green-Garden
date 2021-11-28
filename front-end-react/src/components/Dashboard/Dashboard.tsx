@@ -20,11 +20,11 @@ import SeasonsPieChart from "./SeasonsPieChart";
 
 export default function Dashboard(props: any) {
   // eslint-disable-next-line
-  const { state, handleDayChange, handleTime, bookNotification, createGarden, changeGarden, updateState } = props;
+  const { updateGardenVegetableState, state, handleDayChange, handleTime, bookNotification, createGarden, changeGarden, updateState } = props;
 
   
 
-  console.log("State",state);
+  // console.log("State",state);
 
   //{state.garden === 1 ? <Map /> : state.garden === 2 ? <Graph /> : state.garden === 3 ? <Graph /> : null}
 
@@ -32,6 +32,7 @@ export default function Dashboard(props: any) {
     <div className="layout">
       <div className="sidebard">
         <Sidebar
+        updateGardenVegetableState={updateGardenVegetableState}
           state={state}
           createGarden={createGarden}
           // updateGardenState={updateGardenState}
