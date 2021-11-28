@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { Button } from '@mui/material';
+import React, { useState } from "react";
+import { Button } from "@mui/material";
 // eslint-disable-next-line
-import { render } from '@testing-library/react';
+import { render } from "@testing-library/react";
 
 const Form = function (props: any) {
   // eslint-disable-next-line
@@ -9,25 +9,23 @@ const Form = function (props: any) {
   // eslint-disable-next-line
   const [error, setError] = useState("");
 
+  const [garden, setGarden] = useState("");
+  const [region, setRegion] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
-  const [garden, setGarden] = useState("")
-  const [region, setRegion] = useState("")
-  const [imageUrl, setImageUrl] = useState("")
-
-// eslint-disable-next-line
-  const [selectedFile, setSelectedFile] = useState(null)
-
+  // eslint-disable-next-line
+  const [selectedFile, setSelectedFile] = useState(null);
 
   const newGarden = {
     name: { garden },
     region: { region },
-    image: { imageUrl }
-  }
-
+    image: { imageUrl },
+  };
 
   const reset = () => {
-    setGarden('');
-  }
+    setGarden("");
+    setAddButton(true);
+  };
 
   function validate() {
     if (garden === "") {
@@ -37,22 +35,19 @@ const Form = function (props: any) {
     setError("");
     createGarden(newGarden);
     setAddButton(true);
-  //  updateGardenState();
+    //  updateGardenState();
 
-    setGarden('')
+    setGarden("");
   }
-
 
   const fileSelectedHandler = (event: any) => {
     setSelectedFile(event.target.files[0]);
-  }
-
-
+  };
 
   return (
     <main className="form">
       <section className="appointment__card-left">
-        <form autoComplete="off" onSubmit={event => event.preventDefault()}>
+        <form autoComplete="off" onSubmit={(event) => event.preventDefault()}>
           <input
             className="garden-name-input"
             name="name"
@@ -79,18 +74,20 @@ const Form = function (props: any) {
           />
 
           <input type="file" onChange={fileSelectedHandler} />
-
         </form>
       </section>
       <section className="appointment__card-right">
         <section className="appointment__actions">
-          <Button className='save-button' onClick={validate}>Save</Button>
-          <Button className='cancel-button' onClick={reset}>Cancel</Button>
+          <Button className="save-button" onClick={validate}>
+            Save
+          </Button>
+          <Button className="cancel-button" onClick={reset}>
+            Cancel
+          </Button>
         </section>
       </section>
     </main>
   );
-}
+};
 
 export default Form;
-

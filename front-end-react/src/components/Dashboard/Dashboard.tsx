@@ -5,31 +5,41 @@ import GraphOne from "./GraphOne";
 import GraphThree from "./SeasonsPieChart";
 import GraphFour from "./GraphFour";
 import { TagsBarGraph } from "./TagsBarGraph";
-// import Scheduler from "../Scheduler/Scheduler";
+import Scheduler from "../Scheduler/Scheduler";
 import Map from "./Map";
 import Nav from "../Nav";
-import { Button } from "@mui/material";
+import { Button, formGroupClasses } from "@mui/material";
 import Sidebar from "../SideBar";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../SideBar/index.scss";
 import "../Dashboard/GraphOne.scss";
 import SeasonsPieChart from "./SeasonsPieChart";
+import { useState } from "react";
 
 // import GardenCardList from "./GardenCardList";
 // import GardenCard from "../GardenCard";
 
 export default function Dashboard(props: any) {
   // eslint-disable-next-line
-  const { updateGardenVegetableState, state, handleDayChange, handleTime, bookNotification, createGarden, changeGarden, updateState } = props;
+  const [showNotifications, setShowNotifications] = useState(false);
 
+  const {
+    updateGardenVegetableState,
+    state,
+    handleDayChange,
+    handleTime,
+    bookNotification,
+    createGarden,
+    changeGarden,
+    updateState,
+  } = props;
 
-
-  // console.log("State",state);
-
-  //{state.garden === 1 ? <Map /> : state.garden === 2 ? <Graph /> : state.garden === 3 ? <Graph /> : null}
+  const notificationsHandler = () => {
+    setShowNotifications(!showNotifications);
+  };
 
   return (
-    <div className='main'>
+    <div className="main">
       <Nav />
       <div className="layout">
         <div className="sidebard">
@@ -60,12 +70,26 @@ export default function Dashboard(props: any) {
           <div className="graphContainer full">
             <GraphFour />
           </div>
+
+          <Button variant="contained" onClick={() => {}}>
+            Delete Garden
+          </Button>
+          <Button
+            variant="contained"
+            onClick={() => {
+              notificationsHandler();
+            }}
+          >
+            Set Notifications
+          </Button>
+          {showNotifications ? <Scheduler /> : null}
+          {/* <Button variant="contained">
+             <NavLink to="/scheduler" style={{ textDecoration: "none"}>
+                 Set Notifications
+            </NavLink>
+        </Button> */}
         </div>
-        {/* <Link to="/scheduler" style={{ textDecoration: "none" }>
-        <Button variant="contained">Set Notifications</Button>
-      </Link> */}
       </div>
     </div>
-
   );
 }
