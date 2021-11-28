@@ -34,6 +34,7 @@ export default function Dashboard(props: any) {
     createGarden,
     changeGarden,
     updateState,
+    deleteGarden,
   } = props;
   console.log("state in dashboard", state.garden);
   const gardenId = state.garden;
@@ -81,6 +82,7 @@ export default function Dashboard(props: any) {
           </div>
           {gardenId ? (
             <GardenOptions
+              deleteGarden={deleteGarden}
               state={state}
               showNotifications={showNotifications}
               showDelete={showDelete}

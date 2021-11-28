@@ -161,6 +161,9 @@ export default function useApplicationData() {
       .catch((err) => console.error(err));
   }
 
+  const deleteGarden = () => {
+    console.log("hello");
+  };
   return {
     state,
     handleDayChange,
@@ -171,5 +174,6 @@ export default function useApplicationData() {
     changeGarden,
     handleAddVegetable,
     updateGardenVegetableState,
+    deleteGarden,
   };
 }

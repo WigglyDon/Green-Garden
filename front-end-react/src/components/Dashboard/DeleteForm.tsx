@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { render } from "@testing-library/react";
 
 const DeleteForm = function (props: any) {
-  const { state } = props;
+  const { state, deleteGarden } = props;
   console.log("state in deleteform", state.garden);
 
   return (
@@ -12,7 +12,12 @@ const DeleteForm = function (props: any) {
         <form autoComplete="off" onSubmit={(event) => event.preventDefault()}>
           Are you sure?
         </form>
-        <Button className="save-button" onClick={() => {}}>
+        <Button
+          className="save-button"
+          onClick={() => {
+            deleteGarden();
+          }}
+        >
           Yes
         </Button>
         <Button className="cancel-button" onClick={() => {}}>

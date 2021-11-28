@@ -11,6 +11,7 @@ export default function GardenOptions(props: any) {
     showDelete,
     setShowDelete,
     setShowNotifications,
+    deleteGarden,
   } = props;
 
   const notificationsHandler = () => {
@@ -30,7 +31,9 @@ export default function GardenOptions(props: any) {
       >
         Delete Garden
       </Button>
-      {showDelete ? <DeleteForm state={state} /> : null}
+      {showDelete ? (
+        <DeleteForm state={state} deleteGarden={deleteGarden} />
+      ) : null}
       <Button
         variant="contained"
         onClick={() => {

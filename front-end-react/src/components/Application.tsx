@@ -22,6 +22,7 @@ export default function Application() {
     changeGarden,
     handleAddVegetable,
     updateGardenVegetableState,
+    deleteGarden,
     //  updateGardenState
   } = useApplicationData();
 
@@ -40,7 +41,8 @@ export default function Application() {
           path="dashboard"
           element={
             <Dashboard
-            updateGardenVegetableState={updateGardenVegetableState}
+              deleteGarden={deleteGarden}
+              updateGardenVegetableState={updateGardenVegetableState}
               state={state}
               handleDayChange={handleDayChange}
               handleTime={handleTime}
