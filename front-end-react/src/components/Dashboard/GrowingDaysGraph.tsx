@@ -34,8 +34,8 @@ export default function GrowingDaysGraph(props: any) {
       {
         label: "Growing Days",
         data: graphDataParser(state, "growing_days"),
-        backgroundColor: "rgba(153, 102, 255, 0.2)",
-        borderColor: "rgba(153, 102, 255, 1)",
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
       },
     ],

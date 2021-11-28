@@ -1,83 +1,97 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-$base-color: #c6538c;
-$font-family: "Lato", sans-serif;
+$primary-font: "Lato", sans-serif;
+$family-font: "Lato", sans-serif;
+$secondary-font: "Montserrat", sans-serif;
+$primary-color: #4b966c;
+$secondary-color: #4b966c;
+$links-color: #551b8b;
+$background-color: #f5eee4;
 
 .nav-layout {
-    width: 100%;
-    position: fixed;
-    background-color: transparent;
+  width: 100%;
+  position: fixed;
+  background-color: transparent;
 }
 
-
-
 h2 {
-    font-family: $font-family;
-    color: white;
+  font-family: $primary-font;
+  color: white;
 }
 
 .sidebarItems {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .sidebard {
-    background-color: #57c1aa;
-    width: 25%;
-    height: 100vh;
+  background-color: #57c1aa;
+  width: 25%;
+  height: 100vh;
 }
 
 .garden-card {
-    width: 80%;
+  width: 80%;
 }
 
 .logo {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .garden_add-button {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 hr {
-    width: 80%;
+  width: 80%;
 }
 
 .appointment__actions {
-    display: flex;
+  display: flex;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
 }
 
-.appointment__card-left{
-    width: 80%;
+.appointment__card-left {
+  width: 80%;
 }
 
-.vegetable-info{
-    display: flex;
-    flex-direction: row;
-
+.vegetable-info {
+  display: flex;
+  flex-direction: row;
 }
 
-.info{
-    display:flex;
-    justify-content: space-around;
+.info {
+  display: flex;
+  justify-content: space-around;
 }
 
-.selected{
-    background-color: #328674!important;
+.selected {
+  background-color: #328674 !important;
 }
 
 .notification {
-    position: absolute;
-    top: 0;
-    right: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+////////// Dashboard Styling
+.confirm-btn {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  background: #328674 !important;
+}
+.danger-btn {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+  background: #ec654d !important;
+  color: white !important;
+  margin-left: 10px !important;
 }

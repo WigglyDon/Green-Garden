@@ -15,9 +15,9 @@ import "../SideBar/index.scss";
 import "../Dashboard/GraphOne.scss";
 import SeasonsPieChart from "./SeasonsPieChart";
 import { useState } from "react";
-import DeleteForm from "./DeleteForm";
+// import DeleteForm from "./DeleteForm";
 import GardenOptions from "../GardenOptions";
-import SunLevelGraph from "./GrowingDaysGraph";
+import GrowingDaysGraph from "./GrowingDaysGraph";
 
 // import GardenCardList from "./GardenCardList";
 // import GardenCard from "../GardenCard";
@@ -63,15 +63,13 @@ export default function Dashboard(props: any) {
           </div>
           <div className="graphContainer half">
             <SeasonsPieChart state={state.gardensVegetables} />
-
             {/* garden diversity */}
             <GardenDiversityPolerGraph state={state.gardensVegetables} />
           </div>
           <div className="graphContainer half">
             <TagsBarGraph state={state.gardensVegetables} />
-            <SunLevelGraph state={state.gardensVegetables} />
+            <GrowingDaysGraph state={state.gardensVegetables} />
           </div>
-          <div className="graphContainer full"></div>
           {gardenId ? (
             <GardenOptions
               state={state}
