@@ -1,9 +1,9 @@
 // eslint-disable-next-line
 import React from "react";
-import GraphTwo from "./GraphTwo";
-import GraphOne from "./GraphOne";
+import VegetableCareGraph from "./VegetableCareGraph";
+import GardenDiversityGraph from "./GardenDiversityGraph";
 import GraphThree from "./SeasonsPieChart";
-import GraphFour from "./GraphFour";
+import GardenDiversityPolerGraph from "./GardenDiversityPolerGraph";
 import { TagsBarGraph } from "./TagsBarGraph";
 import Scheduler from "../Scheduler/Scheduler";
 import Map from "./Map";
@@ -15,8 +15,9 @@ import "../SideBar/index.scss";
 import "../Dashboard/GraphOne.scss";
 import SeasonsPieChart from "./SeasonsPieChart";
 import { useState } from "react";
-import DeleteForm from "./DeleteForm";
+// import DeleteForm from "./DeleteForm";
 import GardenOptions from "../GardenOptions";
+import GrowingDaysGraph from "./GrowingDaysGraph";
 
 // import GardenCardList from "./GardenCardList";
 // import GardenCard from "../GardenCard";
@@ -58,19 +59,16 @@ export default function Dashboard(props: any) {
         <div className="dashboard">
           <div className="graphContainer full">
             {/* vegetable care */}
-            <GraphTwo state={state.gardensVegetables} />
+            <VegetableCareGraph state={state.gardensVegetables} />
           </div>
           <div className="graphContainer half">
             <SeasonsPieChart state={state.gardensVegetables} />
-
             {/* garden diversity */}
-            <GraphOne state={state.gardensVegetables} />
+            <GardenDiversityPolerGraph state={state.gardensVegetables} />
           </div>
           <div className="graphContainer half">
             <TagsBarGraph state={state.gardensVegetables} />
-          </div>
-          <div className="graphContainer full">
-            <GraphFour />
+            <GrowingDaysGraph state={state.gardensVegetables} />
           </div>
           {gardenId ? (
             <GardenOptions

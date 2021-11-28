@@ -14,7 +14,8 @@ const DeleteForm = function (props: any) {
           Are you sure?
         </form>
         <Button
-          className="save-button"
+          className="danger-btn"
+          variant="contained"
           onClick={() => {
             deleteGarden(gardenID);
             cancelForm();
@@ -24,7 +25,8 @@ const DeleteForm = function (props: any) {
           Yes
         </Button>
         <Button
-          className="cancel-button"
+          variant="contained"
+          className="danger-btn"
           onClick={() => {
             cancelForm();
           }}

@@ -34,6 +34,7 @@ export default function GardenOptions(props: any) {
   return (
     <div>
       <Button
+        className="danger-btn"
         variant="contained"
         onClick={() => {
           deleteGardenForm();
@@ -49,8 +50,9 @@ export default function GardenOptions(props: any) {
           updateGardenState={updateGardenState}
         />
       ) : null}
-      <div className='notification'>
+      <div className="notification">
         <Button
+          className="confirm-btn"
           variant="contained"
           onClick={() => {
             notificationsHandler();

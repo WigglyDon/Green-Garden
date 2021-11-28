@@ -28,6 +28,7 @@ export default function Scheduler(props: any) {
       </div>
       <div className="scheduler-button-layout">
         <Button
+          className="confirm-btn"
           variant="contained"
           onClick={() => {
             bookNotification(state?.notificationFormData, state.garden);
@@ -37,7 +38,7 @@ export default function Scheduler(props: any) {
           Save Notification
         </Button>
         <Button
-          className="cancel-button"
+          className="danger-btn"
           onClick={() => {
             setShowNotifications(false);
           }}

@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,11 +7,11 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-import { graphDataParser } from '../helpers/graphParser';
-import { graphaDataSculptor } from '../helpers/graphDataSculptor'
-import { sortObject } from '../helpers/sortObject'
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+import { graphDataParser } from "../helpers/graphParser";
+import { graphaDataSculptor } from "../helpers/graphDataSculptor";
+import { sortObject } from "../helpers/sortObject";
 
 ChartJS.register(
   CategoryScale,
@@ -22,15 +22,14 @@ ChartJS.register(
   Legend
 );
 
-
-
 export function TagsBarGraph(props: any) {
   const { state } = props;
-  const sortedArray = sortObject(graphaDataSculptor(graphDataParser(state, "tags")));
-
+  const sortedArray = sortObject(
+    graphaDataSculptor(graphDataParser(state, "tags"))
+  );
 
   const options = {
-    indexAxis: 'y' as const,
+    indexAxis: "y" as const,
     elements: {
       bar: {
         borderWidth: 2,
@@ -39,11 +38,11 @@ export function TagsBarGraph(props: any) {
     responsive: true,
     plugins: {
       legend: {
-        position: 'bottom' as const,
+        position: "bottom" as const,
       },
       title: {
         display: true,
-        text: 'Chart.js Horizontal Bar Chart',
+        text: "Most Common Tags",
       },
     },
   };
@@ -54,19 +53,13 @@ export function TagsBarGraph(props: any) {
     labels,
     datasets: [
       {
-        label: 'Total Number of Tags',
+        label: "Total Number of Tags",
         data: sortedArray.map((values) => values[1]).reverse(),
-        borderColor: 'rgb(255, 99, 132)',
-        backgroundColor: 'rgb(255, 99, 132, 0.5)',
+        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: "rgb(255, 99, 132, 0.5)",
       },
     ],
   };
-
-
-
-
-
-
 
   return <Bar options={options} data={data} />;
 }
