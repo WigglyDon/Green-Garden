@@ -1,13 +1,15 @@
 import React from "react";
 
-export default function SearchBar(props:any) {
+export default function SearchBar(props: any) {
 
   return (
 
     // <input onChange={(e) => setState((prev) => ({ ...prev,  query: e.target.value  }))} type="text" placeholder="enter search here!"></input>
-    <input onChange={props.handleChange} type="text" placeholder="enter search here!"></input>
+    <div className='search'>
+      <input onChange={props.handleChange} type="text" placeholder="enter search here!"></input>
+    </div>
 
-    )
+  )
 }
 
 

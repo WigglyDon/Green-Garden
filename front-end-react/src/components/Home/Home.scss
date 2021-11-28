@@ -1,28 +1,56 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
 $primary-font: "Lato", sans-serif;
-$secondary-font: 'Montserrat', sans-serif;
-
+$secondary-font: "Montserrat", sans-serif;
 
 // .backdrop{
 //   background-image: url("./res/tenor.0.gif");
 //   background-color: #cccccc;
 
 // }
+.nav-layout{
+  width: 100%;
+}
+//front-end-react/public/images/banner.jpeg
+
+.main-img{
+  height: 350px;
+  width: 100%;
+  background-image: url('');
+  background-color: palegreen;
+}
 
 .homepage{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.hero-text{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-title{
+  font-size: 3em;
+  font-family: $secondary-font;
+  font-weight: bolder;
+  color: white;
+}
+
+.all-vegetables {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 10%;
   margin-right: 10%;
 }
 
-.all-vegetables{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.vegetable-card-list{
+.vegetable-card-list {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -30,35 +58,35 @@ $secondary-font: 'Montserrat', sans-serif;
   justify-content: center;
 }
 
-.vegetable-card{
+.vegetable-card {
   width: 25%;
   margin-right: 4%;
   margin-left: 4%;
   margin-top: 5%;
 }
 
-.image-container{
-  img{
+.image-container {
+  img {
     width: 100%;
     height: 200px;
   }
 }
 
-.vegetable-title{
+.vegetable-title {
   font-family: $primary-font;
   font-size: 30px;
   border-bottom: solid 1px;
 }
 
-.vegetable-description{
+.vegetable-description {
   font-family: $secondary-font;
   margin-top: 10px;
 }
-.vegetable-textbox{
+.vegetable-textbox {
   height: 180px;
 }
 
-.drop-down{
+.drop-down {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -68,34 +96,40 @@ $secondary-font: 'Montserrat', sans-serif;
   padding: 8px;
 }
 
-.learn-more{
+.learn-more {
   font-family: $secondary-font;
-//  margin-left: 5px;
+  //  margin-left: 5px;
 }
 
-.vegetable-info{
+.vegetable-info {
   border-bottom: 1px solid grey;
   display: flex;
   flex-direction: column;
-  .info{
+  .info {
     border-bottom: solid 1px grey;
     justify-content: space-between;
   }
-  .key{
+  .key {
     font-weight: 200;
   }
-  .value{
+  .value {
     font-weight: 600;
   }
 }
 
-.css-3ogxn6-MuiButtonBase-root-MuiIconButton-root{
+.search {
+  width: 73%;
+  input {
+    width: 100%;
+  }
+}
+
+.css-3ogxn6-MuiButtonBase-root-MuiIconButton-root {
   width: 10px;
   height: 10px;
 }
 
-
-.css-1eomvmf-MuiButtonBase-root-MuiIconButton-root{
+.css-1eomvmf-MuiButtonBase-root-MuiIconButton-root {
   width: 10px;
   height: 10px;
 }

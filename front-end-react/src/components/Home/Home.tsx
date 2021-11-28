@@ -48,6 +48,13 @@ export default function Home(props: any) {
   return (
     <div className="homepage">
       <Nav />
+      <div className='main-img'>
+        <div className='hero-text'>
+          <div className='hero-title'>
+            What to Grow?
+          </div>
+        </div>
+      </div>
       <SearchBar handleChange={handleChange} />
       <div className="all-vegetables">
         <VegetableCardList

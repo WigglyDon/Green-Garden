@@ -20,63 +20,52 @@ import SeasonsPieChart from "./SeasonsPieChart";
 
 export default function Dashboard(props: any) {
   // eslint-disable-next-line
-<<<<<<< HEAD
   const { updateGardenVegetableState, state, handleDayChange, handleTime, bookNotification, createGarden, changeGarden, updateState } = props;
 
-  
+
 
   // console.log("State",state);
-=======
-  const {
-    state,
-    handleDayChange,
-    handleTime,
-    bookNotification,
-    createGarden,
-    changeGarden,
-    updateState,
-  } = props;
-
-  console.log("State", state);
->>>>>>> master
 
   //{state.garden === 1 ? <Map /> : state.garden === 2 ? <Graph /> : state.garden === 3 ? <Graph /> : null}
 
   return (
-    <div className="layout">
+    <div className='main'>
       <Nav />
-      <div className="sidebard">
-        <Sidebar
-        updateGardenVegetableState={updateGardenVegetableState}
-          state={state}
-          createGarden={createGarden}
-          // updateGardenState={updateGardenState}
-          changeGarden={changeGarden}
-        />
-      </div>
-      {/* <Map /> */}
+      <div className="layout">
+        <div className="sidebard">
+          <Sidebar
+            updateGardenVegetableState={updateGardenVegetableState}
+            state={state}
+            createGarden={createGarden}
+            // updateGardenState={updateGardenState}
+            changeGarden={changeGarden}
+          />
+        </div>
+        {/* <Map /> */}
 
-      <div className="dashboard">
-        <div className="graphContainer full">
-          {/* vegetable care */}
-          <GraphTwo state={state.gardensVegetables} />
-        </div>
-        <div className="graphContainer half">
-          <SeasonsPieChart state={state.gardensVegetables} />
+        <div className="dashboard">
+          <div className="graphContainer full">
+            {/* vegetable care */}
+            <GraphTwo state={state.gardensVegetables} />
+          </div>
+          <div className="graphContainer half">
+            <SeasonsPieChart state={state.gardensVegetables} />
 
-          {/* garden diversity */}
-          <GraphOne state={state.gardensVegetables} />
+            {/* garden diversity */}
+            <GraphOne state={state.gardensVegetables} />
+          </div>
+          <div className="graphContainer half">
+            <TagsBarGraph state={state.gardensVegetables} />
+          </div>
+          <div className="graphContainer full">
+            <GraphFour />
+          </div>
         </div>
-        <div className="graphContainer half">
-          <TagsBarGraph state={state.gardensVegetables} />
-        </div>
-        <div className="graphContainer full">
-          <GraphFour />
-        </div>
-      </div>
-      {/* <Link to="/scheduler" style={{ textDecoration: "none" }>
+        {/* <Link to="/scheduler" style={{ textDecoration: "none" }>
         <Button variant="contained">Set Notifications</Button>
       </Link> */}
+      </div>
     </div>
+
   );
 }
