@@ -6,7 +6,7 @@ export default function SearchBar(props: any) {
 
     // <input onChange={(e) => setState((prev) => ({ ...prev,  query: e.target.value  }))} type="text" placeholder="enter search here!"></input>
     <div className='search'>
-      <input onChange={props.handleChange} type="text" placeholder="enter search here!"></input>
+      <input onChange={props.handleChange} type="text" placeholder="Find your next crop!"></input>
     </div>
 
   )
