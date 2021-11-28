@@ -7,16 +7,19 @@ import classNames from "classnames";
 
 export default function GardenCard(props: any) {
   // const [selected, setSelected] = useState(false)
+  const {
+    garden_name,
+    garden,
+    changeGarden,
+    id,
+    selected,
+    setSelected,
+    updateGardenVegetableState,
+  } = props;
 
-  const { garden_name, garden, changeGarden, id, selected, setSelected, updateGardenVegetableState } =
-    props;
-
-  let gardenClass = classNames(
-    "", 
-    {selected : selected === id ? true : false,},
-    );
-
-
+  let gardenClass = classNames("", {
+    selected: selected === id ? true : false,
+  });
 
   const funktown = function () {
     changeGarden(id);
@@ -25,9 +28,8 @@ export default function GardenCard(props: any) {
       setSelected(id);
     } else {
       setSelected(null);
-      updateGardenVegetableState()
+      updateGardenVegetableState();
     }
-
   };
 
   return (

@@ -15,6 +15,8 @@ import "../SideBar/index.scss";
 import "../Dashboard/GraphOne.scss";
 import SeasonsPieChart from "./SeasonsPieChart";
 import { useState } from "react";
+import DeleteForm from "./DeleteForm";
+import GardenOptions from "../GardenOptions";
 
 // import GardenCardList from "./GardenCardList";
 // import GardenCard from "../GardenCard";
@@ -22,7 +24,7 @@ import { useState } from "react";
 export default function Dashboard(props: any) {
   // eslint-disable-next-line
   const [showNotifications, setShowNotifications] = useState(false);
-
+  const [showDelete, setShowDelete] = useState(false);
   const {
     updateGardenVegetableState,
     state,
@@ -33,10 +35,17 @@ export default function Dashboard(props: any) {
     changeGarden,
     updateState,
   } = props;
+  console.log("state in dashboard", state.garden);
+  const gardenId = state.garden;
+  console.log("gardenId in dashboard", state);
 
-  const notificationsHandler = () => {
-    setShowNotifications(!showNotifications);
-  };
+  // const notificationsHandler = () => {
+  //   setShowNotifications(!showNotifications);
+  // };
+
+  // const deleteGardenForm = () => {
+  //   setShowDelete(!showDelete);
+  // };
 
   return (
     <div className="main">
@@ -70,19 +79,15 @@ export default function Dashboard(props: any) {
           <div className="graphContainer full">
             <GraphFour />
           </div>
-
-          <Button variant="contained" onClick={() => {}}>
-            Delete Garden
-          </Button>
-          <Button
-            variant="contained"
-            onClick={() => {
-              notificationsHandler();
-            }}
-          >
-            Set Notifications
-          </Button>
-          {showNotifications ? <Scheduler /> : null}
+          {gardenId ? (
+            <GardenOptions
+              state={state}
+              showNotifications={showNotifications}
+              showDelete={showDelete}
+              setShowNotifications={setShowNotifications}
+              setShowDelete={setShowDelete}
+            />
+          ) : null}
           {/* <Button variant="contained">
              <NavLink to="/scheduler" style={{ textDecoration: "none"}>
                  Set Notifications

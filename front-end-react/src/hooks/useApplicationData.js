@@ -128,6 +128,7 @@ export default function useApplicationData() {
       .then(({ data }) => {
         setState((prevState) => ({
           ...prevState,
+          garden: null,
           gardensVegetables: data,
         }));
       })
@@ -154,7 +155,7 @@ export default function useApplicationData() {
           ...prevState,
           gardensVegetables: data,
           garden: id,
-          selected:true,
+          selected: true,
         }));
       })
       .catch((err) => console.error(err));
