@@ -24,7 +24,7 @@ export default function Scheduler(props: any) {
         <Button
           variant="contained"
           onClick={() => {
-            bookNotification(state.notificationFormData);
+            bookNotification(state?.notificationFormData, state.garden);
           }}
         >
           Save Notification

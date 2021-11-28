@@ -36,22 +36,20 @@ export default function Dashboard(props: any) {
     updateState,
     deleteGarden,
     updateGardenState,
+    handleVegetable,
   } = props;
   // console.log("state in dashboard", state.garden);
   const gardenId = state.garden;
-  // console.log("gardenId in dashboard", state);
-
-  // const notificationsHandler = () => {
-  //   setShowNotifications(!showNotifications);
-  // };
-
-  // const deleteGardenForm = () => {
-  //   setShowDelete(!showDelete);
-  // };
-
   return (
     <div className="main">
       <Nav />
+      <Scheduler
+        handleTime={handleTime}
+        state={state}
+        handleDayChange={handleDayChange}
+        bookNotification={bookNotification}
+        handleVegetable={handleVegetable}
+      />
       <div className="layout">
         <div className="sidebard">
           <Sidebar
@@ -83,9 +81,13 @@ export default function Dashboard(props: any) {
           </div>
           {gardenId ? (
             <GardenOptions
+              state={state}
+              handleDayChange={handleDayChange}
+              handleTime={handleTime}
+              bookNotification={bookNotification}
+              handleVegetable={handleVegetable}
               updateGardenState={updateGardenState}
               deleteGarden={deleteGarden}
-              state={state}
               showNotifications={showNotifications}
               showDelete={showDelete}
               setShowNotifications={setShowNotifications}

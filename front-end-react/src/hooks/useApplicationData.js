@@ -97,14 +97,13 @@ export default function useApplicationData() {
     });
   };
 
-  function bookNotification(state) {
-    // console.log(state);
-    // const time = state.time.toString();  only use to save time as mountain in database
-    // console.log(time);
+  function bookNotification(state, id) {
+    const gardenID = id;
+    console.log("state bookNoti", state);
     return axios
-      .post(`http://localhost:8080/api/notifications`, { state })
+      .post(`http://localhost:8080/api/notifications`, { state, gardenID })
       .then(() => {
-        console.log("Sucessful Put!");
+        console.log("Sucessful Notification Put!");
       });
   }
 

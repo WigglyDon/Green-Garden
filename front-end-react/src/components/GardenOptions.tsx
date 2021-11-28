@@ -13,6 +13,10 @@ export default function GardenOptions(props: any) {
     setShowNotifications,
     deleteGarden,
     updateGardenState,
+    handleTime,
+    handleDayChange,
+    bookNotification,
+    handleVegetable,
   } = props;
 
   const notificationsHandler = () => {
@@ -53,7 +57,15 @@ export default function GardenOptions(props: any) {
       >
         Set Notifications
       </Button>
-      {showNotifications ? <Scheduler /> : null}
+      {showNotifications ? (
+        <Scheduler
+          state={state}
+          handleDayChange={handleDayChange}
+          handleTime={handleTime}
+          bookNotification={bookNotification}
+          handleVegetable={handleVegetable}
+        />
+      ) : null}
     </div>
   );
 }
