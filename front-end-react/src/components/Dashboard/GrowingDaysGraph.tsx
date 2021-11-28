@@ -22,9 +22,9 @@ ChartJS.register(
   Legend
 );
 
-export default function GraphTwo(props: any) {
+export default function GrowingDaysGraph(props: any) {
   const { state } = props;
-  const labels = graphDataParser(state, "sun_level");
+  const labels = graphDataParser(state, "name");
 
   const data = {
     labels,
@@ -32,8 +32,8 @@ export default function GraphTwo(props: any) {
       //orangy color   // backgroundColor: 'rgba(224, 141, 121, 0.2)',
       // borderColor: 'rgba(224, 141, 121, 1)',
       {
-        label: "Sun Levels",
-        data: graphDataParser(state, ""),
+        label: "Growing Days",
+        data: graphDataParser(state, "growing_days"),
         backgroundColor: "rgba(153, 102, 255, 0.2)",
         borderColor: "rgba(153, 102, 255, 1)",
         borderWidth: 1,
@@ -49,7 +49,7 @@ export default function GraphTwo(props: any) {
       },
       title: {
         display: true,
-        text: "Sun Level",
+        text: "Growing Days",
       },
     },
   };

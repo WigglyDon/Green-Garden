@@ -1,5 +1,5 @@
-import React from 'react';
-import '../Dashboard/GraphOne.scss'
+import React from "react";
+import "../Dashboard/GraphOne.scss";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,11 +8,10 @@ import {
   Title,
   Tooltip,
   Legend,
-} from 'chart.js';
-import { Bar } from 'react-chartjs-2';
-import { AnyRecord } from 'dns';
-import { graphDataParser } from '../helpers/graphParser'
-
+} from "chart.js";
+import { Bar } from "react-chartjs-2";
+import { AnyRecord } from "dns";
+import { graphDataParser } from "../helpers/graphParser";
 
 ChartJS.register(
   CategoryScale,
@@ -25,36 +24,34 @@ ChartJS.register(
 
 export default function GraphTwo(props: any) {
   const { state } = props;
-  const labels = graphDataParser(state, 'name')
+  const labels = graphDataParser(state, "name");
 
   const data = {
     labels,
     datasets: [
-     
-     //orangy color   // backgroundColor: 'rgba(224, 141, 121, 0.2)',
-        // borderColor: 'rgba(224, 141, 121, 1)',
+      //orangy color   // backgroundColor: 'rgba(224, 141, 121, 0.2)',
+      // borderColor: 'rgba(224, 141, 121, 1)',
       {
-        label: 'Seed Spacing',
-        data: graphDataParser(state, 'spread'),
-        backgroundColor: 'rgba(153, 102, 255, 0.2)',
-        borderColor: 'rgba(153, 102, 255, 1)',
-        borderWidth: 1
+        label: "Seed Spacing",
+        data: graphDataParser(state, "spread"),
+        backgroundColor: "rgba(153, 102, 255, 0.2)",
+        borderColor: "rgba(153, 102, 255, 1)",
+        borderWidth: 1,
       },
       {
-        label: 'Water amount',
-        data: graphDataParser(state, 'water_amount'),
-        backgroundColor: 'rgba(54, 162, 235, 0.2)',
-        borderColor: 'rgba(54, 162, 235, 1)',
-        borderWidth: 1
+        label: "Water amount",
+        data: graphDataParser(state, "water_amount"),
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "rgba(54, 162, 235, 1)",
+        borderWidth: 1,
       },
       {
-        label: 'Average Vegetable Height',
-        data: graphDataParser(state, 'height'),
-        backgroundColor: 'rgba(255, 159, 64, 0.2)',
-        borderColor: 'rgba(255, 159, 64, 1)',
-        borderWidth: 1
-      }
-      
+        label: "Average Vegetable Height",
+        data: graphDataParser(state, "height"),
+        backgroundColor: "rgba(255, 159, 64, 0.2)",
+        borderColor: "rgba(255, 159, 64, 1)",
+        borderWidth: 1,
+      },
     ],
   };
 
@@ -62,11 +59,11 @@ export default function GraphTwo(props: any) {
     responsive: true,
     plugins: {
       legend: {
-        position: 'bottom' as const,
+        position: "bottom" as const,
       },
       title: {
         display: true,
-        text: 'Vegetable Care',
+        text: "Vegetable Care",
       },
     },
   };

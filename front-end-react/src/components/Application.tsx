@@ -25,7 +25,7 @@ export default function Application() {
     deleteGarden,
     updateGardenState,
   } = useApplicationData();
-
+  console.log("state in app", state);
   return (
     <div className="backdrop">
       <Routes>

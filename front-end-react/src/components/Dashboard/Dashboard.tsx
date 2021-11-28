@@ -17,7 +17,7 @@ import SeasonsPieChart from "./SeasonsPieChart";
 import { useState } from "react";
 import DeleteForm from "./DeleteForm";
 import GardenOptions from "../GardenOptions";
-import SunLevelGraph from "./SunLevelGraph";
+import SunLevelGraph from "./GrowingDaysGraph";
 
 // import GardenCardList from "./GardenCardList";
 // import GardenCard from "../GardenCard";
