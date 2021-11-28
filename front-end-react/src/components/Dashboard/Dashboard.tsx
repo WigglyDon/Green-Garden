@@ -43,13 +43,6 @@ export default function Dashboard(props: any) {
   return (
     <div className="main">
       <Nav />
-      <Scheduler
-        handleTime={handleTime}
-        state={state}
-        handleDayChange={handleDayChange}
-        bookNotification={bookNotification}
-        handleVegetable={handleVegetable}
-      />
       <div className="layout">
         <div className="sidebard">
           <Sidebar
