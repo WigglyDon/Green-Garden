@@ -3,7 +3,7 @@ import { Button } from "@mui/material";
 import { render } from "@testing-library/react";
 
 const DeleteForm = function (props: any) {
-  const { state, deleteGarden } = props;
+  const { state, deleteGarden, cancelForm, updateGardenState } = props;
   console.log("state in deleteform", state.garden);
   const gardenID = state.garden;
 
@@ -17,11 +17,18 @@ const DeleteForm = function (props: any) {
           className="save-button"
           onClick={() => {
             deleteGarden(gardenID);
+            cancelForm();
+            updateGardenState();
           }}
         >
           Yes
         </Button>
-        <Button className="cancel-button" onClick={() => {}}>
+        <Button
+          className="cancel-button"
+          onClick={() => {
+            cancelForm();
+          }}
+        >
           No
         </Button>
       </section>

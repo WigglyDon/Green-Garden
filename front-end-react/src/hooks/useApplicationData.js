@@ -141,6 +141,7 @@ export default function useApplicationData() {
       .then(({ data }) => {
         setState((prevState) => ({
           ...prevState,
+          garden: null,
           gardens: data,
         }));
       })
@@ -186,5 +187,6 @@ export default function useApplicationData() {
     handleAddVegetable,
     updateGardenVegetableState,
     deleteGarden,
+    updateGardenState,
   };
 }
