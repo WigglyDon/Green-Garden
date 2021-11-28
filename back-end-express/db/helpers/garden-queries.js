@@ -42,9 +42,9 @@ const deleteAGarden = function (data) {
 
 const postNewGarden = function (data) {
   const text = `
-  INSERT INTO gardens (user_id,name,image_url,region)
+  INSERT INTO gardens (user_id,name)
   VALUES
-  (1,'${data.name.garden}','${data.image.imageUrl}', '${data.region.region}')
+  (1,'${data.name.garden}')
   `;
   return db
     .query(text)
