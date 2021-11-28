@@ -13,8 +13,8 @@ export default function Home(props: any) {
     query: "",
   });
 
-  console.log("State in Home", state);
-  console.log("PARENT STATE", parentState);
+  // console.log("State in Home", state);
+  // console.log("PARENT STATE", parentState);
 
   useEffect(() => {
     Promise.all([
