@@ -11,7 +11,7 @@ CREATE TABLE vegetables (
     sowing_method VARCHAR(255),
     tags VARCHAR(255),
     water_amount INTEGER,
-    sun_level VARCHAR(255),
+    sun_level INTEGER,
     season VARCHAR(255),
     height INTEGER
 );
