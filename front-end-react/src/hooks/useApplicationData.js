@@ -61,7 +61,7 @@ export default function useApplicationData() {
       .catch(function (error) {
         console.log(error);
       });
-    alert("posted to database");
+    alert("Posted to Garden");
   };
 
   const handleDayChange = (event) => {
