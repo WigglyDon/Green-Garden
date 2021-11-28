@@ -3,43 +3,78 @@
 
 $primary-font: "Lato", sans-serif;
 $secondary-font: "Montserrat", sans-serif;
+$primary-color:  #4b966c;
+$secondary-color:#4b966c;
+$links-color: #551b8b;
+$background-color:#f5eee4;
 
 // .backdrop{
 //   background-image: url("./res/tenor.0.gif");
 //   background-color: #cccccc;
 
 // }
-.nav-layout{
+.nav-layout {
   width: 100%;
+}
+
+.nav-links {
+  color: $links-color;
+  font-family: $primary-font;
+  font-weight: bold;
 }
 //front-end-react/public/images/banner.jpeg
 
-.main-img{
-  height: 350px;
-  width: 100%;
-  background-image: url('');
-  background-color: palegreen;
+.faSeedling {
+  color: $primary-color;
+  margin-right: 5px;
 }
 
-.homepage{
+a {
+  margin-left: 15px;
+}
+
+.nav-logo {
+  font-family: $primary-font;
+  color: $links-color;
+  font-weight: bold;
+}
+
+.main-img {
+  height: 463px;
+  width: 100%;
+  background-image: url("../../images/what-to-grow-banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.homepage {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: $background-color;
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
 }
 
-.hero-text{
+.hero-text {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   height: 100%;
   width: 100%;
+  margin-top: 30px;
 }
 
-.hero-title{
+.hero-title {
   font-size: 3em;
   font-family: $secondary-font;
   font-weight: bolder;
-  color: white;
+  color: $links-color;
+}
+
+.hero-description{
+  margin-top: 10px;
+
 }
 
 .all-vegetables {
@@ -119,9 +154,25 @@ $secondary-font: "Montserrat", sans-serif;
 
 .search {
   width: 73%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   input {
-    width: 100%;
+    width: 99%;
+    padding: 10px;
+    margin-top: 55px;
+    font-family: "Lato";
+    font-size: 20px;
+    border-radius: 5px;
   }
+}
+
+.search-icon {
+  position: absolute;
+  top: 73px;
+  right: 20px;
 }
 
 .css-3ogxn6-MuiButtonBase-root-MuiIconButton-root {
@@ -132,4 +183,42 @@ $secondary-font: "Montserrat", sans-serif;
 .css-1eomvmf-MuiButtonBase-root-MuiIconButton-root {
   width: 10px;
   height: 10px;
+}
+///////// LOGIN PAGE STYLING
+.login {
+  display: flex;
+  height: 100vh;
+  width: 100%;
+}
+.login-form {
+  width: 50%;
+  margin-top: 10%;
+}
+
+.login-image {
+  background-image: url(https://images.pexels.com/photos/3094208/pexels-photo-3094208.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940);
+  width: 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.avatar{
+  background-color: #446b88!important;
+  height: 70px!important;
+  width: 70px!important;
+  img{
+    height: 46px;
+  }
+}
+
+
+.login-btn{
+  background-color: #446b88 !important;
+}
+
+.login-form{
+  .out{
+    margin-top: -15%
+  }
 }

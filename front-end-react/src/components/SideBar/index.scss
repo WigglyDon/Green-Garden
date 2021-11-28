@@ -3,6 +3,14 @@
 $base-color: #c6538c;
 $font-family: "Lato", sans-serif;
 
+.nav-layout {
+    width: 100%;
+    position: fixed;
+    background-color: transparent;
+}
+
+
+
 h2 {
     font-family: $font-family;
     color: white;
@@ -66,4 +74,10 @@ hr {
 
 .selected{
     background-color: #328674!important;
+}
+
+.notification {
+    position: absolute;
+    top: 0;
+    right: 0;
 }

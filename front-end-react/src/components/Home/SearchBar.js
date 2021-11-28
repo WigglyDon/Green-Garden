@@ -1,13 +1,23 @@
 import React from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCoffee, faSeedling, faSearch } from '@fortawesome/free-solid-svg-icons'
 
-export default function SearchBar(props: any) {
+
+
+const seed = <FontAwesomeIcon icon={faSeedling} />
+
+
+
+export default function SearchBar(props) {
 
   return (
 
     // <input onChange={(e) => setState((prev) => ({ ...prev,  query: e.target.value  }))} type="text" placeholder="enter search here!"></input>
     <div className='search'>
-      <input onChange={props.handleChange} type="text" placeholder="enter search here!"></input>
+        <input onChange={props.handleChange} type="text" placeholder='Find your next crop!'></input>
+        <FontAwesomeIcon className='search-icon' icon={faSearch} />
     </div>
+
 
   )
 }
