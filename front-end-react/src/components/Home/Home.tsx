@@ -53,6 +53,9 @@ export default function Home(props: any) {
           <div className='hero-title'>
             What to Grow?
           </div>
+          <div className='hero-description'>
+            What we are all about
+          </div>
         </div>
       </div>
       <SearchBar handleChange={handleChange} />

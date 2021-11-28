@@ -49,14 +49,16 @@ export default function GardenOptions(props: any) {
           updateGardenState={updateGardenState}
         />
       ) : null}
-      <Button
-        variant="contained"
-        onClick={() => {
-          notificationsHandler();
-        }}
-      >
-        Set Notifications
-      </Button>
+      <div className='notification'>
+        <Button
+          variant="contained"
+          onClick={() => {
+            notificationsHandler();
+          }}
+        >
+          Set Notifications
+        </Button>
+      </div>
       {showNotifications ? (
         <Scheduler
           showNotifications={showNotifications}
