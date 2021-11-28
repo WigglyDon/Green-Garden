@@ -54,7 +54,7 @@ export default function Home(props: any) {
             What to Grow?
           </div>
           <div className='hero-description'>
-            What we are all about
+            Keep your plants happy and never miss a watering day!
           </div>
         </div>
       </div>
