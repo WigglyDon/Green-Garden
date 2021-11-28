@@ -35,7 +35,7 @@ export default function VegetableCard(props: any) {
   // eslint-disable-next-line
   const [selectedGarden, setSelectedGarden] = React.useState('');
 
-  console.log("State in VegetableCard", state)
+  // console.log("State in VegetableCard", state)
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
