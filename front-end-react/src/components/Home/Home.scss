@@ -121,6 +121,7 @@ $secondary-font: "Montserrat", sans-serif;
 
 .search {
   width: 73%;
+  position: relative;
   input {
     width: 100%;
     padding: 10px;
@@ -129,6 +130,12 @@ $secondary-font: "Montserrat", sans-serif;
     font-size: 20px;
     border-radius: 5px;
   }
+}
+
+.search-icon{
+  position: absolute;
+  top: 73px;
+  right: 0;
 }
 
 .css-3ogxn6-MuiButtonBase-root-MuiIconButton-root {
