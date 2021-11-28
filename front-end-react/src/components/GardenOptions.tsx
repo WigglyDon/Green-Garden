@@ -59,6 +59,8 @@ export default function GardenOptions(props: any) {
       </Button>
       {showNotifications ? (
         <Scheduler
+          showNotifications={showNotifications}
+          setShowNotifications={setShowNotifications}
           state={state}
           handleDayChange={handleDayChange}
           handleTime={handleTime}

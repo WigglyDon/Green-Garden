@@ -7,7 +7,13 @@ import TimePicker from "./TimePicker";
 import "./Scheduler.scss";
 
 export default function Scheduler(props: any) {
-  const { state, handleDayChange, handleTime, bookNotification } = props;
+  const {
+    state,
+    handleDayChange,
+    handleTime,
+    bookNotification,
+    setShowNotifications,
+  } = props;
   return (
     <div className="scheduler-layout">
       <div className="picker-layout">
@@ -25,6 +31,7 @@ export default function Scheduler(props: any) {
           variant="contained"
           onClick={() => {
             bookNotification(state?.notificationFormData, state.garden);
+            setShowNotifications(false);
           }}
         >
           Save Notification
