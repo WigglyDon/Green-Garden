@@ -1,9 +1,9 @@
 // eslint-disable-next-line
 import React from "react";
-import GraphTwo from "./GraphTwo";
-import GraphOne from "./GraphOne";
+import VegetableCareGraph from "./VegetableCareGraph";
+import GardenDiversityGraph from "./GardenDiversityGraph";
 import GraphThree from "./SeasonsPieChart";
-import GraphFour from "./GraphFour";
+import GardenDiversityPolerGraph from "./GardenDiversityPolerGraph";
 import { TagsBarGraph } from "./TagsBarGraph";
 import Scheduler from "../Scheduler/Scheduler";
 import Map from "./Map";
@@ -59,21 +59,19 @@ export default function Dashboard(props: any) {
         <div className="dashboard">
           <div className="graphContainer full">
             {/* vegetable care */}
-            <GraphTwo state={state.gardensVegetables} />
+            <VegetableCareGraph state={state.gardensVegetables} />
           </div>
           <div className="graphContainer half">
             <SeasonsPieChart state={state.gardensVegetables} />
 
             {/* garden diversity */}
-            <GraphOne state={state.gardensVegetables} />
+            <GardenDiversityPolerGraph state={state.gardensVegetables} />
           </div>
           <div className="graphContainer half">
             <TagsBarGraph state={state.gardensVegetables} />
             <SunLevelGraph state={state.gardensVegetables} />
           </div>
-          <div className="graphContainer full">
-            <GraphFour />
-          </div>
+          <div className="graphContainer full"></div>
           {gardenId ? (
             <GardenOptions
               state={state}

@@ -22,7 +22,7 @@ ChartJS.register(
   Legend
 );
 
-export default function GraphTwo(props: any) {
+export default function VegetableCareGraph(props: any) {
   const { state } = props;
   const labels = graphDataParser(state, "name");
 
@@ -32,10 +32,10 @@ export default function GraphTwo(props: any) {
       //orangy color   // backgroundColor: 'rgba(224, 141, 121, 0.2)',
       // borderColor: 'rgba(224, 141, 121, 1)',
       {
-        label: "Seed Spacing",
-        data: graphDataParser(state, "spread"),
-        backgroundColor: "rgba(153, 102, 255, 0.2)",
-        borderColor: "rgba(153, 102, 255, 1)",
+        label: "Sun Level",
+        data: graphDataParser(state, "sun_level"),
+        backgroundColor: "rgba(255, 206, 86, 0.2)",
+        borderColor: "rgba(255, 206, 86, 1)",
         borderWidth: 1,
       },
       {
@@ -46,17 +46,18 @@ export default function GraphTwo(props: any) {
         borderWidth: 1,
       },
       {
-        label: "Sun Level",
-        data: graphDataParser(state, "sun_level"),
-        backgroundColor: "rgba(255, 206, 86, 0.2)",
-        borderColor: "rgba(255, 206, 86, 1)",
+        label: "Seed Spacing",
+        data: graphDataParser(state, "spread"),
+        backgroundColor: "rgba(153, 102, 255, 0.2)",
+        borderColor: "rgba(153, 102, 255, 1)",
         borderWidth: 1,
       },
+
       {
         label: "Average Vegetable Height",
         data: graphDataParser(state, "height"),
-        backgroundColor: "rgba(255, 159, 64, 0.2)",
-        borderColor: "rgba(255, 159, 64, 1)",
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(75, 192, 192, 1)",
         borderWidth: 1,
       },
     ],
