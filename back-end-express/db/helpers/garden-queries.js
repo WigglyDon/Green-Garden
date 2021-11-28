@@ -30,25 +30,21 @@ const getAllGardenNames = function () {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
-// const postNotification = function () {
-//   //   ? = ANY (notifications.day)
-//   // ? is the day int 0-6
-//   const text = `
-//   INSERT INTO notifications (garden_id, day, hour, minute, body)
-//   VALUES
-//   (1,[6],12,55,'this means saturday, 4:25 pm for garden id 1')
-//   `;
-//   return db
-//     .query(text)
-//     .then((data) => data.rows)
-//     .catch((err) => console.error(this, "query failed", err.stack));
-// };
+const deleteAGarden = function (data) {
+  const text = `
+  DELETE FROM gardens WHERE id = ${data};
+  `;
+  return db
+    .query(text)
+    .then((data) => data.rows)
+    .catch((err) => console.error(this, "query failed", err.stack));
+};
 
 const postNewGarden = function (data) {
   const text = `
-  INSERT INTO gardens (user_id,name,image_url,region)
+  INSERT INTO gardens (user_id,name)
   VALUES
-  (1,'${data.name.garden}','${data.image.imageUrl}', '${data.region.region}')
+  (1,'${data.name.garden}')
   `;
   return db
     .query(text)
@@ -60,4 +56,5 @@ module.exports = {
   getAllGardens,
   postNewGarden,
   getAllGardenNames,
+  deleteAGarden,
 };

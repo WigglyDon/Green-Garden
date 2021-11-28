@@ -61,7 +61,7 @@ export default function useApplicationData() {
       .catch(function (error) {
         console.log(error);
       });
-    alert("posted to database");
+    alert("Posted to Garden");
   };
 
   const handleDayChange = (event) => {
@@ -97,14 +97,13 @@ export default function useApplicationData() {
     });
   };
 
-  function bookNotification(state) {
-    // console.log(state);
-    // const time = state.time.toString();  only use to save time as mountain in database
-    // console.log(time);
+  function bookNotification(state, id) {
+    const gardenID = id;
+    console.log("state bookNoti", state);
     return axios
-      .post(`http://localhost:8080/api/notifications`, { state })
+      .post(`http://localhost:8080/api/notifications`, { state, gardenID })
       .then(() => {
-        console.log("Sucessful Put!");
+        console.log("Sucessful Notification Put!");
       });
   }
 
@@ -128,6 +127,7 @@ export default function useApplicationData() {
       .then(({ data }) => {
         setState((prevState) => ({
           ...prevState,
+          garden: null,
           gardensVegetables: data,
         }));
       })
@@ -140,6 +140,7 @@ export default function useApplicationData() {
       .then(({ data }) => {
         setState((prevState) => ({
           ...prevState,
+          garden: null,
           gardens: data,
         }));
       })
@@ -154,12 +155,26 @@ export default function useApplicationData() {
           ...prevState,
           gardensVegetables: data,
           garden: id,
-          selected:true,
+          selected: true,
         }));
       })
       .catch((err) => console.error(err));
   }
 
+  const deleteGarden = (id) => {
+    return axios
+      .delete(`http://localhost:8080/api/gardens/${id}`)
+      .then(({ data }) => {
+        setState((prevState) => ({
+          ...prevState,
+          gardensVegetables: data,
+          garden: id,
+          selected: false,
+        }));
+        updateGardenState();
+      })
+      .catch((err) => console.error(err));
+  };
   return {
     state,
     handleDayChange,
@@ -170,5 +185,7 @@ export default function useApplicationData() {
     changeGarden,
     handleAddVegetable,
     updateGardenVegetableState,
+    deleteGarden,
+    updateGardenState,
   };
 }

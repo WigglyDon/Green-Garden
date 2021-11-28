@@ -11,9 +11,12 @@ const getAllNotifications = function () {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
-const postNotification = function (notificationFormData) {
+const postNotification = function (notificationFormData, id) {
   //   ? = ANY (notifications.day)
   // ? is the day int 0-6
+
+  // console.log("id in PostNoti", id);
+  console.log("nofiformdata", notificationFormData);
 
   const getDayNumber = (daysObj) => {
     let arr = [];
@@ -32,7 +35,7 @@ const postNotification = function (notificationFormData) {
   const text = `
   INSERT INTO notifications (garden_id, day, time, body)
   VALUES
-  (1,ARRAY ${numbersArrayString}, '${timeinUTC}','Please water your garden now!')
+  (${id},ARRAY ${numbersArrayString}, '${timeinUTC}','Please water your garden now!')
 `;
   return db
     .query(text)
