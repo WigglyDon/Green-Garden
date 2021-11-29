@@ -19,7 +19,7 @@ export default function Nav() {
       <div className="nav-logo">
         <NavLink to="/" style={{ textDecoration: "none" }}>
           <FontAwesomeIcon className='faSeedling' icon={faSeedling} />
-          What to Grow?
+          Green Garden
         </NavLink>
       </div>
       <div className="nav-links">

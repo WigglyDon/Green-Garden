@@ -53,6 +53,7 @@ a {
   align-items: center;
   background-color: $background-color;
   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  padding-bottom: 400px;
 }
 
 .hero-text {
@@ -67,7 +68,7 @@ a {
 
 .hero-title {
   font-size: 3em;
-  font-family: $secondary-font;
+  font-family: $primary-font;
   font-weight: bolder;
   color: $links-color;
 }

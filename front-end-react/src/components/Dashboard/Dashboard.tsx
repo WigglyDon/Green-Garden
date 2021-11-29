@@ -109,9 +109,6 @@ export default function Dashboard(props: any) {
             </NavLink>
         </Button> */}
         </div>
-        <div className='footer'>
-          Im a FOOOTER
-        </div>
       </div>
     </div>
   );

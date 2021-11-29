@@ -51,10 +51,10 @@ export default function Home(props: any) {
       <div className='main-img'>
         <div className='hero-text'>
           <div className='hero-title'>
-            What to Grow?
+            Green Garden
           </div>
           <div className='hero-description'>
-            Keep your plants happy and never miss a watering day!
+            Keep your plants <em> <strong> happy</strong> </em> and <em> <strong> never miss</strong></em> a watering day!
           </div>
         </div>
       </div>
