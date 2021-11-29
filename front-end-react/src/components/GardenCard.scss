@@ -1,19 +1,19 @@
-.MuiTypography-root{
+ .MuiTypography-root{
       color: #8395a7;
-      height: 5rem;
+       height: 5rem;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-     // margin-top: 15px;
+        margin-top: 15px;
   
-      &:hover {
-        cursor: pointer;
-        background-color: #328674;
-        color: white;
-      }
+//       &:hover {
+//         cursor: pointer;
+//         background-color: #328674;
+//         color: white;
+    //   }
   
-  }
+   }
 
 .MuiPaper-root{
       margin-top: 20px

@@ -22,6 +22,9 @@ export default function Scheduler(props: any) {
             <DayPicker state={state} handleDayChange={handleDayChange} />
           </div>
           <div className="timepicker-layout">
+            <div className='notifications-title'>
+              Schedule Water Notification
+            </div>
             <TimePicker state={state} handleTime={handleTime} />
           </div>
         </LocalizationProvider>

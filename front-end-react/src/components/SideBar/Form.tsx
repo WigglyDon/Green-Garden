@@ -33,7 +33,7 @@ const Form = function (props: any) {
   }
 
   return (
-    <main className="form">
+    <main className="garden-form">
       <section className="appointment__card-left">
         <form autoComplete="off" onSubmit={(event) => event.preventDefault()}>
           <input

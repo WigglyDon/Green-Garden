@@ -8,33 +8,39 @@ const DeleteForm = function (props: any) {
   const gardenID = state.garden;
 
   return (
-    <main className="form">
-      <section className="delete-form">
-        <form autoComplete="off" onSubmit={(event) => event.preventDefault()}>
-          Are you sure?
-        </form>
-        <Button
-          className="danger-btn"
-          variant="contained"
-          onClick={() => {
-            deleteGarden(gardenID);
-            cancelForm();
-            updateGardenState();
-          }}
-        >
-          Yes
-        </Button>
-        <Button
-          variant="contained"
-          className="danger-btn"
-          onClick={() => {
-            cancelForm();
-          }}
-        >
-          No
-        </Button>
-      </section>
-    </main>
+    <div className='delete-modal'>
+      <main className="form">
+        <section className="delete-form">
+          <div className='delete-from-title'>
+            Are you sure you want to delete this garden?
+
+          </div>
+          <div className='delete-buttons'>
+            <Button
+              className="danger-btn"
+              variant="contained"
+              onClick={() => {
+                deleteGarden(gardenID);
+                cancelForm();
+                updateGardenState();
+              }}
+            >
+              Delete
+            </Button>
+            <Button
+              variant="outlined"
+              className="cancel-btn"
+              onClick={() => {
+                cancelForm();
+              }}
+            >
+              Cancel
+            </Button>
+          </div>
+        </section>
+      </main>
+    </div>
+
   );
 };
 
