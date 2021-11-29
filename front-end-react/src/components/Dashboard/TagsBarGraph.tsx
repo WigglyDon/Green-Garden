@@ -43,6 +43,9 @@ export function TagsBarGraph(props: any) {
       title: {
         display: true,
         text: "Most Common Tags",
+        font: {
+          size: 20,
+        },
       },
     },
   };
