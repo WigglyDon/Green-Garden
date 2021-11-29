@@ -110,6 +110,7 @@ hr {
 
 .scheduler-layout{
   position: absolute;
+  width: 590px;
   top: 15%;
   left: 45%;
   background-color: white;
@@ -120,9 +121,10 @@ hr {
 }
 
 .notifications-title{
-  font-family: $primary-font;
+  font-family: $primary-font!important;
   text-align: center;
   padding: 10px;
+  font-size: 2rem;
 }
 
 
@@ -146,6 +148,8 @@ hr {
 
 .css-ahj2mt-MuiTypography-root{
   height: 5px!important;
+  font-family: $secondary-font!important;
+
 }
 
 // .MuiTypography-root{
