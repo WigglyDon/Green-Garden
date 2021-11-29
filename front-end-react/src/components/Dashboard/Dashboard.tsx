@@ -14,7 +14,7 @@ import { Link, NavLink } from "react-router-dom";
 import "../SideBar/index.scss";
 import "../Dashboard/GraphOne.scss";
 import SeasonsPieChart from "./SeasonsPieChart";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 // import DeleteForm from "./DeleteForm";
 import GardenOptions from "../GardenOptions";
 import GrowingDaysGraph from "./GrowingDaysGraph";
@@ -23,9 +23,10 @@ import GrowingDaysGraph from "./GrowingDaysGraph";
 // import GardenCard from "../GardenCard";
 
 export default function Dashboard(props: any) {
-  // eslint-disable-next-line
   const [showNotifications, setShowNotifications] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
+  const [gardenName, setGardenName] = useState("All Gardens");
+  console.log("gardenName", gardenName);
   const {
     updateGardenVegetableState,
     state,
@@ -39,14 +40,26 @@ export default function Dashboard(props: any) {
     updateGardenState,
     handleVegetable,
   } = props;
-  // console.log("state in dashboard", state.garden);
+
   const gardenId = state.garden;
+
+  useEffect(() => {
+    if (!gardenId) {
+      setGardenName("All Gardens");
+    }
+    for (let garden of state.gardens) {
+      if (garden.id === gardenId) {
+        setGardenName(garden.name);
+      }
+    }
+  }, [gardenId]);
+
   return (
     <div className="main">
-      <div className='nav-dash'>
-      <Nav />
+      <div className="nav-dash">
+        <Nav />
       </div>
-    
+
       <div className="layout">
         <div className="sidebard">
           <Sidebar
@@ -58,8 +71,8 @@ export default function Dashboard(props: any) {
           />
         </div>
         {/* <Map /> */}
-
         <div className="dashboard">
+          <div className="garden-name">{gardenName}</div>
           <div className="graphContainer full">
             {/* vegetable care */}
             <VegetableCareGraph state={state.gardensVegetables} />
