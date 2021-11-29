@@ -25,8 +25,8 @@ import GrowingDaysGraph from "./GrowingDaysGraph";
 export default function Dashboard(props: any) {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
-  let [gardenName, setGardenName] = useState("My Gardens Dashboard");
-
+  const [gardenName, setGardenName] = useState("All Gardens");
+  console.log("gardenName", gardenName);
   const {
     updateGardenVegetableState,
     state,
@@ -42,9 +42,16 @@ export default function Dashboard(props: any) {
   } = props;
 
   const gardenId = state.garden;
-  console.log(gardenId);
+
   useEffect(() => {
-    setGardenName(state?.gardens[gardenId - 1]?.name);
+    if (!gardenId) {
+      setGardenName("All Gardens");
+    }
+    for (let garden of state.gardens) {
+      if (garden.id === gardenId) {
+        setGardenName(garden.name);
+      }
+    }
   }, [gardenId]);
 
   return (
