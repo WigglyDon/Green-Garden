@@ -30,12 +30,15 @@ h2 {
     color: white;
   }
 }
+.sidebar-wrap{
+  width: 25%;
+}
 
 .sidebard {
   background-color: #57c1aa;
-  width: 25%;
-  height: 100vh;
-  // padding-top: 60px;
+  width: 100%;
+  height: 100%;
+  position: relative;
 }
 
 .garden-card {

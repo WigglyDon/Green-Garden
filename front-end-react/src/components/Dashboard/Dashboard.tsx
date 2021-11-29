@@ -61,6 +61,7 @@ export default function Dashboard(props: any) {
       </div>
 
       <div className="layout">
+        <div className='sidebar-wrap'>
         <div className="sidebard">
           <Sidebar
             updateGardenVegetableState={updateGardenVegetableState}
@@ -69,6 +70,7 @@ export default function Dashboard(props: any) {
             // updateGardenState={updateGardenState}
             changeGarden={changeGarden}
           />
+        </div>
         </div>
         {/* <Map /> */}
         <div className="dashboard">
@@ -106,6 +108,9 @@ export default function Dashboard(props: any) {
                  Set Notifications
             </NavLink>
         </Button> */}
+        </div>
+        <div className='footer'>
+          Im a FOOOTER
         </div>
       </div>
     </div>
