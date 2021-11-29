@@ -23,6 +23,9 @@ export default function SeasonsPieChart(props: any) {
       title: {
         display: true,
         text: "Growing Seasons",
+        font: {
+          size: 20,
+        },
       },
     },
   };

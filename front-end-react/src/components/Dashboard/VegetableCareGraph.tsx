@@ -72,6 +72,9 @@ export default function VegetableCareGraph(props: any) {
       title: {
         display: true,
         text: "Vegetable Care",
+        font: {
+          size: 20,
+        },
       },
     },
   };

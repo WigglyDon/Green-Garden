@@ -50,7 +50,11 @@ export default function GrowingDaysGraph(props: any) {
       title: {
         display: true,
         text: "Growing Days",
+        font: {
+          size: 20,
+        },
       },
+      
     },
   };
 

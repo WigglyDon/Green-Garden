@@ -24,6 +24,9 @@ export default function GardenDiversityPolerGraph(props: any) {
       title: {
         display: true,
         text: "Garden Diversity",
+        font: {
+          size: 20,
+        },
       },
     },
   };

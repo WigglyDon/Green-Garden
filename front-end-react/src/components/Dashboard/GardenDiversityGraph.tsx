@@ -23,6 +23,9 @@ export default function GardenDiversityGraph(props: any) {
       title: {
         display: true,
         text: "Garden Diversity",
+        font: {
+          size: 20,
+        },
       },
     },
   };
