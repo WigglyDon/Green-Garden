@@ -43,7 +43,10 @@ export default function Dashboard(props: any) {
   const gardenId = state.garden;
   return (
     <div className="main">
+      <div className='nav-dash'>
       <Nav />
+      </div>
+    
       <div className="layout">
         <div className="sidebard">
           <Sidebar

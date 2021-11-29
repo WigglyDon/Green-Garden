@@ -12,7 +12,8 @@ $background-color: #f5eee4;
 .nav-layout {
   width: 100%;
   position: fixed;
-  background-color: transparent;
+  background-color: white;
+  z-index: 10;
 }
 
 h2 {
@@ -80,9 +81,9 @@ hr {
 }
 
 .notification {
-  position: absolute;
-  top: 0;
-  right: 0;
+  // position: absolute;
+  // top: 0;
+  // right: 0;
 }
 ////////// Dashboard Styling
 .confirm-btn {
@@ -160,3 +161,56 @@ hr {
 // .MuiTypography-root{
 //   height: 10px!important;
 // }
+
+
+////delete form
+.form{
+  width: 590px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  position: fixed;
+  top: 15%;
+  left: 45%;
+}
+.delete-from-title{
+  font-family: $primary-font !important;
+  text-align: center;
+  padding: 10px;
+  font-size: 2rem;
+}
+
+.delete-buttons{
+  margin: 10px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.delete-modal{
+  height: 100%;
+  background-color: #0000006b;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+.cancel-btn{
+  color: black!important;
+  margin-left: 20px!important;
+  border: solid 1px black!important;
+}
+
+.dashboard-buttons{
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  width: 100%;
+
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+///dash nav

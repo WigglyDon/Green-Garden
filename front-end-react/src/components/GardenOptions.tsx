@@ -32,7 +32,7 @@ export default function GardenOptions(props: any) {
   };
 
   return (
-    <div>
+    <div className='dashboard-buttons'>
       <Button
         className="danger-btn"
         variant="contained"
