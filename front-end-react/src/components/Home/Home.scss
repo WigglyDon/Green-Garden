@@ -3,10 +3,10 @@
 
 $primary-font: "Lato", sans-serif;
 $secondary-font: "Montserrat", sans-serif;
-$primary-color:  #4b966c;
-$secondary-color:#4b966c;
+$primary-color: #4b966c;
+$secondary-color: #4b966c;
 $links-color: #551b8b;
-$background-color:#f5eee4;
+$background-color: #f5eee4;
 
 // .backdrop{
 //   background-image: url("./res/tenor.0.gif");
@@ -72,9 +72,8 @@ a {
   color: $links-color;
 }
 
-.hero-description{
+.hero-description {
   margin-top: 10px;
-
 }
 
 .all-vegetables {
@@ -202,23 +201,36 @@ a {
   background-repeat: no-repeat;
 }
 
-
-.avatar{
-  background-color: #446b88!important;
-  height: 70px!important;
-  width: 70px!important;
-  img{
+.avatar {
+  background-color: #446b88 !important;
+  height: 70px !important;
+  width: 70px !important;
+  img {
     height: 46px;
   }
 }
 
-
-.login-btn{
+.login-btn {
   background-color: #446b88 !important;
 }
 
-.login-form{
-  .out{
-    margin-top: -15%
+.login-form {
+  .out {
+    margin-top: -15%;
   }
+}
+
+//////swal
+
+.swal-text {
+  // background-color: #fefae3;
+  padding: 17px;
+  // border: 1px solid #f0e1a1;
+  display: block;
+  margin: 22px;
+  text-align: center;
+  color: black;
+}
+.swal-modal {
+  width: 275px;
 }

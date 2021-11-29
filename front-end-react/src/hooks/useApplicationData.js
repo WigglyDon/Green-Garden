@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import swal from "sweetalert";
 
 export default function useApplicationData() {
   const [state, setState] = useState({
@@ -61,7 +62,11 @@ export default function useApplicationData() {
       .catch(function (error) {
         console.log(error);
       });
-    alert("Posted to Garden");
+    swal("Posted to Garden", {
+      buttons: false,
+      icon: "success",
+      timer: 1000,
+    });
   };
 
   const handleDayChange = (event) => {
