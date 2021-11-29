@@ -103,53 +103,58 @@ hr {
   align-items: center;
 }
 
-.scheduler{
-  border-radius: 5px;
-  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+.scheduler {
+  height: 100%;
+  background-color: #0000006b;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
 }
 
-.scheduler-layout{
+.scheduler-layout {
   position: absolute;
   width: 590px;
   top: 15%;
   left: 45%;
   background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
-.scheduler-button-layout{
+.scheduler-button-layout {
   display: flex;
   justify-content: center;
+  margin-bottom: 10px;
 }
 
-.notifications-title{
-  font-family: $primary-font!important;
+.notifications-title {
+  font-family: $primary-font !important;
   text-align: center;
   padding: 10px;
   font-size: 2rem;
 }
 
-
-.css-dmmspl-MuiFormGroup-root{
-  flex-direction: row!important;
+.css-dmmspl-MuiFormGroup-root {
+  flex-direction: row !important;
 }
 
-.css-1nrlq1o-MuiFormControl-root{
-  text-align: center!important;
+.css-1nrlq1o-MuiFormControl-root {
+  text-align: center !important;
 }
 
-.css-j204z7-MuiFormControlLabel-root{
-  display:flex!important;
-  flex-direction: column-reverse!important;
+.css-j204z7-MuiFormControlLabel-root {
+  display: flex !important;
+  flex-direction: column-reverse !important;
 }
 
-.css-u4tvz2-MuiFormLabel-root{
+.css-u4tvz2-MuiFormLabel-root {
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
-.css-ahj2mt-MuiTypography-root{
-  height: 5px!important;
-  font-family: $secondary-font!important;
-
+.css-ahj2mt-MuiTypography-root {
+  height: 5px !important;
+  font-family: $secondary-font !important;
 }
 
 // .MuiTypography-root{
