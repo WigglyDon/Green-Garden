@@ -26,8 +26,8 @@ h2 {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  svg{
-    color:white;
+  svg {
+    color: white;
   }
 }
 
@@ -35,7 +35,7 @@ h2 {
   background-color: #57c1aa;
   width: 25%;
   height: 100vh;
- // padding-top: 60px;
+  // padding-top: 60px;
 }
 
 .garden-card {
@@ -44,7 +44,7 @@ h2 {
 
 .garden-name {
   font-family: $secondary-font;
-  font-size: 2em
+  font-size: 2em;
 }
 
 .garden-form {
@@ -54,11 +54,12 @@ h2 {
   border-radius: 5px;
   background-color: white;
 
-  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-  button{
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  button {
     color: white !important;
   }
-  form{
+  form {
     display: flex;
     justify-content: center;
   }
@@ -72,8 +73,7 @@ h2 {
   }
 }
 
-
-.garden-form-btns{
+.garden-form-btns {
   display: flex;
   justify-content: center;
   margin-top: 10px;
@@ -157,7 +157,8 @@ hr {
   left: 45%;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 }
 .scheduler-button-layout {
   display: flex;
@@ -204,7 +205,8 @@ hr {
   width: 590px;
   background-color: white;
   border-radius: 5px;
-  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%),
+    0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
   position: fixed;
   top: 15%;
   left: 45%;
@@ -252,3 +254,9 @@ hr {
 // .dashboard{
 //  // font-size: 2em;
 // }
+
+///// notifications modal
+
+.swal-modal {
+  margin-left: 326px;
+}

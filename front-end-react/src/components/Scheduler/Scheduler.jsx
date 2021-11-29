@@ -5,6 +5,7 @@ import { Button } from "@mui/material";
 import DayPicker from "./DayPicker";
 import TimePicker from "./TimePicker";
 import "./Scheduler.scss";
+import swal from "sweetalert";
 
 export default function Scheduler(props: any) {
   const {
@@ -14,6 +15,7 @@ export default function Scheduler(props: any) {
     bookNotification,
     setShowNotifications,
   } = props;
+
   return (
     <div className="scheduler-layout">
       <div className="picker-layout">
@@ -22,7 +24,7 @@ export default function Scheduler(props: any) {
             <DayPicker state={state} handleDayChange={handleDayChange} />
           </div>
           <div className="timepicker-layout">
-            <div className='notifications-title'>
+            <div className="notifications-title">
               Schedule Water Notification
             </div>
             <TimePicker state={state} handleTime={handleTime} />
@@ -36,6 +38,11 @@ export default function Scheduler(props: any) {
           onClick={() => {
             bookNotification(state?.notificationFormData, state.garden);
             setShowNotifications(false);
+            swal("Saved Notfication", {
+              button: false,
+              icon: "success",
+              timer: 1000,
+            });
           }}
         >
           Save Notification
