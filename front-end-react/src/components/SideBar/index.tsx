@@ -6,6 +6,9 @@ import Form from "./Form";
 import { useState } from "react";
 // eslint-disable-next-line
 import GardenVegetableList from "./GardenVegetablesList";
+import { faSeedling } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 
 const Sidebar = function (props: any) {
@@ -18,14 +21,22 @@ const Sidebar = function (props: any) {
 
 
 
+
+
   //set state which id gets displayed
 
   return (
     <article className="sidebarItems">
-      <img className='logo' src="https://raw.githubusercontent.com/nikolajjuuel/scheduler/master/public/images/lhl.png" alt="" />
+
+      <FontAwesomeIcon className='faSeedling dashboard' icon={faSeedling} />
+
+
+      {/* <img className='logo' src="https://raw.githubusercontent.com/nikolajjuuel/scheduler/master/public/images/lhl.png" alt="" /> */}
+
+
       <h2>My Gardens</h2>
       <hr />
-      <GardenCardList updateGardenVegetableState={updateGardenVegetableState} state={state} changeGarden={changeGarden}/>
+      <GardenCardList updateGardenVegetableState={updateGardenVegetableState} state={state} changeGarden={changeGarden} />
 
 
       {/* <GardenVegetableList 
