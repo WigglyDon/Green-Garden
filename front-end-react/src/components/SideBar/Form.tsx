@@ -34,24 +34,24 @@ const Form = function (props: any) {
 
   return (
     <main className="garden-form">
-      <section className="appointment__card-left">
-        <form autoComplete="off" onSubmit={(event) => event.preventDefault()}>
-          <input
-            className="garden-name-input"
-            name="name"
-            type="text"
-            placeholder="Enter Your Garden Name"
-            value={garden}
-            onChange={(event) => setGarden(event.target.value)}
-          />
-        </form>
-        <Button className="save-button" onClick={validate}>
+      <form autoComplete="off" onSubmit={(event) => event.preventDefault()}>
+        <input
+          className="garden-name-input"
+          name="name"
+          type="text"
+          placeholder="Enter Your Garden Name"
+          value={garden}
+          onChange={(event) => setGarden(event.target.value)}
+        />
+      </form>
+      <div className='garden-form-btns'>
+        <Button className="confirm-btn" onClick={validate}>
           Save
         </Button>
-        <Button className="cancel-button" onClick={reset}>
+        <Button className="danger-btn" onClick={reset}>
           Cancel
         </Button>
-      </section>
+      </div>
     </main>
   );
 };

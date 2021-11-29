@@ -38,6 +38,45 @@ h2 {
   width: 80%;
 }
 
+.garden-name-input {
+
+}
+
+.garden-form {
+  margin-top: 20px;
+  width: 80%;
+  height: 6rem;
+  border-radius: 5px;
+  background-color: white;
+
+  box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+  button{
+    color: white!important;
+  }
+  form{
+    display: flex;
+    justify-content: center;
+  }
+  input {
+    width: 80%;
+    padding: 5px;
+    font-family: "Lato";
+    font-size: 0.875rem;
+    border-radius: 5px;
+    margin-top: 12px;
+  }
+}
+.css-1e6y48t-MuiButtonBase-root-MuiButton-root{
+ // color: white!important;
+}
+
+.garden-form-btns{
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+////
+
 .logo {
   margin-top: 10px;
 }
@@ -80,11 +119,6 @@ hr {
   background-color: #328674 !important;
 }
 
-.notification {
-  // position: absolute;
-  // top: 0;
-  // right: 0;
-}
 ////////// Dashboard Styling
 .confirm-btn {
   background-color: rgba(0, 0, 0, 0.6) !important;
@@ -162,9 +196,8 @@ hr {
 //   height: 10px!important;
 // }
 
-
 ////delete form
-.form{
+.form {
   width: 590px;
   background-color: white;
   border-radius: 5px;
@@ -173,21 +206,21 @@ hr {
   top: 15%;
   left: 45%;
 }
-.delete-from-title{
+.delete-from-title {
   font-family: $primary-font !important;
   text-align: center;
   padding: 10px;
   font-size: 2rem;
 }
 
-.delete-buttons{
+.delete-buttons {
   margin: 10px;
   justify-content: center;
   align-items: center;
   display: flex;
 }
 
-.delete-modal{
+.delete-modal {
   height: 100%;
   background-color: #0000006b;
   width: 100%;
@@ -196,13 +229,13 @@ hr {
   left: 0;
 }
 
-.cancel-btn{
-  color: black!important;
-  margin-left: 20px!important;
-  border: solid 1px black!important;
+.cancel-btn {
+  color: black !important;
+  margin-left: 20px !important;
+  border: solid 1px black !important;
 }
 
-.dashboard-buttons{
+.dashboard-buttons {
   display: flex;
   flex-direction: row-reverse;
   justify-content: center;
@@ -210,7 +243,6 @@ hr {
 
   margin-top: 20px;
   margin-bottom: 20px;
-
 }
 
 ///dash nav
