@@ -62,15 +62,17 @@ export default function GardenOptions(props: any) {
         </Button>
       </div>
       {showNotifications ? (
-        <Scheduler
-          showNotifications={showNotifications}
-          setShowNotifications={setShowNotifications}
-          state={state}
-          handleDayChange={handleDayChange}
-          handleTime={handleTime}
-          bookNotification={bookNotification}
-          handleVegetable={handleVegetable}
-        />
+        <div className='scheduler'>
+          <Scheduler
+            showNotifications={showNotifications}
+            setShowNotifications={setShowNotifications}
+            state={state}
+            handleDayChange={handleDayChange}
+            handleTime={handleTime}
+            bookNotification={bookNotification}
+            handleVegetable={handleVegetable}
+          />
+        </div>
       ) : null}
     </div>
   );
