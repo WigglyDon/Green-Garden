@@ -27,7 +27,7 @@ export default function Dashboard(props: any) {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [gardenName, setGardenName] = useState("All Gardens");
-  console.log("gardenName", gardenName);
+  // console.log("gardenName", gardenName);
   const {
     updateGardenVegetableState,
     state,
@@ -46,6 +46,9 @@ export default function Dashboard(props: any) {
   const gardenId = state.garden;
 
   useEffect(() => {
+    if (!state.selected) {
+      setGardenName("All Gardens");
+    }
     if (!gardenId) {
       setGardenName("All Gardens");
     }
@@ -77,10 +80,12 @@ export default function Dashboard(props: any) {
         {/* <Map /> */}
         <div className="dashboard">
           <div className="garden-name">{gardenName}</div>
-          <DeleteDropDown
-            state={state}
-            deleteGardenVegetable={deleteGardenVegetable}
-          />
+          {gardenId ? (
+            <DeleteDropDown
+              state={state}
+              deleteGardenVegetable={deleteGardenVegetable}
+            />
+          ) : null}
           <div className="graphContainer full">
             {/* vegetable care */}
             <VegetableCareGraph state={state.gardensVegetables} />
