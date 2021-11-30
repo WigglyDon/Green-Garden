@@ -4,12 +4,12 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select, { SelectChangeEvent } from "@mui/material/Select";
-import axios from "axios";
 import Button from "@mui/material/Button";
 
 const DeleteDropDown = function (props: any) {
   const { state, deleteGardenVegetable } = props;
-  const [vegetableID, setVegetableID] = useState("");
+  const [vegetableName, setVegetableName] = useState("");
+  const [vegetableID, setVegetableID] = useState(null);
 
   const gardensVegetables = state.gardensVegetables;
   const gardenID = state.garden;
@@ -17,16 +17,30 @@ const DeleteDropDown = function (props: any) {
   console.log("state in ddd", state);
 
   const handleChange = (event: SelectChangeEvent) => {
-    setVegetableID(event.target.value);
+    console.log("even.target.value", event.target.value);
+    setVegetableName(event.target.value);
   };
+
+  useEffect(() => {
+    for (let vegetable of gardensVegetables) {
+      if (vegetable.name === vegetableName) {
+        setVegetableID(vegetable.id);
+      }
+    }
+  }, [vegetableName]);
+
+  // console.log("vegetable name", vegetableName);
+  // console.log("vegetableID", vegetableID);
 
   const mapList = (listGardenVegetables: any) => {
     let listItems = [];
-
     for (let i = 0; i < listGardenVegetables.length; i++) {
       const vegetableName = listGardenVegetables[i].name;
       listItems.push(
-        <MenuItem value={gardenID} key={listGardenVegetables[i].id}>
+        <MenuItem
+          value={vegetableName}
+          key={listGardenVegetables[i].vegetable_id}
+        >
           {vegetableName}
         </MenuItem>
       );
@@ -44,7 +58,7 @@ const DeleteDropDown = function (props: any) {
           <Select
             labelId="demo-simple-select-label"
             id="demo-simple-select"
-            value={vegetableID}
+            value={vegetableName}
             label="selectedGarden"
             onChange={handleChange}
           >
@@ -52,7 +66,9 @@ const DeleteDropDown = function (props: any) {
           </Select>
         </FormControl>
       </Box>
-      <Button onClick={() => console.log("form")}>Submit</Button>
+      <Button onClick={() => deleteGardenVegetable(gardenID, vegetableID)}>
+        Delete
+      </Button>
     </div>
   );
 };

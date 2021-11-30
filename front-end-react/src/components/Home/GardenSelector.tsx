@@ -20,7 +20,7 @@ export default function GardenSelector(props: any) {
   const { selectedGarden } = props.selectedGarden;
   // console.log("selected garden", props.selectedGarden)
 
-  console.log("State in GardenSelector", state);
+  // console.log("State in GardenSelector", state);
 
   const gardens = state.gardens;
   // const gardens = [1, 2, 3];

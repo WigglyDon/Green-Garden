@@ -49,14 +49,14 @@ const postGardensVegetables = function (data) {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
-const deleteFromGardensVegetables = function (data) {
-  const gardenId = data.gardenId;
-  const vegetableId = data.vegetableId;
+const deleteFromGardensVegetables = function (gardenID, vegetableID) {
+  // const gardenId = data.gardenId;
+  // const vegetableId = data.vegetableId;
 
-  // console.log("IDPAIRS", gardenId, vegetableId)
+  // console.log("IDPAIRS", gardenID, vegetableID);
 
   const text = `
-  DELETE FROM gardens_vegetables WHERE vegetable_id = ${$vegetableId}} 
+  DELETE FROM gardens_vegetables WHERE garden_id =${gardenID} AND vegetable_id = ${vegetableID} 
   `;
 
   {

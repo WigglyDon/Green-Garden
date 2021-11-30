@@ -139,6 +139,20 @@ export default function useApplicationData() {
       .catch((err) => console.error(err));
   }
 
+  function updateGardenVegetableStateAfterDelete(gardenID) {
+    return axios
+      .get(`http://localhost:8080/api/gardensvegetables/${gardenID}`)
+      .then(({ data }) => {
+        setState((prevState) => ({
+          ...prevState,
+          gardensVegetables: data,
+          garden: gardenID,
+          selected: true,
+        }));
+      })
+      .catch((err) => console.error(err));
+  }
+
   function updateGardenState() {
     return axios
       .get("http://localhost:8080/api/gardens")
@@ -182,13 +196,20 @@ export default function useApplicationData() {
   };
 
   const deleteGardenVegetable = (gardenID, vegetableID) => {
+    // console.log("gardenId in useapp", gardenID);
+    // console.log("vegetableID in useapp", vegetableID);
+    const data = {
+      vegetableID,
+      gardenID,
+    };
+
     return axios
-      .delete(`http://localhost:8080/api/gardensvegetables/${gardenID}`, {
-        state,
+      .delete(`http://localhost:8080/api/gardensvegetables`, {
+        data,
       })
       .then((res) => {
         console.log("Sucessful Delete!");
-        // updateGardenState();
+        updateGardenVegetableStateAfterDelete(gardenID);
       })
       .catch((err) => console.error(err));
   };

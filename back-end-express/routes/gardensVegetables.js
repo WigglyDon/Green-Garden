@@ -28,9 +28,14 @@ router.post("/", (req, res) => {
     .catch((err) => res.status(500).json({ error: err.message }));
 });
 
-router.delete("/:id", (req, res) => {
-  const data = req.body;
-  deleteFromGardensVegetables(data)
+router.delete("/", (req, res) => {
+  const gardenID = req.body.gardenID;
+  const vegetableId = req.body.vegetableID;
+
+  // console.log("gardenID in router", gardenID);
+  // console.log("vegetableID in router", vegetableId);
+
+  deleteFromGardensVegetables(gardenID, vegetableId)
     .then((data) => res.status(200).json(data))
     .catch((err) => res.status(500).json({ error: err.message }));
 });
