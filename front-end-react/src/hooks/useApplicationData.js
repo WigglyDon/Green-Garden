@@ -24,6 +24,8 @@ export default function useApplicationData() {
     selected: false,
   });
 
+  console.log("gardenid", state.garden);
+
   useEffect(() => {
     Promise.all([
       axios.get("http://localhost:8080/api/notifications"),
@@ -147,7 +149,7 @@ export default function useApplicationData() {
           ...prevState,
           gardensVegetables: data,
           garden: gardenID,
-          selected: true,
+          selected: false,
         }));
       })
       .catch((err) => console.error(err));

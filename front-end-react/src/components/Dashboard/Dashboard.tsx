@@ -46,6 +46,9 @@ export default function Dashboard(props: any) {
   const gardenId = state.garden;
 
   useEffect(() => {
+    if (!state.selected) {
+      setGardenName("All Gardens");
+    }
     if (!gardenId) {
       setGardenName("All Gardens");
     }
