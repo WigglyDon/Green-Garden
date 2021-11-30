@@ -148,8 +148,7 @@ export default function useApplicationData() {
         setState((prevState) => ({
           ...prevState,
           gardensVegetables: data,
-          garden: gardenID,
-          selected: false,
+//          garden: gardenID
         }));
       })
       .catch((err) => console.error(err));

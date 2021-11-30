@@ -49,11 +49,11 @@ const DeleteDropDown = function (props: any) {
   };
 
   return (
-    <div>
+    <div className='delete-vegetable'>
       <Box sx={{ minWidth: 120 }}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">
-            Selected Vegetable
+            Delete Vegetable
           </InputLabel>
           <Select
             labelId="demo-simple-select-label"
@@ -66,7 +66,7 @@ const DeleteDropDown = function (props: any) {
           </Select>
         </FormControl>
       </Box>
-      <Button onClick={() => deleteGardenVegetable(gardenID, vegetableID)}>
+      <Button className='danger-btn' onClick={() => deleteGardenVegetable(gardenID, vegetableID)}>
         Delete
       </Button>
     </div>
