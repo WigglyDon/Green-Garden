@@ -129,6 +129,7 @@ export default function useApplicationData() {
   }
 
   function updateGardenVegetableState() {
+    console.log('updateGardenVegetableState()')
     return axios
       .get("http://localhost:8080/api/gardensvegetables")
       .then(({ data }) => {
@@ -142,25 +143,30 @@ export default function useApplicationData() {
   }
 
   function updateGardenVegetableStateAfterDelete(gardenID) {
+    console.log('updateGardenVegetableStateAfterDelete()')
     return axios
       .get(`http://localhost:8080/api/gardensvegetables/${gardenID}`)
       .then(({ data }) => {
         setState((prevState) => ({
           ...prevState,
           gardensVegetables: data,
-//          garden: gardenID
+  //        garden: gardenID,
+        //  selected: true,
+          // garden: null,
         }));
       })
       .catch((err) => console.error(err));
   }
 
   function updateGardenState() {
+    console.log('updateGardenState()')
     return axios
       .get("http://localhost:8080/api/gardens")
       .then(({ data }) => {
+        console.log('updateGarden()')
         setState((prevState) => ({
           ...prevState,
-          garden: null,
+        //  garden: null,
           gardens: data,
         }));
       })
@@ -168,6 +174,7 @@ export default function useApplicationData() {
   }
 
   function changeGarden(id) {
+    console.log('changeGarden()')
     return axios
       .get(`http://localhost:8080/api/gardensvegetables/${id}`)
       .then(({ data }) => {
@@ -182,6 +189,8 @@ export default function useApplicationData() {
   }
 
   const deleteGarden = (id) => {
+    console.log('deleteGarden()')
+
     return axios
       .delete(`http://localhost:8080/api/gardens/${id}`)
       .then(({ data }) => {
@@ -197,6 +206,7 @@ export default function useApplicationData() {
   };
 
   const deleteGardenVegetable = (gardenID, vegetableID) => {
+    console.log('deleteGardenVegetable()')
     // console.log("gardenId in useapp", gardenID);
     // console.log("vegetableID in useapp", vegetableID);
     const data = {
