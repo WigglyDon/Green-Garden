@@ -24,6 +24,7 @@ export default function Application() {
     updateGardenVegetableState,
     deleteGarden,
     updateGardenState,
+    deleteGardenVegetable,
   } = useApplicationData();
 
   return (
@@ -52,6 +53,7 @@ export default function Application() {
               createGarden={createGarden}
               //updateState= {updateGardenState}
               changeGarden={changeGarden}
+              deleteGardenVegetable={deleteGardenVegetable}
             />
           }
         />

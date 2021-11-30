@@ -14,7 +14,6 @@ const getAllGardenVegetables = function () {
     .catch((err) => console.error(this, "query failed", err.stack));
 };
 
-
 const getSpecificGardenVegetables = function (id) {
   const text = `
   SELECT *
@@ -31,10 +30,9 @@ const getSpecificGardenVegetables = function (id) {
 };
 
 const postGardensVegetables = function (data) {
-
   const gardenId = data.gardenId;
   const vegetableId = data.vegetableId;
-  
+
   // console.log("IDPAIRS", gardenId, vegetableId)
 
   const text = `
@@ -50,4 +48,28 @@ const postGardensVegetables = function (data) {
     .then((data) => data.rows)
     .catch((err) => console.error(this, "query failed", err.stack));
 };
-module.exports = { getAllGardenVegetables, postGardensVegetables, getSpecificGardenVegetables };
+
+const deleteFromGardensVegetables = function (data) {
+  const gardenId = data.gardenId;
+  const vegetableId = data.vegetableId;
+
+  // console.log("IDPAIRS", gardenId, vegetableId)
+
+  const text = `
+  DELETE FROM gardens_vegetables WHERE vegetable_id = ${$vegetableId}} 
+  `;
+
+  {
+    return db
+      .query(text)
+      .then((data) => data.rows)
+      .catch((err) => console.error(this, "query failed", err.stack));
+  }
+};
+
+module.exports = {
+  getAllGardenVegetables,
+  postGardensVegetables,
+  getSpecificGardenVegetables,
+  deleteFromGardensVegetables,
+};
