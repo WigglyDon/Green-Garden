@@ -1,20 +1,58 @@
- .MuiTypography-root{
-      color: #8395a7;
-       height: 5rem;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-        margin-top: 15px;
-  
-//       &:hover {
-//         cursor: pointer;
-//         background-color: #328674;
-//         color: white;
-    //   }
-  
-   }
+.MuiTypography-root {
+  color: #8395a7;
+  height: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 15px;
 
-.MuiPaper-root{
-      margin-top: 20px
+  //       &:hover {
+  //         cursor: pointer;
+  //         background-color: #328674;
+  //         color: white;
+  //   }
+}
+
+.garden-cards {
+  width: 80%;
+}
+
+.garden-card {
+  margin-top: 20px;
+}
+
+.delete-vegetable {
+  display: flex;
+  position: absolute;
+  width: 200px;
+  top: 160px;
+  left: 26%;
+
+  .css-ece9u5 {
+    min-width: 165px;
+  }
+  .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input {
+    //  height: 20px;
+    padding: 0px;
+  }
+  .css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    top: -12px;
+  }
+
+  .css-1e6y48t-MuiButtonBase-root-MuiButton-root {
+    border: solid 1px red;
+    background-color: rgba(255, 0, 0, 0.2);
+    height: 20px;
+    color: white;
+    margin-top: 15px;
+    margin-left: 6px;
+
+  }
+
+
+  label {
+    font-size: 13px;
+  }
+
 }
