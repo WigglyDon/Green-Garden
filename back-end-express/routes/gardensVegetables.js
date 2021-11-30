@@ -4,6 +4,7 @@ const {
   getAllGardenVegetables,
   postGardensVegetables,
   getSpecificGardenVegetables,
+  deleteFromGardensVegetables,
 } = require("../db/helpers/gardens-vegetables-queries");
 
 router.get("/", (req, res) => {
@@ -21,9 +22,15 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-
   const data = req.body;
   postGardensVegetables(data)
+    .then((data) => res.status(200).json(data))
+    .catch((err) => res.status(500).json({ error: err.message }));
+});
+
+router.delete("/:id", (req, res) => {
+  const data = req.body;
+  deleteFromGardensVegetables(data)
     .then((data) => res.status(200).json(data))
     .catch((err) => res.status(500).json({ error: err.message }));
 });

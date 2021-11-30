@@ -180,6 +180,19 @@ export default function useApplicationData() {
       })
       .catch((err) => console.error(err));
   };
+
+  const deleteGardenVegetable = (gardenID, vegetableID) => {
+    return axios
+      .delete(`http://localhost:8080/api/gardensvegetables/${gardenID}`, {
+        state,
+      })
+      .then((res) => {
+        console.log("Sucessful Delete!");
+        // updateGardenState();
+      })
+      .catch((err) => console.error(err));
+  };
+
   return {
     state,
     handleDayChange,
@@ -192,5 +205,6 @@ export default function useApplicationData() {
     updateGardenVegetableState,
     deleteGarden,
     updateGardenState,
+    deleteGardenVegetable,
   };
 }

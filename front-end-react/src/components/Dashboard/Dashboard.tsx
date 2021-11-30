@@ -18,6 +18,7 @@ import { useState, useEffect } from "react";
 // import DeleteForm from "./DeleteForm";
 import GardenOptions from "../GardenOptions";
 import GrowingDaysGraph from "./GrowingDaysGraph";
+import DeleteDropDown from "./DeleteDropDown";
 
 // import GardenCardList from "./GardenCardList";
 // import GardenCard from "../GardenCard";
@@ -39,6 +40,7 @@ export default function Dashboard(props: any) {
     deleteGarden,
     updateGardenState,
     handleVegetable,
+    deleteGardenVegetable,
   } = props;
 
   const gardenId = state.garden;
@@ -61,20 +63,24 @@ export default function Dashboard(props: any) {
       </div>
 
       <div className="layout">
-        <div className='sidebar-wrap'>
-        <div className="sidebard">
-          <Sidebar
-            updateGardenVegetableState={updateGardenVegetableState}
-            state={state}
-            createGarden={createGarden}
-            // updateGardenState={updateGardenState}
-            changeGarden={changeGarden}
-          />
-        </div>
+        <div className="sidebar-wrap">
+          <div className="sidebard">
+            <Sidebar
+              updateGardenVegetableState={updateGardenVegetableState}
+              state={state}
+              createGarden={createGarden}
+              // updateGardenState={updateGardenState}
+              changeGarden={changeGarden}
+            />
+          </div>
         </div>
         {/* <Map /> */}
         <div className="dashboard">
           <div className="garden-name">{gardenName}</div>
+          <DeleteDropDown
+            state={state}
+            deleteGardenVegetable={deleteGardenVegetable}
+          />
           <div className="graphContainer full">
             {/* vegetable care */}
             <VegetableCareGraph state={state.gardensVegetables} />
