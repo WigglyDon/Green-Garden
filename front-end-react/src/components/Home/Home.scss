@@ -99,6 +99,8 @@ a {
   margin-right: 4%;
   margin-left: 4%;
   margin-top: 5%;
+  min-width: 250px!important;
+
 }
 
 .image-container {
@@ -226,3 +228,8 @@ a {
     margin-top: -15%
   }
 }
+
+
+// .css-bhp9pd-MuiPaper-root-MuiCard-root{
+//   min-width: 250px;
+// }
