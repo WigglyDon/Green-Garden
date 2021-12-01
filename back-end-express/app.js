@@ -58,7 +58,7 @@ const timeSplitter = function (string) {
   return array;
 };
 
-const midnightScanner = new CronJob("0/1 * * * *", function () {
+const midnightScanner = new CronJob("50 19 * * *", function () {
   console.log("midnight scanner ran");
   getAllNotifications().then((notifications) => {
     getAllUsers()
@@ -80,8 +80,9 @@ const midnightScanner = new CronJob("0/1 * * * *", function () {
             // * Day of Month: 1-31
             // * Months: 0-11 (Jan-Dec)
             // * Day of Week: 0-6 (Sun-Sat)
-            const day = parseInt(daysArray[j]) - 1;
-            const send = new CronJob(`${min} ${hour} * * *`, function () {
+            const day = parseInt(daysArray[j]);
+            console.log("day", day);
+            const send = new CronJob(`${min} ${hour} * * ${day}`, function () {
               console.log("send job created day", day);
               console.log("send job created hour", hour);
               console.log("send job created min", min);

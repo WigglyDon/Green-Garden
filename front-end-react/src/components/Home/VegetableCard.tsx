@@ -83,15 +83,15 @@ export default function VegetableCard(props: any) {
             </div>
             <div className="info">
               <p className="key">Sun Level: </p>
-              <p className="value"> {vegetable.sun_level}</p>
+              <p className="value"> {vegetable.sun_level} %</p>
             </div>
             <div className="info">
               <p className="key"> Water Amount: </p>
-              <p className="value"> {vegetable.water_amount}</p>
+              <p className="value"> {vegetable.water_amount} ml</p>
             </div>
             <div className="info">
               <p className="key"> Height: </p>
-              <p className="value"> {vegetable.height}</p>
+              <p className="value"> {vegetable.height} cm</p>
             </div>
             <div className="info">
               {/* <p className='key'>Sowing Method: </p> */}
