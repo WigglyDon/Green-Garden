@@ -56,8 +56,8 @@ export default function VegetableCareGraph(props: any) {
       {
         label: "Average Vegetable Height",
         data: graphDataParser(state, "height"),
-        backgroundColor: "rgba(75, 192, 192, 0.2)",
-        borderColor: "rgba(75, 192, 192, 1)",
+        backgroundColor: "rgba(224, 141, 121, 0.2)",
+        borderColor: "rgba(224, 141, 121, 1)",
         borderWidth: 1,
       },
     ],
