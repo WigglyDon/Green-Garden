@@ -64,10 +64,10 @@ export default function useApplicationData() {
       .catch(function (error) {
         console.log(error);
       });
-    swal("Posted to Garden", {
+    swal("Added to Garden", {
       buttons: false,
       icon: "success",
-      timer: 1000,
+      timer: 150000,
     });
   };
 
@@ -129,7 +129,7 @@ export default function useApplicationData() {
   }
 
   function updateGardenVegetableState() {
-    console.log('updateGardenVegetableState()')
+    console.log("updateGardenVegetableState()");
     return axios
       .get("http://localhost:8080/api/gardensvegetables")
       .then(({ data }) => {
@@ -143,15 +143,15 @@ export default function useApplicationData() {
   }
 
   function updateGardenVegetableStateAfterDelete(gardenID) {
-    console.log('updateGardenVegetableStateAfterDelete()')
+    console.log("updateGardenVegetableStateAfterDelete()");
     return axios
       .get(`http://localhost:8080/api/gardensvegetables/${gardenID}`)
       .then(({ data }) => {
         setState((prevState) => ({
           ...prevState,
           gardensVegetables: data,
-  //        garden: gardenID,
-        //  selected: true,
+          //        garden: gardenID,
+          //  selected: true,
           // garden: null,
         }));
       })
@@ -159,14 +159,14 @@ export default function useApplicationData() {
   }
 
   function updateGardenState() {
-    console.log('updateGardenState()')
+    console.log("updateGardenState()");
     return axios
       .get("http://localhost:8080/api/gardens")
       .then(({ data }) => {
-        console.log('updateGarden()')
+        console.log("updateGarden()");
         setState((prevState) => ({
           ...prevState,
-        //  garden: null,
+          //  garden: null,
           gardens: data,
         }));
       })
@@ -174,7 +174,7 @@ export default function useApplicationData() {
   }
 
   function changeGarden(id) {
-    console.log('changeGarden()')
+    console.log("changeGarden()");
     return axios
       .get(`http://localhost:8080/api/gardensvegetables/${id}`)
       .then(({ data }) => {
@@ -189,7 +189,7 @@ export default function useApplicationData() {
   }
 
   const deleteGarden = (id) => {
-    console.log('deleteGarden()')
+    console.log("deleteGarden()");
 
     return axios
       .delete(`http://localhost:8080/api/gardens/${id}`)
@@ -206,7 +206,7 @@ export default function useApplicationData() {
   };
 
   const deleteGardenVegetable = (gardenID, vegetableID) => {
-    console.log('deleteGardenVegetable()')
+    console.log("deleteGardenVegetable()");
     // console.log("gardenId in useapp", gardenID);
     // console.log("vegetableID in useapp", vegetableID);
     const data = {
