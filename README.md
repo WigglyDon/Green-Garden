@@ -14,6 +14,14 @@ Green garden was created because the dev team were all enthusiastic about plants
 
 ## Screenshots
 
+### Home Page
+
+!["Home Page"](https://github.com/Nolelle/green-garden/blob/update-readme/docs/home%20page.png?raw=true)
+
+### My Garden
+
+!["My Garden"](https://github.com/Nolelle/green-garden/blob/update-readme/docs/dashboard.png?raw=true)
+
 ---
 
 ## Backend Setup
