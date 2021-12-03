@@ -4,7 +4,6 @@ import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
-
 import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import { styled } from "@mui/material/styles";
@@ -28,9 +27,7 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 export default function VegetableCard(props: any) {
   const [expanded, setExpanded] = React.useState(false);
-  // eslint-disable-next-line
   const { state, handleAddVegetable, vegetable } = props;
-  // eslint-disable-next-line
   const [selectedGarden, setSelectedGarden] = React.useState("");
 
   const handleExpandClick = () => {
@@ -98,10 +95,6 @@ export default function VegetableCard(props: any) {
               <p className="key"> {vegetable.sowing_method}</p>
             </div>
           </div>
-          {/* <div> Row Spacing: {vegetable.row_spacing}</div> */}
-          {/* <div> THIS CARD ID IS: {vegetable.id}</div> */}
-          {/* <div>Spread: {vegetable.spread}</div> */}
-          {/* <div>Growing Days: {vegetable.growing_days}</div> */}
           {email ? (
             <>
               <GardenSelector

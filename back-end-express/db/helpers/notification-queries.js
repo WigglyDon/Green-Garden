@@ -12,12 +12,6 @@ const getAllNotifications = function () {
 };
 
 const postNotification = function (notificationFormData, id) {
-  //   ? = ANY (notifications.day)
-  // ? is the day int 0-6
-
-  // console.log("id in PostNoti", id);
-  console.log("nofiformdata", notificationFormData);
-
   const getDayNumber = (daysObj) => {
     let arr = [];
     for (const number in daysObj) {

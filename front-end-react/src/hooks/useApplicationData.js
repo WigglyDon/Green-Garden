@@ -52,7 +52,6 @@ export default function useApplicationData() {
   }, []);
 
   const handleAddVegetable = (gardenId, vegetableId) => {
-    // console.log("HANDLE ADD VEGETABLE CALLED", gardenId, vegetableId);
     axios
       .post("http://localhost:8080/api/gardensvegetables", {
         gardenId,
@@ -99,7 +98,6 @@ export default function useApplicationData() {
       ...state,
       vegetables: {
         ...state.vegetables,
-        //new data
       },
     });
   };
@@ -115,14 +113,9 @@ export default function useApplicationData() {
   }
 
   function createGarden(state) {
-    // console.log('createGarden', state)
-    //const newGarden ;
-    //const newGardenId ;
-
     return axios
       .post(`http://localhost:8080/api/gardens/`, { state })
       .then((res) => {
-        // console.log({ res });
         console.log("Sucessful Put!");
         updateGardenState();
       });
@@ -150,9 +143,6 @@ export default function useApplicationData() {
         setState((prevState) => ({
           ...prevState,
           gardensVegetables: data,
-          //        garden: gardenID,
-          //  selected: true,
-          // garden: null,
         }));
       })
       .catch((err) => console.error(err));
@@ -166,7 +156,6 @@ export default function useApplicationData() {
         console.log("updateGarden()");
         setState((prevState) => ({
           ...prevState,
-          //  garden: null,
           gardens: data,
         }));
       })
@@ -207,8 +196,6 @@ export default function useApplicationData() {
 
   const deleteGardenVegetable = (gardenID, vegetableID) => {
     console.log("deleteGardenVegetable()");
-    // console.log("gardenId in useapp", gardenID);
-    // console.log("vegetableID in useapp", vegetableID);
     const data = {
       vegetableID,
       gardenID,

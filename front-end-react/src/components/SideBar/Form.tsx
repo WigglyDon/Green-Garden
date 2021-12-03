@@ -1,14 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "@mui/material";
-// eslint-disable-next-line
-import { render } from "@testing-library/react";
 
 const Form = function (props: any) {
-  // eslint-disable-next-line
   const { createGarden, state, setAddButton } = props;
-  // eslint-disable-next-line
   const [error, setError] = useState("");
-
   const [garden, setGarden] = useState("");
 
   const newGarden = {
@@ -44,7 +39,7 @@ const Form = function (props: any) {
           onChange={(event) => setGarden(event.target.value)}
         />
       </form>
-      <div className='garden-form-btns'>
+      <div className="garden-form-btns">
         <Button className="confirm-btn" onClick={validate}>
           Save
         </Button>

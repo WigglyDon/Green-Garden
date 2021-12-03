@@ -15,32 +15,9 @@ export default function GardenSelector(props: any) {
   const gardenId = gardenState;
   const vegetableId = vegetableState;
   const { handleAddVegetable, state } = props;
-  // const {state} = props.state;
-  // eslint-disable-next-line
   const { selectedGarden } = props.selectedGarden;
-  // console.log("selected garden", props.selectedGarden)
-
-  // console.log("State in GardenSelector", state);
 
   const gardens = state.gardens;
-  // const gardens = [1, 2, 3];
-
-  // const handleSubmit = () => {
-  //   console.log("garden and vegetable state", gardenState, vegetableState)
-  //   axios
-  //       .post("http://localhost:8080/api/gardensvegetables", {
-  //         gardenId,
-  //         vegetableId,
-  //       })
-  //       .then(function (response) {
-  //         console.log(response)
-  //       })
-  //       .catch(function (error) {
-  //         console.log(error);
-  //       });
-  //       alert("posted to database")
-
-  // }
 
   const handleChange = (event: SelectChangeEvent) => {
     setVegetableState(props.currentVegetableId);

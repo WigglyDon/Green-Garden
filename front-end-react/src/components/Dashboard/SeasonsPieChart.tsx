@@ -9,11 +9,6 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 export default function SeasonsPieChart(props: any) {
   const { state } = props;
 
-  // console.log("SEA STATE", state)
-  const obj = {
-    canada: 1,
-    changeMe: 2,
-  };
   const options = {
     responsive: true,
     plugins: {
@@ -32,7 +27,7 @@ export default function SeasonsPieChart(props: any) {
 
   const data = {
     labels: Object.keys(graphaDataSculptor(graphDataParser(state, "season"))),
-    //graphDataParser(state, "native_region"),
+
     datasets: [
       {
         label: "# of Votes",

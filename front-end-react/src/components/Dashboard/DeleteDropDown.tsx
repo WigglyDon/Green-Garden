@@ -29,9 +29,6 @@ const DeleteDropDown = function (props: any) {
     }
   }, [vegetableName]);
 
-  // console.log("vegetable name", vegetableName);
-  // console.log("vegetableID", vegetableID);
-
   const mapList = (listGardenVegetables: any) => {
     let listItems = [];
     for (let i = 0; i < listGardenVegetables.length; i++) {
@@ -49,7 +46,7 @@ const DeleteDropDown = function (props: any) {
   };
 
   return (
-    <div className='delete-vegetable'>
+    <div className="delete-vegetable">
       <Box sx={{ minWidth: 120 }}>
         <FormControl fullWidth>
           <InputLabel id="demo-simple-select-label">
@@ -66,7 +63,10 @@ const DeleteDropDown = function (props: any) {
           </Select>
         </FormControl>
       </Box>
-      <Button className='danger-btn' onClick={() => deleteGardenVegetable(gardenID, vegetableID)}>
+      <Button
+        className="danger-btn"
+        onClick={() => deleteGardenVegetable(gardenID, vegetableID)}
+      >
         Delete
       </Button>
     </div>

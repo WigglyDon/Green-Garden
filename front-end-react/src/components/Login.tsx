@@ -1,15 +1,9 @@
 import React from "react";
-// import "./Login.scss";
 import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import CssBaseline from "@mui/material/CssBaseline";
 import TextField from "@mui/material/TextField";
-// import FormControlLabel from "@mui/material/FormControlLabel";
-// import Checkbox from "@mui/material/Checkbox";
-// import Link from "@mui/material/Link";
-// import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
@@ -18,12 +12,10 @@ import Nav from "./Nav";
 const theme = createTheme();
 
 export default function Login(props: any) {
-  // const {} = props;
   const navigate = useNavigate();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    //Add email/password validation as stretch
     const data = new FormData(event.currentTarget);
     const email = data.get("email");
     // const password = data.get("password");
@@ -38,9 +30,9 @@ export default function Login(props: any) {
   };
 
   return (
-    <div className='login'>
+    <div className="login">
       <Nav />
-      <div className='login-form'>
+      <div className="login-form">
         <ThemeProvider theme={theme}>
           <Container component="main" maxWidth="xs">
             <CssBaseline />
@@ -52,9 +44,14 @@ export default function Login(props: any) {
                 alignItems: "center",
               }}
             >
-              <Avatar className='avatar' sx={{ m: 1, bgcolor: "secondary.main" }}>
-                {/* <LockOutlinedIcon /> */}
-                <img src="https://raw.githubusercontent.com/nikolajjuuel/scheduler/master/public/images/lhl.png" alt="lhl" />
+              <Avatar
+                className="avatar"
+                sx={{ m: 1, bgcolor: "secondary.main" }}
+              >
+                <img
+                  src="https://raw.githubusercontent.com/nikolajjuuel/scheduler/master/public/images/lhl.png"
+                  alt="lhl"
+                />
               </Avatar>
               <Typography component="h1" variant="h5">
                 Login
@@ -86,7 +83,7 @@ export default function Login(props: any) {
                   autoComplete="current-password"
                 />
                 <Button
-                  className='login-btn'
+                  className="login-btn"
                   type="submit"
                   fullWidth
                   variant="contained"
@@ -99,12 +96,7 @@ export default function Login(props: any) {
           </Container>
         </ThemeProvider>
       </div>
-      <div className='login-image'>
-      
-      </div>
-
+      <div className="login-image"></div>
     </div>
-
-
   );
 }

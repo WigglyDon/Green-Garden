@@ -9,11 +9,6 @@ ChartJS.register(ArcElement, Tooltip, Legend);
 
 export default function GardenDiversityGraph(props: any) {
   const { state } = props;
-  //console.log("G1 STATE", state)
-  const obj = {
-    canada: 1,
-    changeMe: 2,
-  };
   const options = {
     responsive: true,
     plugins: {
@@ -34,7 +29,6 @@ export default function GardenDiversityGraph(props: any) {
     labels: Object.keys(
       graphaDataSculptor(graphDataParser(state, "native_region"))
     ),
-    //graphDataParser(state, "native_region"),
     datasets: [
       {
         label: "# of Votes",

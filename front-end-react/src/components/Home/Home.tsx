@@ -12,10 +12,6 @@ export default function Home(props: any) {
     vegetables: [],
     query: "",
   });
-
-  // console.log("State in Home", state);
-  // console.log("PARENT STATE", parentState);
-
   useEffect(() => {
     Promise.all([
       axios.get("http://localhost:8080/api/vegetables/search", {
@@ -48,13 +44,21 @@ export default function Home(props: any) {
   return (
     <div className="homepage">
       <Nav />
-      <div className='main-img'>
-        <div className='hero-text'>
-          <div className='hero-title'>
-            Green Garden
-          </div>
-          <div className='hero-description'>
-            Keep your plants <em> <strong> happy</strong> </em> and <em> <strong> never miss</strong></em> a watering day!
+      <div className="main-img">
+        <div className="hero-text">
+          <div className="hero-title">Green Garden</div>
+          <div className="hero-description">
+            Keep your plants{" "}
+            <em>
+              {" "}
+              <strong> happy</strong>{" "}
+            </em>{" "}
+            and{" "}
+            <em>
+              {" "}
+              <strong> never miss</strong>
+            </em>{" "}
+            a watering day!
           </div>
         </div>
       </div>
