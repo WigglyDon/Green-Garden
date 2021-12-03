@@ -4,26 +4,27 @@ import "./VegetableCardList.scss";
 import VegetableCard from "./VegetableCard";
 
 export default function VegetableCardList(props: any) {
- const {state, handleAddVegetable} = props
+  const { state, handleAddVegetable } = props;
   const vegetables = props.vegetables[0];
 
-  const mapVegetables = (vegetableList:any) => {
+  const mapVegetables = (vegetableList: any) => {
     let vegCards = [];
-
-  //  console.log("State in VegetableCardList", state)
 
     for (let i = 0; i < vegetableList.length; i++) {
       const vegetable = props.vegetables[0][i];
-      vegCards.push(<VegetableCard handleAddVegetable={handleAddVegetable} state={state} key={vegetable.id} vegetable={vegetable}/>) 
+      vegCards.push(
+        <VegetableCard
+          handleAddVegetable={handleAddVegetable}
+          state={state}
+          key={vegetable.id}
+          vegetable={vegetable}
+        />
+      );
     }
-    return vegCards
-  }
+    return vegCards;
+  };
 
-  const listVegetables = mapVegetables(vegetables)
+  const listVegetables = mapVegetables(vegetables);
 
-
-
-
-  return <div className='vegetable-card-list'>{listVegetables}</div>;
-
+  return <div className="vegetable-card-list">{listVegetables}</div>;
 }

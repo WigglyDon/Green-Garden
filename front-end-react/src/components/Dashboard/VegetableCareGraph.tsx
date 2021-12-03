@@ -29,8 +29,6 @@ export default function VegetableCareGraph(props: any) {
   const data = {
     labels,
     datasets: [
-      //orangy color   // backgroundColor: 'rgba(224, 141, 121, 0.2)',
-      // borderColor: 'rgba(224, 141, 121, 1)',
       {
         label: "Sun Level",
         data: graphDataParser(state, "sun_level"),

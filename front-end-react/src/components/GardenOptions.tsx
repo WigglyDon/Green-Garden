@@ -2,7 +2,6 @@ import React from "react";
 import { Button } from "@mui/material";
 import DeleteForm from "./Dashboard/DeleteForm";
 import Scheduler from "./Scheduler/Scheduler";
-import { useState } from "react";
 
 export default function GardenOptions(props: any) {
   const {
@@ -32,7 +31,7 @@ export default function GardenOptions(props: any) {
   };
 
   return (
-    <div className='dashboard-buttons'>
+    <div className="dashboard-buttons">
       <Button
         className="danger-btn"
         variant="contained"
@@ -62,7 +61,7 @@ export default function GardenOptions(props: any) {
         </Button>
       </div>
       {showNotifications ? (
-        <div className='scheduler'>
+        <div className="scheduler">
           <Scheduler
             showNotifications={showNotifications}
             setShowNotifications={setShowNotifications}

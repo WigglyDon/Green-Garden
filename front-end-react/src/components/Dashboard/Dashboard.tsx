@@ -15,19 +15,15 @@ import "../SideBar/index.scss";
 import "../Dashboard/GraphOne.scss";
 import SeasonsPieChart from "./SeasonsPieChart";
 import { useState, useEffect } from "react";
-// import DeleteForm from "./DeleteForm";
 import GardenOptions from "../GardenOptions";
 import GrowingDaysGraph from "./GrowingDaysGraph";
 import DeleteDropDown from "./DeleteDropDown";
-
-// import GardenCardList from "./GardenCardList";
-// import GardenCard from "../GardenCard";
 
 export default function Dashboard(props: any) {
   const [showNotifications, setShowNotifications] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [gardenName, setGardenName] = useState("All Gardens");
-  // console.log("gardenName", gardenName);
+
   const {
     updateGardenVegetableState,
     state,
@@ -36,7 +32,6 @@ export default function Dashboard(props: any) {
     bookNotification,
     createGarden,
     changeGarden,
-    updateState,
     deleteGarden,
     updateGardenState,
     handleVegetable,
@@ -72,7 +67,6 @@ export default function Dashboard(props: any) {
               updateGardenVegetableState={updateGardenVegetableState}
               state={state}
               createGarden={createGarden}
-              // updateGardenState={updateGardenState}
               changeGarden={changeGarden}
             />
           </div>
@@ -114,11 +108,6 @@ export default function Dashboard(props: any) {
               setShowDelete={setShowDelete}
             />
           ) : null}
-          {/* <Button variant="contained">
-             <NavLink to="/scheduler" style={{ textDecoration: "none"}>
-                 Set Notifications
-            </NavLink>
-        </Button> */}
         </div>
       </div>
     </div>

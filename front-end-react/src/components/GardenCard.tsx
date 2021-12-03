@@ -6,10 +6,8 @@ import { useState } from "react";
 import classNames from "classnames";
 
 export default function GardenCard(props: any) {
-  // const [selected, setSelected] = useState(false)
   const {
     garden_name,
-    garden,
     changeGarden,
     id,
     selected,

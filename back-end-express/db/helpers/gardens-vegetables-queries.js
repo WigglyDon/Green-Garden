@@ -33,15 +33,11 @@ const postGardensVegetables = function (data) {
   const gardenId = data.gardenId;
   const vegetableId = data.vegetableId;
 
-  // console.log("IDPAIRS", gardenId, vegetableId)
-
   const text = `
   INSERT INTO gardens_vegetables (garden_id,vegetable_id)
   VALUES
   (${gardenId}, ${vegetableId})
   `;
-  // ${vegetableid}
-  // ${gardenid}
 
   return db
     .query(text)
@@ -50,11 +46,6 @@ const postGardensVegetables = function (data) {
 };
 
 const deleteFromGardensVegetables = function (gardenID, vegetableID) {
-  // const gardenId = data.gardenId;
-  // const vegetableId = data.vegetableId;
-
-  // console.log("IDPAIRS", gardenID, vegetableID);
-
   const text = `
   DELETE FROM gardens_vegetables WHERE garden_id =${gardenID} AND vegetable_id = ${vegetableID} 
   `;
