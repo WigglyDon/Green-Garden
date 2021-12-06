@@ -1,6 +1,6 @@
 # Green Garden
 
-Green Garden is a personal gardening app made to make home gardening easier and more fun. It's main features include interactive live graphs hooked into a custom built API and automatic text message notifications to remind you to water your plants.
+Green Garden is a personal gardening app designed to make home gardening easier and more fun. It's main features include interactive live graphs hooked into a custom built API and automatic text message notifications to remind you to water your plants.
 
 ### The Dev Team
 
