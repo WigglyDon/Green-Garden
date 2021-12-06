@@ -4,11 +4,11 @@ Green Garden is a personal gardening app designed to make home gardening easier 
 
 ### The Dev Team
 
+- [Donnie Walsh](https://github.com/WigglyDonnie)
+
 - [Edmund Yu](https://github.com/Nolelle)
 
 - [Nikolaj Johansen](https://github.com/nikolajjuuel)
-
-- [Donnie Walsh](https://github.com/WigglyDonnie)
 
 ---
 
