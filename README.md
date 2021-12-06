@@ -1,6 +1,6 @@
 # Green Garden
 
-Green garden was created because the dev team were all enthusiastic about plants and wanted to take there gardening skills to the next level. One common issue between them was there busy schedules and the lack of proper knowledge to take care of each plant. We looked around for apps to help us keep our plants alive but we were unable to find one so we put our head together and built our own
+Green Garden is a personal gardening app made to make home gardening easier and more fun. It's main features include interactive live graphs hooked into a custom built API and automatic text message notifications to remind you to water your plants.
 
 ### The Dev Team
 
@@ -26,7 +26,7 @@ Green garden was created because the dev team were all enthusiastic about plants
 
 ## Backend Setup
 
-1. Changed directories to back-end-express
+1. Change directories to back-end-express
 2. Create an .env following the .env.example
 3. Sign up for a Twillio account and place your Twillio Account SID and Token in .env file.
 
